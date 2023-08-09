@@ -74,8 +74,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse nav-collapse">
                         <div class="menu-container"
-                             style="text-align: center;
-                             font-family: 'Cafe24Ssurround';" > <!-- 폰트 적용 다시 해보기 -->
+                             style="text-align: center;"> <!-- 폰트 적용 다시 해보기 -->
                             <ul class="navbar-nav navbar-nav-right">
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
@@ -141,7 +140,7 @@
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
                 <div class="row row-space-5" style="margin: 30px;">
-                    <div class="col-sm-6 sm-margin-b-30">
+                    <div class="col-sm-3 sm-margin-b-30">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
                             <div class="service" data-height="height">
                                 <div class="service-element" style="margin-bottom: 15px;">
@@ -150,13 +149,13 @@
                                 </div>
                                 <div class="service-info">
                                     <h3>건강관리 다이어리</h3>
-                                    <p class="margin-b-5">깜빡하기 쉬운 일정을<br>가족들과 공유하고,<br>수시로 반려동물 피부건강을<br>체크할 수 있어요.</p>
+                                    <p class="margin-b-5">반려동물 건강을 관리해요.</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 sm-margin-b-2">
+                    <div class="col-sm-3 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
                             <div class="service" data-height="height">
                                 <div class="service-element" style="margin-bottom: 15px;">
@@ -165,22 +164,53 @@
                                 </div>
                                 <div class="service-info">
                                     <h3>반려인 커뮤니티</h3>
-                                    <p class="margin-b-5">반려견, 반려묘를 키우는<br>반려인들과 함께<br>피부 질환에 관련된<br>정보를 공유해보세요.</p>
+                                    <p class="margin-b-5">반려인들과<br>정보를 공유해요.</p>
+                                </div>
+                                <a href="#" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sm-margin-b-30">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
+                            <div class="service" data-height="height">
+                                <div class="service-element" style="margin-bottom: 15px;">
+                                    <!-- <i class="service-icon icon-notebook"></i> -->
+                                    <i class="bi bi-search-heart" style="font-size: 35px;"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>주변 동물 병원 검색</h3>
+                                    <p class="margin-b-5">인근 동물 병원 정보를<br>확인할 수 있어요.</p>
+                                </div>
+                                <a href="#" class="content-wrapper-link"></a>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 sm-margin-b-2">
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
+                            <div class="service" data-height="height">
+                                <div class="service-element" style="margin-bottom: 15px;">
+                                    <!-- <i class="service-icon icon-speedometer"></i> -->
+                                    <i class="bi bi-robot" style="font-size: 35px;"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>PetCheck 챗봇</h3>
+                                    <p class="margin-b-5">궁금한 것을<br>챗봇에게 물어보세요!</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
                     </div>
                     
+                    
                 </div>
                 <!--// end row -->
 
-                <div class="row row-space-5" style="margin: 30px;">
+                <!-- <div class="row row-space-3" style="margin: 30px;">
                     <div class="col-sm-6 sm-margin-b-30">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
                             <div class="service" data-height="height">
                                 <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-notebook"></i> -->
+                                    <i class="service-icon icon-notebook"></i>
                                     <i class="bi bi-search-heart" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
@@ -191,11 +221,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 sm-margin-b-2">
+                    <div class="col-sm-3 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
                             <div class="service" data-height="height">
                                 <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-speedometer"></i> -->
+                                    <i class="service-icon icon-speedometer"></i>
                                     <i class="bi bi-robot" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
@@ -207,7 +237,7 @@
                         </div>
                     </div>
                     
-                </div>
+                </div> -->
                 <!--// end row -->
             </div>
         </div>
@@ -216,63 +246,8 @@
 
         <!--========== FOOTER ==========-->
         
-        <!-- <footer class="footer">
-            Links
-            <div class="footer-seperator">
-                <div class="content-lg container">
-                    <div class="row">
-                        <div class="col-sm-2 sm-margin-b-50">
-                            List
-                            <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Home</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">About</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Products</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Pricing</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Contact</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
-                            </ul>
-                            End List
-                        </div>
-                        <div class="col-sm-4 sm-margin-b-30">
-                            List
-                            <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Twitter</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
-                            </ul>
-                            End List
-                        </div>
-                        <div class="col-sm-5 sm-margin-b-30">
-                            <h2 class="color-white">Send Us A Note</h2>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Name" required>
-                            <input type="email" class="form-control footer-input margin-b-20" placeholder="Email" required>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Phone" required>
-                            <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Message" required></textarea>
-                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
-                        </div>
-                    </div>
-                    // end row
-                </div>
-            </div>
-            End Links
-
-            Copyright
-            <div class="content container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img class="footer-logo" src="resources/img/logo1.png" alt="Asentus Logo">
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                // end row
-            </div>
-            End Copyright
-        </footer> -->
+        
+        
         <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->

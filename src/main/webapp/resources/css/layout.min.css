@@ -7,6 +7,9 @@
     font-style: normal;
 }
 
+* {
+	font-family: 'Cafe24Ssurround';
+}
 .blockquote, .btn-theme, p {
    line-height: 1.4
 }
@@ -26,7 +29,7 @@
 
 .blockquote, .header .nav-item-child, .link, a, body, em, h1, h2, h3, h4,
    h5, h6, li, li a, p, span {
-   font-family: Hind, sans-serif
+   font-family: 'Cafe24Ssurround';
 }
 
 .back-to-top:focus, .back-to-top:hover, .btn-theme.focus, .btn-theme:focus,
