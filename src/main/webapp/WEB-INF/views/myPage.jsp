@@ -34,32 +34,37 @@
 				<input type="text" class="form-control" name="nick" id="nick" value="${mvo.nick}"/>
 			</div>
 			<div class="form-group">
-				<button class="btn btn-warning btn-sm" data-btn="add_pet" id="add_pet">펫 추가버튼</button>
 			</div>
 			<!-- 버튼에 폼-컨트롤 은 길이를 맞추는 용도? -->
 			<button type="submit" class="btn btn-primary btn-sm form-control">수정</button>
 		</form>
-		<form id="addPet" action="${cpath}/addPet" method="post">
+		<button data-btn="deleteInfo" id="deleteInfo" class="btn btn-warning btn-sm">회원탈퇴</button>
+		<form id="addPet" action="${cpath}/addPet.do" method="post">
+			<input type="hidden" name="id" value="${mvo.id}">
+			<br>
 			<div class="form-group">
-			<input id="id" type="hidden" name="id" value="${mvo.id}">
 			<label for="pet_name">펫 이름 :</label>
-			</div>
-			<div class="form-group">
 			<input id="pet_name" type="text" name="pet_name">
+			</div>
+			<br>
+			<div class="form-group">
 			<label for="pet_race">펫 품종 :</label>
+			<label><input type="radio" name="pet_race" value="개">개</label>
+			<label><input type="radio" name="pet_race" value="고양이">고양이</label>
 			</div>
+			<br>
 			<div class="form-group">
-			<input id="pet_race" type="text" name="pet_race">
 			<label for="pet_gender">펫 성별 :</label>
+			<label><input type="radio" name="pet_gender" value="남아">남아</label>
+			<label><input type="radio" name="pet_gender" value="여아">여아</label>
 			</div>
+			<br>
 			<div class="form-group">
-			<label><input id="pet_gender" type="radio" name="pet_gender" value="남아">남아</label>
-			<label><input id="pet_gender" type="radio" name="pet_gender" value="남아">여아</label>
-			</div>
 			<label for="pet_birthdate">펫 출생일 :</label>
 			<input id="pet_birthdate" type="date" name="pet_birthdate">
+			</div>
+		<button class="btn btn-warning btn-sm" type="submit">펫 추가버튼</button>
 		</form>
-		<button data-btn="deleteInfo" id="deleteInfo" class="btn btn-warning btn-sm">삭제</button>
 	</c:if>
 	<form id="frm">
 		<input type="hidden" name="idx" value="${mvo.idx}">
@@ -79,18 +84,8 @@
 				}
 			});
 			
-			$("#add_pet").click(function(){
-				var plist = "<table class='table table-hover'>";
-					plist += "<thead>";
-					plist += "<tr>";
-					plist += "<th>펫이름</th>";
-					plist += "<th>제목</th>";
-					plist += "<th>작성자</th>";
-					plist += "<th>작성일</th>";
-					plist += "<th>조회수</th>";
-					plist += "</tr>";
-					plist += "</thead>";
-			});
+			/* $("#add_pet").click(function(){
+			}); */
 		});
 	</script>
 </body>

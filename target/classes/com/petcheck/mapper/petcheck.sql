@@ -295,3 +295,4 @@ select * from t_member;
 
 ALTER TABLE t_pet ADD COLUMN pet_name varchar(50) NOT NULL	COMMENT '펫이름. 펫이름';
 ALTER TABLE t_pet ADD COLUMN pet_gender varchar(50) NOT NULL COMMENT '펫성별. 펫성별';
+ALTER TABLE t_pet MODIFY COLUMN pet_birthdate DATE NULL;

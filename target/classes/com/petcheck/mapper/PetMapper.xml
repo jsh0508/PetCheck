@@ -8,23 +8,16 @@
 	</insert>
 	
 	<update id="updatepet" parameterType="com.petcheck.entity.Pet">
-		update t_pet set pet_race=#{pet_race}, nick=#{nick} where pet_seq=#{pet_seq}
+		update t_pet set pet_race=#{pet_race}, pet_birthdate=#{pet_birthdate}, pet_name=#{pet_name}, pet_gender=#{pet_gender} where pet_seq=#{pet_seq}
 	</update>
 	
-	<delete id="deleteInfo" parameterType="com.petcheck.entity.Member">
-		delete from t_member where idx=#{idx}
+	<delete id="deletePet" parameterType="com.petcheck.entity.Pet">
+		delete from t_pet where pet_seq=#{pet_seq}
 	</delete>
 	
-	<select id="snsLogin" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
-		select * from t_member where sns_type=#{sns_type} and id=#{id}
-	</select>
 	
-	<select id="login" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
-		select * from t_member where id=#{id} and pw=#{pw}
-	</select>
-	
-	<select id="checkInfo" parameterType="int" resultType="com.petcheck.entity.Member"> 
-		select * from t_member where idx=#{idx}
+	<select id="petList" parameterType="com.petcheck.entity.Pet" resultType="com.petcheck.entity.Pet"> 
+		select * from t_pet where id=#{id}
 	</select>
 	
 </mapper>

@@ -26,7 +26,7 @@ public class Pet {
 	    private String pet_race;
 
 	    // 펫 출생일
-	    private Date pet_birthdate;
+	    private String pet_birthdate;
 
 	    // 펫 이름
 	    private String pet_name;
