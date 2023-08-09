@@ -5,3 +5,5 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 	<c:redirect url="main.do"/>
+<!-- test 해봄 -->
+<!-- 무등 test 했음 -->
