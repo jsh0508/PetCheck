@@ -41,16 +41,14 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="stylesheet" href="resources/css/btn.css">
-        
-        <!-- bootstrap icon -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     </head>
     <!-- END HEAD -->
 
     <!-- BODY -->
     <body>
+
         <!--========== HEADER ==========-->
-        <header class="header" style="background-color: #FFFAF3;">
+        <header class="header navbar-fixed-top">
             <!-- Navbar -->
             <nav class="navbar" role="navigation">
                 <div class="container">
@@ -62,36 +60,25 @@
                         </button>
 
                         <!-- Logo -->
-                        <!-- <div class="logo">
+                        <div class="logo">
                             <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="resources/img/logo1.png" alt="">
+                                <img class="logo-img logo-img-main" src="resources/img/logo1.png" width=100 alt="Asentus Logo">
                                 <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo">
                             </a>
-                        </div> -->
+                        </div>
                         <!-- End Logo -->
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container"
-                             style="text-align: center;
-                             font-family: 'Cafe24Ssurround';" > <!-- 폰트 적용 다시 해보기 -->
+                        <div class="menu-container">
                             <ul class="navbar-nav navbar-nav-right">
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="index">마이페이지</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover">|</a></li>                   
-                                <c:if test="${empty mvo}">
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/memberjoin.do">회원가입</a></li>
-                                </c:if>    
-                                <c:if test="${!empty mvo}">
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
-                                
-                                </c:if>         
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html"><i class="bi bi-person"></i></a></li>
+                                <li class="nav-item"><a type="" class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
                             </ul>
                         </div>
                     </div>
@@ -104,34 +91,45 @@
 
         <!--========== SLIDER ==========-->
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- <div class="container">
-                Indicators
+            <div class="container">
+                <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 </ol>
-            </div> -->
+            </div>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="resources/img/1920x1080/main03.png" alt="Slider Image">
+                    <img class="img-responsive" src="resources/img/1920x1080/bg1.jpg" alt="Slider Image">
                     <div class="container">
                         <div class="carousel-centered">
-                            <!-- <div class="margin-b-40">
+                            <div class="margin-b-40">
                                 <h1 class="carousel-title"></h1>
                                 <p>반려묘의 오버그루밍이 심하거나,<br>반려견의 피부질환이 의심되시나요?<br>지금 바로 직접 촬영하여 자가진단을 해보세요!</p>
                             </div>
                            <div class="buttons">
                           <button class="btn-hover color-10">진단하기</button>
-                      </div> -->
+                      </div>
                             
                            
                             
                         </div>
                     </div>
                 </div>
-                
+                <div class="item">
+                    <img class="img-responsive" src="resources/img/1920x1080/02.jpg" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h2 class="carousel-title">Hi-Tech Design</h2>
+                                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                            </div>
+                            <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--========== SLIDER ==========-->
@@ -140,13 +138,12 @@
         <!-- Service -->
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
-                <div class="row row-space-5" style="margin: 30px;">
-                    <div class="col-sm-6 sm-margin-b-30">
+                <div class="row row-space-1 margin-b-2">
+                    <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-chemistry"></i> -->
-                                    <i class="bi bi-journal-plus" style="font-size: 35px;"></i>
+                                <div class="service-element">
+                                    <i class="service-icon icon-chemistry"></i>
                                 </div>
                                 <div class="service-info">
                                     <h3>건강관리 다이어리</h3>
@@ -156,12 +153,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 sm-margin-b-2">
+                    <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-screen-tablet"></i> -->
-                                    <i class="bi bi-people" style="font-size: 35px;"></i>
+                                <div class="service-element">
+                                    <i class="service-icon icon-screen-tablet"></i>
                                 </div>
                                 <div class="service-info">
                                     <h3>반려인 커뮤니티</h3>
@@ -175,13 +171,12 @@
                 </div>
                 <!--// end row -->
 
-                <div class="row row-space-5" style="margin: 30px;">
-                    <div class="col-sm-6 sm-margin-b-30">
+                <div class="row row-space-1">
+                    <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-notebook"></i> -->
-                                    <i class="bi bi-search-heart" style="font-size: 35px;"></i>
+                                <div class="service-element">
+                                    <i class="service-icon icon-notebook"></i>
                                 </div>
                                 <div class="service-info">
                                     <h3>주변 동물 병원 검색</h3>
@@ -191,12 +186,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 sm-margin-b-2">
+                    <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-speedometer"></i> -->
-                                    <i class="bi bi-robot" style="font-size: 35px;"></i>
+                                <div class="service-element">
+                                    <i class="service-icon icon-speedometer"></i>
                                 </div>
                                 <div class="service-info">
                                     <h3>PetCheck 챗봇</h3>
@@ -215,14 +209,13 @@
         <!--========== END PAGE LAYOUT ==========-->
 
         <!--========== FOOTER ==========-->
-        
-        <!-- <footer class="footer">
-            Links
+        <footer class="footer">
+            <!-- Links -->
             <div class="footer-seperator">
                 <div class="content-lg container">
                     <div class="row">
                         <div class="col-sm-2 sm-margin-b-50">
-                            List
+                            <!-- List -->
                             <ul class="list-unstyled footer-list">
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Home</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">About</a></li>
@@ -233,17 +226,17 @@
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Contact</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
                             </ul>
-                            End List
+                            <!-- End List -->
                         </div>
                         <div class="col-sm-4 sm-margin-b-30">
-                            List
+                            <!-- List -->
                             <ul class="list-unstyled footer-list">
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Twitter</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
                             </ul>
-                            End List
+                            <!-- End List -->
                         </div>
                         <div class="col-sm-5 sm-margin-b-30">
                             <h2 class="color-white">Send Us A Note</h2>
@@ -254,12 +247,12 @@
                             <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
                         </div>
                     </div>
-                    // end row
+                    <!--// end row -->
                 </div>
             </div>
-            End Links
+            <!-- End Links -->
 
-            Copyright
+            <!-- Copyright -->
             <div class="content container">
                 <div class="row">
                     <div class="col-xs-6">
@@ -269,10 +262,10 @@
                         Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
                     </div>
                 </div>
-                // end row
+                <!--// end row -->
             </div>
-            End Copyright
-        </footer> -->
+            <!-- End Copyright -->
+        </footer>
         <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->
@@ -298,7 +291,20 @@
         <script src="resources/js/components/wow.min.js" type="text/javascript"></script>
         <script src="resources/js/components/swiper.min.js" type="text/javascript"></script>
         <script src="resources/js/components/masonry.min.js" type="text/javascript"></script>
-
+		<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+		<script>
+			window.Kakao.init('0cbbc520fc8aaa3c1adfb65f2f39c106');
+				function kakaoLogout() {
+			    	if (!Kakao.Auth.getAccessToken()) {
+					    console.log('Not logged in.');
+					    return;
+				    }
+				    Kakao.Auth.logout(function(response) {
+			    		alert(response +' logout');
+					    window.location.href='/'
+				    });
+				};
+		</script>
     </body>
     <!-- END BODY -->
 </html>

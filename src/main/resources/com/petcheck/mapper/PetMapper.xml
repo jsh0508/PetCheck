@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
+<mapper namespace="com.petcheck.mapper.PetMapper">
+	<insert id="addPet" parameterType="com.petcheck.entity.Pet">
+		INSERT INTO t_Pet (id, pet_race, pet_birthdate, pet_name, pet_gender) 
+		VALUES (#{id}, #{pet_race}, #{pet_birthdate}, #{pet_name}, #{pet_gender});
+	</insert>
+	
+	<update id="updatepet" parameterType="com.petcheck.entity.Pet">
+		update t_pet set pet_race=#{pet_race}, nick=#{nick} where pet_seq=#{pet_seq}
+	</update>
+	
+	<delete id="deleteInfo" parameterType="com.petcheck.entity.Member">
+		delete from t_member where idx=#{idx}
+	</delete>
+	
+	<select id="snsLogin" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
+		select * from t_member where sns_type=#{sns_type} and id=#{id}
+	</select>
+	
+	<select id="login" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
+		select * from t_member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="checkInfo" parameterType="int" resultType="com.petcheck.entity.Member"> 
+		select * from t_member where idx=#{idx}
+	</select>
+	
+</mapper>

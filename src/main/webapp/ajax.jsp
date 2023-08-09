@@ -4,4 +4,4 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
-	<c:redirect url="ajax.do"/>
+	<c:redirect url="main.do"/>
