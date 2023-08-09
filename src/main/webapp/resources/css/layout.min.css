@@ -10,6 +10,26 @@
 * {
 	font-family: 'Cafe24Ssurround';
 }
+
+footer{
+    border-top: 1px solid #e4e4e4;
+    background-color:#E8E4E4;
+    padding:1rem 0;
+    margin:0;
+    height: 100px;
+    text-align: center;
+}
+.footer-contact{
+    font-size:30px;
+    color:#545e6f;
+    margin:0.6rem;
+}
+.footer-copyright{
+    font-size:0.9rem;
+    color:#545e6f;
+    margin:0.6rem;
+}
+
 .blockquote, .btn-theme, p {
    line-height: 1.4
 }

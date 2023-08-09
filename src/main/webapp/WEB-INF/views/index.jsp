@@ -246,7 +246,16 @@
 
         <!--========== FOOTER ==========-->
         
-        
+	<footer>
+		<div class="inner">
+			<div class="footer-contact">
+			<a href="https://github.com/jsh0508/PetCheck" target="_blank">
+			<i class="bi bi-github"></i>
+			</a>
+			</div>
+			<div class="footer-copyright">독하고묘한팀</div>
+		</div>
+	</footer>
         
         <!--========== END FOOTER ==========-->
 
