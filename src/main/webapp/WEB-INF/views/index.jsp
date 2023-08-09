@@ -114,7 +114,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="resources/img/1920x1080/main03.png" alt="Slider Image">
+                    <img class="img-responsive" src="resources/img/1920x1080/main001.png" alt="Slider Image">
                     <div class="container">
                         <div class="carousel-centered">
                             <!-- <div class="margin-b-40">

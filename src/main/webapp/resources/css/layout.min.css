@@ -1,14 +1,14 @@
 @charset "UTF-8"; 
 
 @font-face {
-    font-family: 'Cafe24Ssurround';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 * {
-	font-family: 'Cafe24Ssurround';
+	font-family: 'RIDIBatang';
 }
 
 footer{
@@ -49,7 +49,7 @@ footer{
 
 .blockquote, .header .nav-item-child, .link, a, body, em, h1, h2, h3, h4,
    h5, h6, li, li a, p, span {
-   font-family: 'Cafe24Ssurround';
+   font-family: 'RIDIBatang';
 }
 
 .back-to-top:focus, .back-to-top:hover, .btn-theme.focus, .btn-theme:focus,
