@@ -120,6 +120,7 @@ $RECYCLE.BIN/
 *.lnk
 
 MANIFEST.MF
+pom.properties
 
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
