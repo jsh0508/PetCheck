@@ -17,7 +17,7 @@ def generate_result_image():
 @app.route('/')
 def index():
     result_image_base64 = generate_result_image()
-    return render_template('index.html', result_image=result_image_base64)
+    return render_template('result.jsp', result_image=result_image_base64)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True)
