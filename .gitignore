@@ -119,8 +119,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-MANIFEST.MF
-pom.properties
+src/main/webapp/WEB-INF/views/index.jsp
+target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
