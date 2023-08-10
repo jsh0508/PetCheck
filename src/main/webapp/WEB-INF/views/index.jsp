@@ -139,7 +139,7 @@
         <!-- Service -->
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
-                <div class="row row-space-5" style="margin: 30px;">
+                <!-- <div class="row row-space-5" style="margin: 30px;"> -->
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
                             <div class="service" data-height="height">
@@ -148,8 +148,8 @@
                                     <i class="bi bi-journal-plus" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>건강관리 다이어리</h3>
-                                    <p class="margin-b-5">반려동물 건강을 관리해요.</p>
+                                    <h3>건강관리<br>다이어리</h3>
+                                    <p class="margin-b-5">반려동물 건강을<br>관리해요.</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -163,7 +163,7 @@
                                     <i class="bi bi-people" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>반려인 커뮤니티</h3>
+                                    <h3>반려인<br>커뮤니티</h3>
                                     <p class="margin-b-5">반려인들과<br>정보를 공유해요.</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
@@ -178,7 +178,7 @@
                                     <i class="bi bi-search-heart" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>주변 동물 병원 검색</h3>
+                                    <h3>주변 동물<br>병원 검색</h3>
                                     <p class="margin-b-5">인근 동물 병원 정보를<br>확인할 수 있어요.</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
@@ -193,7 +193,7 @@
                                     <i class="bi bi-robot" style="font-size: 35px;"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>PetCheck 챗봇</h3>
+                                    <h3>PetCheck<br>챗봇</h3>
                                     <p class="margin-b-5">궁금한 것을<br>챗봇에게 물어보세요!</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
@@ -202,7 +202,7 @@
                     </div>
                     
                     
-                </div>
+                <!-- </div> -->
                 <!--// end row -->
 
                 <!-- <div class="row row-space-3" style="margin: 30px;">
