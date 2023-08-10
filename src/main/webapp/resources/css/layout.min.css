@@ -76,10 +76,11 @@ body, html, html a {
 }
 
 p {
-   font-size: 15px;
+   font-size: 20px;
    font-weight: 400;
-   color: #a6a7aa;
-   margin-bottom: 15px
+   color: #9E97A1;
+   margin-bottom: 15px;
+   text-align:center;
 }
 
 em, li, li a {
@@ -562,15 +563,15 @@ h3, h4 {
 }
 
 .header .logo {
-   width: 100px;
+   width: 130px;
    height: 100px;
    float: left;
-   max-height: 95px;
+   max-height: 120px;
    line-height: 65px
 }
 
 .header .logo-wrap {
-   padding: 15px 0
+   padding: 5px 0
 }
 
 .header .logo-img {
@@ -857,8 +858,10 @@ h3, h4 {
 }
 
 .carousel-centered {
-   position: absolute;
-   top: 50%;
+   position: relative;
+   top: 230px;
+   left: 2px;
+   right:300px;
    -webkit-transform: translate3d(0, -50%, 0);
    -moz-transform: translate3d(0, -50%, 0);
    transform: translate3d(0, -50%, 0)

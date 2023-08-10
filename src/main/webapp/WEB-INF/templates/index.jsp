@@ -62,12 +62,12 @@
                         </button>
 
                         <!-- Logo -->
-                        <!-- <div class="logo">
+                        <div class="logo">
                             <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="resources/img/logo1.png" alt="">
-                                <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo">
+                                <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+                               <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
                             </a>
-                        </div> -->
+                        </div>
                         <!-- End Logo -->
                     </div>
 
@@ -114,28 +114,23 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="resources/img/1920x1080/main001.png" alt="Slider Image">
-                    <div class="container">
+                    <img class="img-responsive" src="resources/img/1920x1080/mainmain.png" alt="Slider Image">
+                       <div class="container">
                         <div class="carousel-centered">
-                            <!-- <div class="margin-b-40">
-                                <h1 class="carousel-title"></h1>
-                                <p>반려묘의 오버그루밍이 심하거나,<br>반려견의 피부질환이 의심되시나요?<br>지금 바로 직접 촬영하여 자가진단을 해보세요!</p>
-                            </div>
+                           <p>습한 여름철,<br>땀샘이 없는 고양이와 개는 피부질환에 노출되기 쉽습니다.<br><br>
+                           나의 소중한 반려동물의 피부가 걱정되시나요?<br>
+                           지금 바로 촬영하여 자가진단해보세요!<p>
+                       </div>
                            <div class="buttons">
-                          <button class="btn-hover color-10">진단하기</button>
-                      </div> -->
-                            
-                           
-                            
-                        </div>
-                    </div>
+                            <button class="btn-hover color-10">자가진단 시작하기</button>
+                           </div>
                 </div>
-                
-            </div>
+            </div>   
+        </div>
         </div>
         <!--========== SLIDER ==========-->
 
-        <!--========== PAGE LAYOUT ==========-->
+         <!--========== PAGE LAYOUT ==========-->
         <!-- Service -->
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
@@ -243,7 +238,6 @@
         </div>
        
         <!--========== END PAGE LAYOUT ==========-->
-
         <!--========== FOOTER ==========-->
         
 	<footer>

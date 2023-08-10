@@ -1162,7 +1162,7 @@ hr {
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  position: static;
+  position: relative;
   width: auto;
   height: auto;
   margin: 0;
@@ -1583,6 +1583,7 @@ pre code {
   overflow-y: scroll;
 }
 .container {
+  top:300px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
