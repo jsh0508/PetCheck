@@ -53,28 +53,30 @@
         <header class="header" style="background-color: #FFFAF3;">
             <!-- Navbar -->
             <nav class="navbar" role="navigation">
-                <div class="container">
+              <div class="logo">
+                 <a class="logo-wrap" href="index.html">
+                   <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+                 </a>
+              </div>
+               <div class="menu-container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="menu-container">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="toggle-icon"></span>
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="toggle-icon"></span>
                         </button>
 
-                        <!-- Logo -->
-                        <div class="logo">
-                            <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
-                               <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
-                            </a>
-                        </div>
-                        <!-- End Logo -->
+                        <!-- 로고 -->
+                       <!--  <div class="logo">
+                          <a class="logo-wrap" href="index.html">
+                            <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+                          </a>
+                        </div> -->
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- 네비게이션 -->
                     <div class="collapse navbar-collapse nav-collapse">
-                        <div class="menu-container"
-                             style="text-align: center;"> <!-- 폰트 적용 다시 해보기 -->
+                        <div class="menu-container">
                             <ul class="navbar-nav navbar-nav-right">
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
@@ -103,49 +105,36 @@
 
         <!--========== SLIDER ==========-->
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- <div class="container">
-                Indicators
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                </ol>
-            </div> -->
-
-            <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="resources/img/1920x1080/mainmain.png" alt="Slider Image">
+                    <img class="img-responsive" src="resources/img/1920x1080/mmain.png" alt="Slider Image">
                        <div class="container">
-                        <div class="carousel-centered">
+                         <div class="carousel-centered">
                            <p>습한 여름철,<br>땀샘이 없는 고양이와 개는 피부질환에 노출되기 쉽습니다.<br><br>
                            나의 소중한 반려동물의 피부가 걱정되시나요?<br>
                            지금 바로 촬영하여 자가진단해보세요!<p>
-                       </div>
-                           <div class="buttons">
+                         </div>
+                          <div class="buttons">
                             <button class="btn-hover color-10">자가진단 시작하기</button>
-                           </div>
-                </div>
-            </div>   
+                          </div>
+                       </div>
+                </div>   
+           </div>
         </div>
-        </div>
-        <!--========== SLIDER ==========-->
-
-         <!--========== PAGE LAYOUT ==========-->
-        <!-- Service -->
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- 서비스 소개 -->
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
-                <!-- <div class="row row-space-5" style="margin: 30px;"> -->
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-chemistry"></i> -->
+                                <div class="flex" style="margin-bottom: 15px;">
                                     <i class="bi bi-journal-plus" style="font-size: 35px;"></i>
                                 </div>
-                                <div class="service-info">
+                                  <div class="service-info">
                                     <h3>건강관리<br>다이어리</h3>
-                                    <p class="margin-b-5">반려동물 건강을<br>관리해요.</p>
-                                </div>
+                                    <p class="intro">반려동물<br>건강관리를<br>가족과 함께<br>할 수 있어요</p>
+                                  </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
@@ -153,14 +142,13 @@
                     <div class="col-sm-3 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-screen-tablet"></i> -->
+                                <div class="flex" style="margin-bottom: 15px;">
                                     <i class="bi bi-people" style="font-size: 35px;"></i>
                                 </div>
-                                <div class="service-info">
+                                  <div class="service-info">
                                     <h3>반려인<br>커뮤니티</h3>
-                                    <p class="margin-b-5">반려인들과<br>정보를 공유해요.</p>
-                                </div>
+                                    <p class="intro">반려인들과<br>양육 꿀팁을<br> 나누고<br> 소통해요</p>
+                                  </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
@@ -168,14 +156,13 @@
                     <div class="col-sm-3 sm-margin-b-30">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-notebook"></i> -->
+                                <div class="flex" style="margin-bottom: 15px;">
                                     <i class="bi bi-search-heart" style="font-size: 35px;"></i>
                                 </div>
-                                <div class="service-info">
+                                  <div class="service-info">
                                     <h3>주변 동물<br>병원 검색</h3>
-                                    <p class="margin-b-5">인근 동물 병원 정보를<br>확인할 수 있어요.</p>
-                                </div>
+                                    <p class="intro">내 주변<br>동물 병원 정보를<br>확인해보세요.</p>
+                                  </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
@@ -183,61 +170,21 @@
                     <div class="col-sm-3 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
                             <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <!-- <i class="service-icon icon-speedometer"></i> -->
+                                <div class="flex" style="margin-bottom: 15px;">
                                     <i class="bi bi-robot" style="font-size: 35px;"></i>
                                 </div>
-                                <div class="service-info">
+                                  <div class="service-info">
                                     <h3>PetCheck<br>챗봇</h3>
-                                    <p class="margin-b-5">궁금한 것을<br>챗봇에게 물어보세요!</p>
-                                </div>
+                                    <p class="intro">멍냥이에 대한 <br>A to Z !<br> 챗봇이 궁금증을 해결해줄게요.</p>
+                                  </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
                         </div>
                     </div>
-                    
-                    
-                <!-- </div> -->
-                <!--// end row -->
-
-                <!-- <div class="row row-space-3" style="margin: 30px;">
-                    <div class="col-sm-6 sm-margin-b-30">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
-                            <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <i class="service-icon icon-notebook"></i>
-                                    <i class="bi bi-search-heart" style="font-size: 35px;"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>주변 동물 병원 검색</h3>
-                                    <p class="margin-b-5">병원 내원이 필요한 질환일 경우,<br>주변 동물 병원을 검색해보세요.<br>인근 동물 병원 정보를<br>확인할 수 있어요.</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
-                            <div class="service" data-height="height">
-                                <div class="service-element" style="margin-bottom: 15px;">
-                                    <i class="service-icon icon-speedometer"></i>
-                                    <i class="bi bi-robot" style="font-size: 35px;"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>PetCheck 챗봇</h3>
-                                    <p class="margin-b-5">반려동물의 피부 건강에 대해<br>궁금한 것을<br>챗봇에게 물어보세요!</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div> -->
-                <!--// end row -->
             </div>
         </div>
-       
         <!--========== END PAGE LAYOUT ==========-->
+
         <!--========== FOOTER ==========-->
         
 	<footer>
