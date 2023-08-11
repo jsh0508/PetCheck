@@ -66,19 +66,29 @@
                           <span class="toggle-icon"></span>
                         </button>
 
+<<<<<<< HEAD
                         <!-- 로고 -->
                        <!--  <div class="logo">
                           <a class="logo-wrap" href="index.html">
                             <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
                           </a>
                         </div> -->
+=======
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a class="logo-wrap" href="index.html">
+                               <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+>>>>>>> c1bc83d5dc3a527455b7cfeb779f0bbef494ef8d
                     </div>
 
                     <!-- 네비게이션 -->
                     <div class="collapse navbar-collapse nav-collapse">
                         <div class="menu-container">
                             <ul class="navbar-nav navbar-nav-right">
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
