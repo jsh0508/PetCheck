@@ -24,10 +24,34 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
+<header class="navbar navbar-expand-lg navbar-light" id="nav">
+    <div class="container-fluid ">
+        <a class="navbar-brand " href="/"><i class="fa-solid fa-shield-dog"></i><strong>PETOM</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8081/PetCheck/main.do"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="detect"><strong>다이어리</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hospital" id="hospital" onclick="loading()"><strong>병원검색</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hospital" id="hospital" onclick="loading()"><strong>게시판</strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</header>
 
 <body>
-	<a href="http://localhost:8081/PetCheck/main.do" class="button">HOME</a>
-	<a href="/" class="button">TEST</a>
 	
 	<div class="grid ">
 
@@ -36,7 +60,7 @@
 				<p>
 					📍 바운딩 박스 형태 : 증상명 + 숫자 <br>📍
 					숫자는 Confidence로 확률을 의미하며 0부터 1 미만의 값을 가집니다. <br>
-					🐾 예: 농포_여드름 0.69 ➡️ 69%의 확률로 농포∙여드름 증상이라는 의미입니다.
+					🐾 예: 결절_종괴 0.82 ➡️ 82%의 확률로 농포∙여드름 증상이라는 의미입니다.
 				</p>
 
 			</div>
@@ -50,8 +74,16 @@
 			</div>
 			<div class="col-md-6 result-explanation">
 				<p class="result-right">결과 설명</p>
-				<img class="result-sample-img"
-					src="static/img/result_sample_eu.png" title="미란∙궤양 결과 샘플">
+				<p class="paragraph">
+					<strong>Pustule(농포)</strong> : 몸의 일부분에 약간 돋아올라 보이는 발진을 농포라고 하며, 내부에 고름이 차 있어서 황색 또는 회백색으로 보인다. 
+					농포 주위는 대부분 붉게 변하며 농포가 터지면 딱지가 앉게 된다. 피부의 모낭이 막히면 모낭에 피지가 쌓이게 되고, 
+					여기에 여드름균이 증식해 염증을 일으킨 것이 원인이다. 농포는 농가진의 대표적인 증상이며, 
+					소수포(小水泡)나 수포의 내용물이 고름으로 변해 나타나기도 한다. 
+					이런 것을 2차적 농포라고 한다. 제거기나 레이저로 짜내여 농포를 없앨 수 있다.
+					<a
+						href="https://terms.naver.com/entry.naver?docId=1077841&cid=40942&categoryId=32783"
+						target="_blank">출처<i class="bi bi-box-arrow-up-right"></i></a>
+				</p>
 				<p class="paragraph">
 					<strong>Erosion(미란)</strong> : 피부의 표층에 국한되는 조직결손을 말한다. 치유 후에 흉터를
 					남기지 않고 완전히 치유된다. 표피까지 얕은 수준의 궤양을 말하며 반흔을 남기지 않는다. 고름딱지나 물집이 터진 후
@@ -67,8 +99,6 @@
 						target="_blank">출처<i class="bi bi-box-arrow-up-right"></i></a>
 				</p>
 
-				<img class="result-sample-img"
-					src="static/img/result_sample_nt.png" title="결정∙종괴 결과 샘플">
 				<p class="paragraph">
 					<strong>Nodule(결절) </strong> : 피부 안쪽이나 밑에 딱딱하고 솟아오른 조직이나 유체로, 지름은
 					0.5cm를 초과한다. 결절은 상해를 입을 경우 힘줄이나 근육에 형성될 수 있다. 결절은 일반적으로 양성에 속하며 대부분

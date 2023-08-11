@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, jsonify, request
 from PIL import Image
 import io
@@ -18,10 +19,6 @@ def generate_result_image():
     result_image.save(result_image_byte, format="JPEG")
     result_image_base64 = base64.b64encode(result_image_byte.getvalue()).decode("utf-8")
     return result_image_base64
-
-@app.route("/")
-def index():
-    return render_template('index.html')
 
 
 @app.route('/result', methods=['GET', 'POST'])
