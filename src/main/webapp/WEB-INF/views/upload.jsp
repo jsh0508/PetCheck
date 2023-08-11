@@ -35,10 +35,17 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
+	<!--========== HEADER ==========-->
 	<header class="header" style="background-color: #FFFAF3;">
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
-			<div class="container">
+			<div class="logo">
+				<a class="logo-wrap" href="${cpath}/main.do"> <img
+					class="logo-img logo-img-main" src="resources/img/nocatlogo.png"
+					alt="">
+				</a>
+			</div>
+			<div class="menu-container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="menu-container">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -49,19 +56,16 @@
 
 					<!-- Logo -->
 					<div class="logo">
-						<a class="logo-wrap" href="index.html"> 
+						<a class="logo-wrap" href="index.html"> <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
 						</a>
 					</div>
 					<!-- End Logo -->
 				</div>
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
+				<!-- 네비게이션 -->
 				<div class="collapse navbar-collapse nav-collapse">
-					<div class="menu-container" style="text-align: center;">
-						<!-- 폰트 적용 다시 해보기 -->
+					<div class="menu-container">
 						<ul class="navbar-nav navbar-nav-right">
-							<li class="nav-item"><a
-								class="nav-item-child nav-item-hover" href="${cpath}/main.do">HOME</a></li>
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
 							<li class="nav-item"><a
@@ -98,6 +102,7 @@
 		</nav>
 		<!-- Navbar -->
 	</header>
+	<!--========== END HEADER ==========-->
 
 	<div id="root">
 		<h2 class="title">File Upload</h2>
