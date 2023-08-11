@@ -64,7 +64,6 @@
                         <!-- Logo -->
                         <div class="logo">
                             <a class="logo-wrap" href="index.html">
-                                <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
                                <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
                             </a>
                         </div>
@@ -76,7 +75,7 @@
                         <div class="menu-container"
                              style="text-align: center;"> <!-- 폰트 적용 다시 해보기 -->
                             <ul class="navbar-nav navbar-nav-right">
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
                                 <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
