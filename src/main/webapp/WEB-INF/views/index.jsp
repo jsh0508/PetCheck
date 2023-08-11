@@ -66,14 +66,6 @@
                           <span class="toggle-icon"></span>
                         </button>
 
-<<<<<<< HEAD
-                        <!-- 로고 -->
-                       <!--  <div class="logo">
-                          <a class="logo-wrap" href="index.html">
-                            <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
-                          </a>
-                        </div> -->
-=======
                         <!-- Logo -->
                         <div class="logo">
                             <a class="logo-wrap" href="index.html">
@@ -81,7 +73,6 @@
                             </a>
                         </div>
                         <!-- End Logo -->
->>>>>>> c1bc83d5dc3a527455b7cfeb779f0bbef494ef8d
                     </div>
 
                     <!-- 네비게이션 -->
