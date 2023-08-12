@@ -250,7 +250,6 @@
 			buttonElement = contents[i].querySelector('button');
 			(function(index) {
 		        buttonElement.addEventListener("click", function() {
-		            console.log("here");
 		            overlays[index].setMap(null);
 		        });
 		    })(i);

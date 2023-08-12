@@ -8,9 +8,9 @@
 .buttons {
     margin: 1%;
     text-align: center;
-    top: 730px;
+    top: 740px;
     right: 200px;
-    left: 200px;
+    left: 210px;
     position: absolute;
 }
 
@@ -52,4 +52,23 @@
 .btn-hover.color-7 {
     background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
 }
