@@ -62,7 +62,7 @@
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"> <img
+				<a class="logo-wrap" href="${cpath}/main.do" style="margin-top:10px"> <img
 					class="logo-img logo-img-main" src="resources/img/nocatlogo.png"
 					alt="">
 				</a>
@@ -93,7 +93,7 @@
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
 							<li class="nav-item"><a
-								class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
+								class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
 							<li class="nav-item"><a
