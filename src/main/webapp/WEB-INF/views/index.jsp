@@ -90,8 +90,15 @@
 						<ul class="navbar-nav navbar-nav-right">
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
-							<li class="nav-item"><a
-								class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
+							<c:if test="${empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
+							</c:if>
+							<c:if test="${!empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover"
+									href="${cpath}/diary.do?idx=${mvo.idx}">다이어리</a></li>
+							</c:if>
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
 							<li class="nav-item"><a
@@ -136,8 +143,8 @@
 				<div class="container">
 					<div class="carousel-centered">
 						<p>
-							습한 여름철,<br>땀샘이 없는 고양이와 개는 피부질환에 노출되기 쉽습니다.<br>
-							<br> 나의 소중한 반려동물의 피부가 걱정되시나요?<br> 지금 바로 촬영하여 자가진단해보세요!
+							습한 여름철,<br>땀샘이 없는 고양이와 개는 피부질환에 노출되기 쉽습니다.<br> <br>
+							나의 소중한 반려동물의 피부가 걱정되시나요?<br> 지금 바로 촬영하여 자가진단해보세요!
 						<p>
 					</div>
 					<div class="buttons">

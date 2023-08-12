@@ -101,9 +101,9 @@
 	 <form action="${cpath}/login.do" method="post" class="form1">
 	   <input type="text" id="id" name="id" class="un" align="center" placeholder="아이디를 입력해주세요">
 	   <input type="password" id="pw" name="pw" class="pass" placeholder="비밀번호를 입력해주세요">
-		<a href="#" type="submit" class="submit" align="center">로그인하기</a><br><br>
+		<button type="submit" class="submit" align="center">로그인하기</button><br><br>
 		<!-- <a href="#" type="submit" class="joinus" align="center">회원가입하기</a> -->
-		<a type="joinUs" class="joinUs" align="center' onclick="location.href='${cpath}/memberjoin.do'">회원가입</a>
+		<button type="button" class="joinUs" align="center" onclick="location.href='${cpath}/memberjoin.do'">회원가입</button>
 	 </form>
     <div class="apilogin">
 	  <ul class="api">
