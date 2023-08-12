@@ -188,6 +188,7 @@
 	<!--========== END PAGE LAYOUT ==========-->
 
 	<!--========== FOOTER ==========-->
+
         
 	<footer>
 		<div class="inner">
