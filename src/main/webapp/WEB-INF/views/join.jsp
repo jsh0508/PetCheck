@@ -14,7 +14,9 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta content="" name="description" />
 <meta content="" name="author" />
-
+<link rel="stylesheet" href="resources/css/upload.css">
+<link rel="stylesheet" href="resources/css/form.css">
+<link rel="stylesheet" href="resources/css/btn.css">
 <!-- GLOBAL MANDATORY STYLES -->
 <link
 	href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
@@ -54,20 +56,19 @@
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"> <img
-					class="logo-img logo-img-main" src="resources/img/nocatlogo.png"
-					alt="">
-				</a>
+			  <a class="logo-wrap" href="${cpath}/main.do"> 
+			  <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고" style="width: 110px;">
+			  </a>
 			</div>
-			<div class="menu-container">
+			 <div class="menu-container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="menu-container">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
+			   <div class="menu-container">
+				 <button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target=".nav-collapse">
-						<span class="sr-only">Toggle navigation</span> 
-						<span class="toggle-icon"></span>
-					</button>
-				</div>
+				   <span class="sr-only">Toggle navigation</span> 
+				   <span class="toggle-icon"></span>
+			     </button>
+			   </div>
 
 				<!-- 네비게이션 -->
 				<div class="collapse navbar-collapse nav-collapse">
