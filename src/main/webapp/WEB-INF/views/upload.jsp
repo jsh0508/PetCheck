@@ -14,7 +14,8 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 <link rel="stylesheet" href="resources/css/upload.css">
-
+<link rel="stylesheet" href="resources/css/form.css">
+<link rel="stylesheet" href="resources/css/btn.css">
 <!-- GLOBAL MANDATORY STYLES -->
 <link
 	href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
@@ -42,7 +43,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
-<body>
+<body style="background-color: #FFFAF3;">
 	<!--========== HEADER ==========-->
 	<header class="header" style="background-color: #FFFAF3;">
 		<!-- Navbar -->
@@ -118,18 +119,19 @@
 		<!-- Navbar -->
 	</header>
 	<!--========== END HEADER ==========-->
-	<div class="row" style="text-align:center">
-		<div class="col">
-			<p></p>
-			* 이미지 파일(JPG, JPEG, PNG)만 업로드가 가능합니다<br>
-			* 업로드된 이미지와 결과 이미지는 저장되지 않습니다
-			</p>
-		</div>
-	</div>
+	
 	<div id="root">
-		<h2 class="title">증상을 탐지할 파일을 올려주세요.</h2>
-		<hr>
-		<form action="http://172.30.1.65:5000/result" method="post"
+	   <h2 class="title">진단받고 싶은 아이의 사진을 올려주세요.</h2>
+		 <div class="row" style="text-align:center">
+		   <div class="col">
+			<p> 업로드 가능한 파일 : JPG, JPEG, PNG </p><br>
+			<p>업로드 된 사진과 결과는 저장되지 않아요.</p>
+		   </div>
+        </div>
+         <input name="image" class="form-control form-control-sm" id="image-input" type="file"
+                     onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
+				       
+		  <form action="http://172.30.1.65:5000/result" method="post"
 			enctype="multipart/form-data" id="uploadForm">
 			<div class="contents">
 				<div class="upload-box">	
@@ -139,12 +141,12 @@
 						<p class="message">Drag files to upload</p>
 						<img src="" alt="미리보기 이미지" class="preview">
 					</div>
-					<label class="file-label" for="image-input">파일을 선택해주세요.</label> <input
-						name="image" class="file" id="image-input" type="file"
-						onchange="dropFile.handleFiles(this.files)"
-						accept="image/png, image/jpeg, image/gif">
-					<button type="button" onclick="uploadFile()">Upload</button>
-				</div>
+					 <div class="checkbtn" >
+					  <button class="btn-hover color-10" type="button" onclick="uploadFile()">진단결과 확인하기</button>
+                     </div>
+                   <!--   <label class="file-label" for="image-input"></label>  -->
+                    
+			  </div>
 			</div>
 		</form>
 	</div>

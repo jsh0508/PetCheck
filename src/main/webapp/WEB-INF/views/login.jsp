@@ -118,7 +118,7 @@
 					name="pw" class="pass" placeholder="비밀번호를 입력해주세요"> 
 			    <button type="submit" class="submit" align="center">로그인하기</button><br><br>
 		<!-- <a href="#" type="submit" class="joinus" align="center">회원가입하기</a> -->
-				<button type="button" class="submit" align="center" onclick="location.href='${cpath}/memberjoin.do'">회원가입</button>
+			<%-- 	<button type="button" class="submit" align="center" onclick="location.href='${cpath}/memberjoin.do'">회원가입</button> --%>
 			</form>
 		</div>
 		<p class="intro-1" align="center">ㅡㅡㅡㅡㅡㅡ 간편로그인 / 회원가입 ㅡㅡㅡㅡㅡㅡ

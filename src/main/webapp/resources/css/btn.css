@@ -45,6 +45,8 @@
 }
 
 .btn-hover.color-10 {
+	position: relative;
+    top: 20px;
     background-image: linear-gradient(to right, #d7b0bb, #ebd5d5, #cfa8d5 , #ebd0d0);
     box-shadow: 0 4px 15px 0 #c7b9b9;
 }

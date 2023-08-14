@@ -126,7 +126,7 @@ a, h1, p {
 }
 
 form.form1 {
-   padding-top: 30px;
+   padding-top: 20px;
    padding-bottom: 10PX;
 }
 
@@ -193,7 +193,7 @@ form.form1 {
 .joinus {
     margin: 30px 60px 30px 60px;
     opacity: 0.9;
-    top: 650px;
+    top: 660px;
     position: absolute;
     width: 380px;
     color: #fff;
