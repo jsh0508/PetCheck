@@ -44,6 +44,8 @@
         
         <!-- bootstrap icon -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" href="resources/css/chatbot.css">
     </head>
     <!-- END HEAD -->
 
@@ -66,13 +68,7 @@
 							<span class="sr-only">Toggle navigation</span> <span
 								class="toggle-icon"></span>
 						</button>
-	                        <!-- 로고 -->
-	                       <!--  <div class="logo">
-	                          <a class="logo-wrap" href="index.html">
-	                            <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
-	                          </a>
-	                        </div> -->
-	                    </div>
+                    </div>
 
 				<!-- 네비게이션 -->
 				<div class="collapse navbar-collapse nav-collapse">
@@ -131,6 +127,21 @@
 	         </div>   
 	    </div>
 	 </div>
+	 
+	 <!-- chatbot 버튼과 채팅창 -->
+	 <div class="fixed-button" id="chat-toggle">
+        <button id="scroll-top-button" style="background: none;"><i class="bi bi-robot" style="font-size: 50px;"></i></button>
+    </div>
+    
+    <div id="chat-container">
+    	<button id="close-chat-button" onclick="closeChat();">X</button>
+		<div id="chat-messages"></div>
+		<div id="user-input">
+			<input type="text" placeholder="메시지를 입력하세요..." />
+			<button>전송</button>
+		</div>
+	</div>
+    
 	 <!--========== PAGE LAYOUT ==========-->
 	<!-- 서비스 소개 -->
 	<div class="bg-color-sky-light" data-auto-height="true">
@@ -211,8 +222,6 @@
         
         <!--========== END FOOTER ==========-->
 
-        <!-- Back To Top -->
-        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
 
         <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
         <!-- CORE PLUGINS -->
@@ -234,7 +243,9 @@
         <script src="resources/js/components/wow.min.js" type="text/javascript"></script>
         <script src="resources/js/components/swiper.min.js" type="text/javascript"></script>
         <script src="resources/js/components/masonry.min.js" type="text/javascript"></script>
-
+		
+		
+		<script src="resources/js/chatbot.js"></script>
     </body>
     <!-- END BODY -->
 </html>
