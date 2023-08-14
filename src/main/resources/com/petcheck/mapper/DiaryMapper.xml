@@ -5,4 +5,14 @@
 	<select id="DiaryList" resultType="com.petcheck.entity.Diary">
 		select * from calendar where idx=#{idx} ;
 	</select>
+	
+	<insert id="InsertCalendar" parameterType="com.petcheck.entity.Diary">
+		insert into calendar (cal_key, idx, title, start_at, end_at) values (#{cal_key}, #{idx}, #{title}, #{start_at}, #{end_at});
+	</insert>
+	
+	<delete id="DeleteCalendar" parameterType="string">
+		delete from calendar where cal_key=#{cal_key} ;
+	</delete>
+	
+	
 </mapper>

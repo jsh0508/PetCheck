@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Diary {
 	
+	private String cal_key;
 	private int idx;
 	private String title;
 	private String start_at;

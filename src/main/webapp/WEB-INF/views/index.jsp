@@ -79,7 +79,15 @@
 					<div class="menu-container">
 						<ul class="navbar-nav navbar-nav-right">
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
-							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
+							<c:if test="${empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
+							</c:if>
+							<c:if test="${!empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover"
+									href="${cpath}/diary.do?idx=${mvo.idx}">다이어리</a></li>
+							</c:if>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover">|</a></li>
