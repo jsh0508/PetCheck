@@ -1,7 +1,6 @@
 package com.petcheck.entity;
 
-
-import java.util.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,5 +32,13 @@ public class Pet {
 
 	    // 펫 성별
 	    private String pet_gender;
+	    
+	    // 펫 상세품종
+	    private String detail_race;
+	    
+	    // 펫 이미지
+	    private String pet_img;  // 이미지 경로 또는 URL을 저장할 문자열 필드
+	    
+	    private MultipartFile petImg;  // 업로드된 이미지 파일을 담을 MultipartFile 필드
 
 }
