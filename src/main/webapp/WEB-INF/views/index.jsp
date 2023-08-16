@@ -25,9 +25,9 @@
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="" name="description"/>
         <meta content="" name="author"/>
-
-<link rel="stylesheet" href="resources/css/form.css">
-
+		<link rel="stylesheet" href="resources/css/index.css">
+        <link rel="stylesheet" href="resources/css/form.css">
+        
         <!-- GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
         <link href="resources/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
@@ -56,12 +56,10 @@
 		<!--========== HEADER ==========-->
 		<header class="header" style="background-color: #FFFAF3;">
 			<!-- Navbar -->
-			
 			<nav class="navbar" role="navigation">
 				<div class="logo">
-			<%-- 	<a class="logo-wrap" href="${cpath}/main.do" style="margin-top:10px">  --%>
 					<a class="logo-wrap" href="${cpath}/main.do"> 
-					  <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고" style="width: 110px;">
+					<img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고" style="width: 110px;">
 					</a>
 				</div>
 				<div class="menu-container">
@@ -103,34 +101,41 @@
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="products.html"><i class="bi bi-person"></i></a></li>
 						</ul>
 					</div>
-				</div>
-				<!-- End Navbar Collapse -->
+				</div><!-- End Navbar Collapse -->
 			</div>
-		</nav>
-		<!-- Navbar -->
-	</header>
-	<!--========== END HEADER ==========-->
+		</nav> <!-- Navbar -->
+	</header> <!--========== END HEADER ==========-->
 
 	<!--========== SLIDER ==========-->
-	 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-	 	<div class="carousel-inner" role="listbox">
-	     	<div class="item active">
-	         	<img class="img-responsive" src="resources/img/1920x1080/mmain.png" alt="Slider Image">
-	                <div class="container">
-	<div class="row">
-			<div class="carousel-centered">
-	                      	<p>습한 여름철,<br>땀샘이 없는 고양이와 개는 피부질환에 노출되기 쉽습니다.<br><br>
-	                      나의 소중한 반려동물의 피부가 걱정되시나요?<br>
-	                      지금 바로 촬영하여 자가진단해보세요!<p>
+	<!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	      <div class="carousel-inner" role="listbox">
+	   	    <div class="item active"> -->
+	         <!--<div class="container">	 -->               
+	                <div id="root">  
+	                 <div class="mainImg">
+		           <img src="resources/img/blurMAIN.png" alt="자가진단서비스 화면" width="300px">
+		           </div>
+	                   <div class="row" style="text-align:center";>
+	                     <div class="col">
+		            <!--   <div class="carousel-centered"> -->
+		          
+	                      <p>반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
+	                      사람보다 1.5배이상 얇은 반려동물의 피부!<br>
+	                      털에 가려져 특히 세심한 관심이 필요해요<br><br>
+	                      내 소중한 펫의 피부질환을 지금 바로 체크해보세요.</p>
 	                    </div>
-	</div>
-	                   <div class="row buttons">
-	                     <button class="btn-hover color-10">자가진단 시작하기</button>
-	                   </div>
+	                 <div class="checkbtn">
+	                       <button class="btn-hover color-10" align="center" onclick="location.href='${cpath}/upload.do'">자가진단 시작하기</a>
+	                     </div>
+	                  </div>
+	                   <div class="contents">
+	                     
+	                  </div>
 	                </div>
-	         </div>   
-	    </div>
-	 </div>
+<!-- 	                 </div>
+	            </div>   
+	       </div>
+	   </div> -->
 	 
 	 <!-- chatbot 버튼과 채팅창 -->
 	 <div class="fixed-button" id="chat-toggle">

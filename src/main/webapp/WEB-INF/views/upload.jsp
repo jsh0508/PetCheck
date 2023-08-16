@@ -44,7 +44,6 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 
-
 <body style="background-color: #FFFAF3;">
 	<!--========== HEADER ==========-->
 	<header class="header" style="background-color: #FFFAF3;">
@@ -121,7 +120,7 @@
 		<!-- Navbar -->
 	</header>
 	<!--========== END HEADER ==========-->
-	
+	<div class="uploadMain">
 	<div id="root">
 	   <h2 class="title">진단받고 싶은 아이의 사진을 올려주세요.</h2>
 		 <div class="row" style="text-align:center">
@@ -156,6 +155,7 @@
 			  </div>
 			</div>
 		</form>
+	</div>
 	</div>
 </body>
 </html>

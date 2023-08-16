@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kakao Map Template</title>
 
+<link rel="stylesheet" href="resources/css/form.css">
 <!-- GLOBAL MANDATORY STYLES -->
 <link
 	href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
@@ -47,9 +48,8 @@
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"
-					style="margin-top: 10px"> <img class="logo-img logo-img-main"
-					src="resources/img/nocatlogo.png" alt="">
+				<a class="logo-wrap" href="${cpath}/main.do"> 
+				<img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
 				</a>
 			</div>
 			<div class="menu-container">
