@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
+<mapper namespace="com.petcheck.mapper.DiaryMapper">
+	<select id="DiaryList" resultType="com.petcheck.entity.Diary">
+		select * from calendar where idx=#{idx} ;
+	</select>
+	
+	<insert id="InsertCalendar" parameterType="com.petcheck.entity.Diary">
+		insert into calendar (cal_key, idx, title, start_at, end_at) values (#{cal_key}, #{idx}, #{title}, #{start_at}, #{end_at});
+	</insert>
+	
+	<delete id="DeleteCalendar" parameterType="string">
+		delete from calendar where cal_key=#{cal_key} ;
+	</delete>
+	
+	
+</mapper>

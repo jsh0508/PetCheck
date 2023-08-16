@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, jsonify, request
 from PIL import Image
 import io
@@ -7,7 +8,6 @@ from flask_cors import CORS
 import torch
 
 app = Flask(__name__)
-CORS(app)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='best_class3.pt', force_reload=True)
 
@@ -19,6 +19,7 @@ def generate_result_image():
     result_image.save(result_image_byte, format="JPEG")
     result_image_base64 = base64.b64encode(result_image_byte.getvalue()).decode("utf-8")
     return result_image_base64
+
 
 @app.route('/result', methods=['GET', 'POST'])
 def detect():
@@ -34,8 +35,6 @@ def detect():
             img_base64 = Image.fromarray(img)
             img_base64.save(result_image_byte, format="JPEG")
             result_image_base64 = base64.b64encode(result_image_byte.getvalue()).decode("utf-8")
-            return render_template('result.jsp', result_image = result_image_base64)
-    else:
-        return render_template('warning.jsp')
+            return render_template('result.html', result_image = result_image_base64)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)

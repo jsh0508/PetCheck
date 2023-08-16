@@ -1,6 +1,5 @@
 package com.petcheck.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.petcheck.entity.Diary;
 import com.petcheck.entity.Member;
+import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemberMapper;
 import com.petcheck.mapper.PetMapper;
 
@@ -22,6 +23,8 @@ public class MemberController {
 	// @Inject
 	@Autowired // 설명(DI : 의존성주입)
 	private MemberMapper mapper;
+	@Autowired
+	private DiaryMapper mapper2;
 	
 	// 메인페이지 접속
 	@RequestMapping("/main.do")
@@ -104,6 +107,13 @@ public class MemberController {
 		mapper.deleteInfo(idx);
 		session.invalidate();
 		return "redirect:/main.do";
+	}
+	
+	@RequestMapping("/diary.do")
+	public String diary(int idx, Model request) {
+		List<Diary> list = mapper2.DiaryList(idx);
+		request.addAttribute("list", list);
+		return "diary";
 	}
 	
 }

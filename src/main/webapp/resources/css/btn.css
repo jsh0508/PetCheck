@@ -6,10 +6,11 @@
 }
 
 .buttons {
-    margin: 1%;
     text-align: center;
-    top: 590px;
-    position: relative;
+    top: 600px;
+    right: 200px;
+    left: 210px;
+    position: absolute;
 }
 
 .btn-hover {
@@ -43,6 +44,8 @@
 }
 
 .btn-hover.color-10 {
+	position: relative;
+    top: 20px;
     background-image: linear-gradient(to right, #d7b0bb, #ebd5d5, #cfa8d5 , #ebd0d0);
     box-shadow: 0 4px 15px 0 #c7b9b9;
 }
@@ -50,4 +53,23 @@
 .btn-hover.color-7 {
     background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
 }
