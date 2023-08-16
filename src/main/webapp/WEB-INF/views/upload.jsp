@@ -43,15 +43,17 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
+
+
 <body style="background-color: #FFFAF3;">
 	<!--========== HEADER ==========-->
 	<header class="header" style="background-color: #FFFAF3;">
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do" style="margin-top:10px"> <img
+				<a class="logo-wrap" href="${cpath}/main.do"> <img
 					class="logo-img logo-img-main" src="resources/img/nocatlogo.png"
-					alt="">
+					alt="" style="width: 110px;">
 				</a>
 			</div>
 			<div class="menu-container">
@@ -128,11 +130,11 @@
 			<p>업로드 된 사진과 결과는 저장되지 않아요.</p>
 		   </div>
         </div>
-         <input name="image" class="form-control form-control-sm" id="image-input" type="file"
-                     onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
-				       
 		  <form action="http://172.30.1.65:5000/result" method="post"
 			enctype="multipart/form-data" id="uploadForm">
+	         <input name="image" class="form-control form-control-sm" id="image-input" type="file"
+	                     onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
+					       
 			<div class="contents">
 				<div class="upload-box">	
 					<div id="drop-file" class="drag-file">
@@ -145,6 +147,11 @@
 					  <button class="btn-hover color-10" type="button" onclick="uploadFile()">진단결과 확인하기</button>
                      </div>
                    <!--   <label class="file-label" for="image-input"></label>  -->
+                    
+                               <!--     <label class="file-label" for="image-input">파일을 선택해주세요.</label> 
+               <input name="image" class="form-control form-control-sm" id="image-input" type="file"
+                  onchange="dropFile.handleFiles(this.files)"
+                  accept="image/png, image/jpeg, image/gif"> -->
                     
 			  </div>
 			</div>

@@ -39,8 +39,7 @@
 <link rel="stylesheet" href="resources/css/btn.css">
 
 <!-- bootstrap icon -->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
 <!-- 로그인 디자인 CSS -->
 <link rel="stylesheet" href="resources/css/form.css">
@@ -52,25 +51,24 @@
 	<header class="header" style="background-color: #FFFAF3;">
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
-			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"> <img
-					class="logo-img logo-img-main" src="resources/img/nocatlogo.png"
-					alt="">
-				</a>
-			</div>
-			<div class="menu-container">
+		  <div class="logo">
+			 <a class="logo-wrap" href="${cpath}/main.do"> 
+			 <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고">
+			 </a>
+		  </div>
+		   <div class="menu-container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="menu-container">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
+			 <div class="menu-container">
+			   <button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target=".nav-collapse">
-						<span class="sr-only">Toggle navigation</span> <span
+			   <span class="sr-only">Toggle navigation</span> <span
 							class="toggle-icon"></span>
-					</button>
-				</div>
+			   </button>
+			 </div>
 
 				<!-- 네비게이션 -->
 				<div class="collapse navbar-collapse nav-collapse">
-					<div class="menu-container">
+				   <div class="menu-container">
 						<ul class="navbar-nav navbar-nav-right">
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="pricing.html">자가진단</a></li>
@@ -125,15 +123,17 @@
 		<p>
 		<!-- <div class="apilogin"> -->
 		<!-- 	<div class="naverlogo"> -->
-				<button type="submit" class="apiLogo" href="javascript:void(0)"
+		<div class="kakaonaver">
+				<a type="submit" class="apiLogo" href="javascript:void(0)"
 					id="naverIdLogin_loginButton" align="center"> <img
 					src="resources/img/naver0.png" alt="네이버 간편 로그인" class="naver"/>
-				</button>
+				</a>
 <!-- 			</div> -->
 <!-- 			<div class="kakaologo"> -->
-				<button type="button" class="apiLogo" href="javascript:kakaoLogin();" align="center">
+				<a type="button" class="apiLogo" href="javascript:kakaoLogin();" align="center">
 					<img src="resources/img/kakao0.png" alt="카카오 간편 로그인" class="kakao"/>
-				</button>
+				</a>
+		</div>
 <!-- 			</div> -->
 			<p class="intro-2" align="center">아직 PetCheck 회원이 아니신가요?
 			<p>

@@ -28,6 +28,8 @@
         <meta content="" name="description"/>
         <meta content="" name="author"/>
 
+<link rel="stylesheet" href="resources/css/form.css">
+
         <!-- GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
         <link href="resources/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
@@ -56,21 +58,23 @@
 		<!--========== HEADER ==========-->
 		<header class="header" style="background-color: #FFFAF3;">
 			<!-- Navbar -->
+			
 			<nav class="navbar" role="navigation">
 				<div class="logo">
-					<a class="logo-wrap" href="${cpath}/main.do" style="margin-top:10px"> 
-						<img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+			<%-- 	<a class="logo-wrap" href="${cpath}/main.do" style="margin-top:10px">  --%>
+					<a class="logo-wrap" href="${cpath}/main.do"> 
+					  <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고" style="width: 110px;">
 					</a>
 				</div>
 				<div class="menu-container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="menu-container">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".nav-collapse">
-							<span class="sr-only">Toggle navigation</span> <span
+				  <div class="menu-container">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+					       data-target=".nav-collapse">
+					  <span class="sr-only">Toggle navigation</span> <span
 								class="toggle-icon"></span>
-						</button>
-                    </div>
+					</button>
+                   </div>
 
 				<!-- 네비게이션 -->
 				<div class="collapse navbar-collapse nav-collapse">
