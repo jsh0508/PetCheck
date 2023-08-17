@@ -2,22 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
 <mapper namespace="com.petcheck.mapper.PetMapper">
-	<insert id="addPet" parameterType="com.petcheck.entity.Pet">
-		INSERT INTO t_Pet (id, pet_race, pet_birthdate, pet_name, pet_gender) 
-		VALUES (#{id}, #{pet_race}, #{pet_birthdate}, #{pet_name}, #{pet_gender});
+	<insert id="insertPet" parameterType="com.petcheck.entity.Pet">
+		INSERT INTO t_pet (id, pet_race, pet_birthdate, pet_name, pet_gender, detail_race, pet_img) 
+		VALUES (#{id}, #{pet_race}, #{pet_birthdate}, #{pet_name}, #{pet_gender}, #{detail_race}, #{pet_img})
 	</insert>
 	
-	<update id="updatepet" parameterType="com.petcheck.entity.Pet">
-		update t_pet set pet_race=#{pet_race}, pet_birthdate=#{pet_birthdate}, pet_name=#{pet_name}, pet_gender=#{pet_gender} where pet_seq=#{pet_seq}
+	<update id="updatePet" parameterType="com.petcheck.entity.Pet">
+		update t_pet set pet_race=#{pet_race}, pet_birthdate=#{pet_birthdate}, pet_name=#{pet_name}, pet_gender=#{pet_gender}, detail_race=#{detail_race}, pet_img=#{pet_img} where pet_seq=#{pet_seq}
 	</update>
 	
 	<delete id="deletePet" parameterType="com.petcheck.entity.Pet">
 		delete from t_pet where pet_seq=#{pet_seq}
 	</delete>
 	
+	<select id="selectPet" parameterType="com.petcheck.entity.Pet" resultType="com.petcheck.entity.Pet"> 
+		select * from t_pet where id=#{id}
+	</select>
 	
 	<select id="petList" parameterType="com.petcheck.entity.Pet" resultType="com.petcheck.entity.Pet"> 
-		select * from t_pet where id=#{id}
+		select * from t_member m, t_pet p where m.id = p.id
+	</select>
+	
+	<select id="upPet" parameterType="int" resultType="com.petcheck.entity.Pet">
+		select * from t_pet where pet_seq=#{pet_seq}
 	</select>
 	
 </mapper>

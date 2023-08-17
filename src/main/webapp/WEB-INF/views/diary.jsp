@@ -8,7 +8,6 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<link rel="stylesheet" href="resources/css/form.css">
 <!-- GLOBAL MANDATORY STYLES -->
 <link
 	href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700"
@@ -153,8 +152,9 @@
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"> 
-				<img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+				<a class="logo-wrap" href="${cpath}/main.do"
+					style="margin-top: 10px"> <img class="logo-img logo-img-main"
+					src="resources/img/nocatlogo.png" alt="">
 				</a>
 			</div>
 			<div class="menu-container">
@@ -225,8 +225,53 @@
 
 
 	<!-- calendar -->
+	
+	<div class="card" style="background-color: #FFFAF3;">
+		<div class="row">
+			<div class="col-lg-6">
+				<div id='calendar'></div>
+			</div>
+			<div class="col-lg-6">
+				<div class="card">
+						<div class="card-body">
+							<h4 class="card-title">
+								MEMO
+								<button id="register" style="background: none;">
+									<i class="bi bi-plus-square" style="font-size: 20px;"></i>
+								</button>
+							</h4>
+							<div id="board" style="display: block"></div>
+						</div>
+					</div>
+					<div id="write" class="card" style="display: none">
+						<div class="card-body">
+							<div class="container">
+							<p class="card-text">글등록하기</p>
+							<form id="frm" enctype="multipart/form-data">
+								<label>제목 :</label>
+								<input type="text" name="title" class="form-control" />
+								<label>내용 :</label>
+								<textarea rows="10" name="content" class="form-control"></textarea>
+								<label>이미지 파일 첨부</label>
+								<input type="file" name="img_file" multiple class="form-control"/>
+								<img id="preview" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
+								<br />
+								<label>작성자 :</label>
+								<input type="text" name="username" class="form-control" /> <br />
+								<button type="button" class="btn btn-primary btn-sm"
+									onclick="insert()">등록</button>
+								<button id="reset" type="reset" class="btn btn-warning btn-sm">취소</button>
+							</form>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	
 
-	<div id='calendar' style="background-color: #FFFAF3;"></div>
+	
+	
 
 
 	<!-- footer -->
@@ -240,6 +285,89 @@
 			<div class="footer-copyright">독하고묘한팀</div>
 		</div>
 	</footer>
+	
+	<script type="text/javascript">
+	// 이미지 업로드
+
+	
+	$(document).ready(function() {
+	       // 글쓰기 버튼이 클릭 되었을 때
+	      $("#register").click(function() {
+	      // $("#board").css("display", "none");
+	       if($("#write").css("display")=="none"){
+	         $("#write").css("display", "block");
+	         }else{
+	            $("#write").css("display", "none");
+	         }
+	      });
+	      // 버튼이 클릭되었을때 서버통신 : ajax(비동기전송)  # : id , . : class
+	      //$("button").click(function() {
+	         loadList();
+	      //}); // button 끝
+	   });
+	
+	function insert() {
+	      // 폼의 데이터를 가지고오기(title,content,writer)
+	      var fData=$("#frm").serialize();   // 직렬화 : title=111&content=111&writer=111
+	      
+	      /* var inputFile = $("input[name='img_file']");
+	      var files = inputFile[0].files; */
+	      
+	      /* fData += "&img_file_name="+files[0].name ;
+	      fData += "&img_file_size="+files[0].size ; */
+	      
+	      console.log(fData);
+	      
+	      $.ajax({
+	         url : "${cpath}/ajaxMemoInsert.do?idx=${param.idx}",
+	         /* processData: false,
+	         contentType: false, */
+	         type : "post",
+	         data : fData,  // 직렬화 된 데이터는 바로 써주면 된다.
+	         success : loadList,
+	         error : function() {alert("error");}
+	      });
+	   }
+	
+	function loadList() {
+	      $.ajax({
+	         url : "${cpath}/ajaxMemoList.do?idx=${param.idx}",
+	         type : "get",
+	         dataType : "json",
+	         success : ajaxMemoList,
+	         error : function() {alert("error");}
+	      }); // ajax
+	   }
+	
+	function ajaxMemoList(data){
+		console.log(data);
+		
+		var blist = "<div class='container-fluid'>";
+		blist += "<div class='row'>"
+		
+		$.each(data, function(index,obj) {
+			
+			blist += "<div class='col-lg-6'>"
+			blist += "<div class='card-body'>"
+			blist += "<img></img>";
+			blist += "<h5 class='card-title'>"+obj.title+"</h5>";
+			blist += "<p class='card-text'>"+obj.content+"</p>";
+			blist += "<h5 class='card-text'>"+obj.username+"</h5>";
+			blist += "</div>";
+			blist += "</div>";
+		})
+		
+		blist += "</div>";
+		blist += "</div>";
+		
+		$("#board").html(blist);
+		$("#write").css("display","none");
+	    $("#reset").trigger("click");
+		
+	}	
+	
+	</script>
+	
 
 	<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
 

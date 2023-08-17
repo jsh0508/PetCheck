@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
+<mapper namespace="com.petcheck.mapper.MemoMapper">
+	
+	<select id="MemoList" resultType="com.petcheck.entity.Memo">
+		select * from diary where idx=#{idx};
+	</select>
+	
+	<insert id="InsertMemo" parameterType="com.petcheck.entity.Memo">
+		insert into diary (idx, title, content, username) values (#{idx}, #{title}, #{content}, #{username});
+	</insert>
+	
+</mapper>

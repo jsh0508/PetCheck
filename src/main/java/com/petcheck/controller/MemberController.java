@@ -16,6 +16,7 @@ import com.petcheck.entity.Diary;
 import com.petcheck.entity.Member;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemberMapper;
+import com.petcheck.mapper.PetMapper;
 
 @Controller //POJO
 public class MemberController {
@@ -84,11 +85,12 @@ public class MemberController {
 	}
 	
 	// 정보 수정 페이지 이동
-	@GetMapping("/myPage.do")
+	@RequestMapping("/myPage.do")
 	public String myPage(int idx, Model model) {
 		Member vo = mapper.checkInfo(idx);
-		model.addAttribute("vo", vo);
-		return "myPage";
+		String id = vo.getId();
+		model.addAttribute("id", id);
+		return "forward:/petList.do";
 	}
 	
 	// 정보 수정
@@ -101,8 +103,9 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/deleteInfo.do")
-	public String deleteInfo(int idx) {
+	public String deleteInfo(int idx, HttpSession session) {
 		mapper.deleteInfo(idx);
+		session.invalidate();
 		return "redirect:/main.do";
 	}
 	

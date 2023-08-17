@@ -1,5 +1,7 @@
 package com.petcheck.mapper;
 
+import java.util.List;
+
 import com.petcheck.entity.Pet;
 
 // @Mapper
@@ -7,6 +9,10 @@ import com.petcheck.entity.Pet;
 public interface PetMapper {
 	
 	// 회원가입 메소드
-	public void addPet(Pet vo);
-	
+	public void insertPet(Pet vo);
+	public void updatePet(Pet vo);
+	public void deletePet(int pet_seq);
+	public List<Pet> petList(Pet vo);
+	public Pet selectPet(Pet vo);
+	public Pet upPet(int pet_seq);
 }
