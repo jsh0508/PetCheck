@@ -264,8 +264,11 @@
 			</div>
 		</div>
 	</div>
+	
+	<button id="tabbtn" style="color:white; background: #09df09; position:fixed; right: 0; top: 70px">tab</button>
+	
 	<!-- 오른쪽에 tab을 만듬 -->
-	<div class="tab-container ">
+	<div id="tab-container" class="tab-container ">
 		<div style="display:flex">
 			<input id="diaryname" style="width:80px;" type="text" name="search" placeholder="제목입력">
 			<button onclick="addDiary()" style="width: 40px; background: #09df09; color: white; margin-top: 5px; border-radius: 5px;">add</button>
@@ -277,7 +280,24 @@
         <div id="shared" style="margin-top: 10px;">
         </div>
     </div>
+	<script>
+		const ele = document.getElementById("tabbtn");
+		console.log("hihi");
+		console.log(ele);
+		const tab = document.getElementById("tab-container");
+		console.log(tab);
+		ele.onclick = function(){
+			tab.classList.toggle("open");
+		}
+		console.log("finish!!");
+	</script>
 	
+	<style>
+		#tab-container.open {
+			right: 0;
+			z-index: 1000;
+		}
+	</style>
 	<!-- 알림 목록을 보여주는 모달 창 설정 -->
 	<div id="notification-modal" class="modal fade" tabindex="-1">
 	  <div class="modal-dialog">
@@ -427,10 +447,9 @@
         .tab-container {
             position: fixed;
             top: 100px;
-            right: 0;
+            right: -120px;
             width: 120px; /* 탭의 너비 조정 */
             height: 100%; /* 탭의 높이 조정 */
-            z-index: 100;
             background : #f5f5f5;
         }
 
