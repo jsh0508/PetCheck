@@ -82,11 +82,23 @@ body, html, html a {
 
 p {
    display: inline-block;
-   font-size: 20px;
+   font-size: 22px;
    font-weight: 400;
-   color: #9E97A1;
+   color: #766B6B;
    margin-bottom: 15px;
    text-align:center;
+}
+
+.service > .inrto {
+	display: inline-block;
+    font-size: 22px;
+    font-weight: 400;
+    position: absolute;
+    left: 65px;
+    color: #766B6B;
+    margin-bottom: 15px;
+    text-align: center;
+    right: 60px;
 }
 
 em, li, li a {
@@ -159,9 +171,13 @@ h3, h4 {
    font-size: 20px
 }
 
+/* 메인페이지 기능소개 카드 문구 */
 .intro {
 	text-align: center;
-	font-size:17px
+    font-size: 17px;
+    position: absolute;
+    right: 30px;
+    left: 30px;
 }
 
 ::selection {
@@ -379,7 +395,8 @@ h3, h4 {
 
 .service {
    background: #fff;
-   padding: 50px
+   padding: 50px;
+   height: 320px;
 }
 
 .flex{
@@ -662,13 +679,16 @@ h3, h4 {
 }
 
 .mainImg > img {
-	position: relative;
+	position: absolute;
 	width: 600px;
 	height: 650px;
 	left: 800px;
 }
+
+/* 메인페이지 기능 소개 카드 */
 .container{
 	position: relative;
+	height: 600px;
 	width: 1100px;
 }
 
@@ -1154,6 +1174,7 @@ h3, h4 {
 }
 
 .content-lg {
+   position: relative;
    padding-top: 100px;
    padding-bottom: 100px
 }

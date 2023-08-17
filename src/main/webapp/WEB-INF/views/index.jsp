@@ -115,20 +115,22 @@
 	         <!--<div class="container">	 -->               
 	                <div id="root">  
 	                 <div class="mainImg">
-		           <img src="resources/img/blurMAIN.png" alt="자가진단서비스 화면" width="300px">
+		           <img src="resources/img/main.png" alt="자가진단서비스 화면" width="300px">
 		           </div>
 	                   <div class="row" style="text-align:center";>
 	                     <div class="col">
 		            <!--   <div class="carousel-centered"> -->
-		          
+		          		<h1>페트체크</h1>
 	                      <p>반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
 	                      사람보다 1.5배이상 얇은 반려동물의 피부!<br>
 	                      털에 가려져 특히 세심한 관심이 필요해요<br><br>
-	                      내 소중한 펫의 피부질환을 지금 바로 체크해보세요.</p>
+	                      내 소중한 <strong>펫</strong>의 피부질환을 지금 바로 <strong>체크</strong>해보세요.</p>
+	                       <!--  <div class="checkbtn"> -->
+	                       <div class="mainbtn">
+	                         <button class="btn-hover color-10" align="center" onclick="location.href='${cpath}/upload.do'">자가진단 시작하기</button>
+	                       </div>
+	                 <!--        </div> -->
 	                    </div>
-	                 <div class="checkbtn">
-	                       <button class="btn-hover color-10" align="center" onclick="location.href='${cpath}/upload.do'">자가진단 시작하기</a>
-	                     </div>
 	                  </div>
 	                   <div class="contents">
 	                     
@@ -157,6 +159,7 @@
 	<!-- 서비스 소개 -->
 	<div class="bg-color-sky-light" data-auto-height="true">
 	    <div class="content-lg container">
+	    <p class="serviceIntro">페트체크에서 즐길 수 있는 <strong>펫케어</strong> 서비스</p><br>
 	            <div class="col-sm-3 sm-margin-b-30">
 	                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
 	                    <div class="service" data-height="height">
@@ -164,7 +167,7 @@
 	                            <i class="bi bi-journal-plus" style="font-size: 35px;"></i>
 	                        </div>
 	                          <div class="service-info">
-	                            <h3>건강관리<br>다이어리</h3>
+	                            <h3>펫<br>다이어리</h3>
 	                            <p class="intro">반려동물<br>건강관리를<br>가족과 함께<br>할 수 있어요</p>
 	                          </div>
 	                        <a href="#" class="content-wrapper-link"></a>    
@@ -206,8 +209,8 @@
 	                            <i class="bi bi-robot" style="font-size: 35px;"></i>
 	                        </div>
 	                          <div class="service-info">
-	                            <h3>PetCheck<br>챗봇</h3>
-	                            <p class="intro">멍냥이에 대한 <br>A to Z !<br> 챗봇이 궁금증을 해결해줄게요.</p>
+	                            <h3>페트체크<br>챗봇</h3>
+	                            <p class="intro">멍냥이에 대한 <br>A to Z !<br> 챗봇이 궁금증을<br> 해결해줄게요.</p>
 	                          </div>
 	                        <a href="#" class="content-wrapper-link"></a>    
 	                    </div>

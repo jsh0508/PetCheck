@@ -21,15 +21,57 @@ p .available {
 	max-width: 1600px;
 }
 
-.col {
+/* .col {
 	display: inline-block;
     position: absolute;
-    top: 100px;
-    left: 180px;
+    top: 0px;
+    height: 350px;
+    left: 100px;
+    margin: 120px 1px;
+    padding: 1px 10px 10px;
+} */
+
+.col {
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    height: 430px;
+    left: 100px;
+    margin: 90px 1px;
+    padding: 1px 10px 10px;
 }
+
+/* .mainbtn {
+    position: absolute;
+    top: 300px;
+    height: 300px;
+    width: 400px;
+    padding: 10px 30px;
+    bottom: 400px;
+    right: 160px;
+} */
+
+.mainbtn {
+	position: absolute;
+    top: 300px;
+    height: 100px;
+    width: 570px;
+    padding: 10px 100px 10px 60px;
+    bottom: 400px;
+    left: -20px;
+    right: 80px;
+}
+
+
+/* .mainbtn {
+	position: absolute;
+	top: 230px;
+	left: 110px;
+} */
+
+
 col {
 	height: 800px;
-	
 }
 
 .checkbtn {
@@ -98,4 +140,15 @@ col {
 	width: 65%;
 	border-radius: 6px;
 	cursor: pointer;
+}
+
+.content-lg container .serviceIntro {
+	text-align: center;
+}
+
+@media screen and (width: 600px) {
+  body {
+    font-size: 16px;
+    color: red;
+  }
 }

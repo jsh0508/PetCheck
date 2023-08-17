@@ -118,9 +118,15 @@
 		<!-- Navbar -->
 	</header>
 	<!--========== END HEADER ==========-->
-
-	<div class="map_wrap">
-		<div id="map"
+    <div class="row" style="text-align:center";>
+	  <div class="col">
+		 <h1>내 주변 동물병원 검색하기</h1>
+	       <p>자가진단을 마치셨나요?<br> <strong>정확한 진단</strong>과 <strong>신속한 치료</strong>를 위해 주변 병원 위치를 알려드려요.</p>
+	  </div>
+	</div>
+    
+	   <div class="map_wrap">
+		 <div id="map"
 			style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 
 		<div id="menu_wrap" class="bg_white">

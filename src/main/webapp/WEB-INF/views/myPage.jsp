@@ -12,7 +12,7 @@
   <title>Mypage</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/form.css">
   <link rel="stylesheet" href="resources/css/myPage.css">
@@ -38,8 +38,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
-<div class="myPagemain" text-align="center";>
+<div id="myPagemain" text-align="center";>
    <c:if test="${!empty mvo}">
+      <div class="main">
        <h1>회원 정보</h1>
        <form action="${cpath}/updateInfo" method="post">
          <div class="form-group">
@@ -92,6 +93,7 @@
       <input type="hidden" name="idx" value="${mvo.idx}">
    </form>
    </div>
+ </div>
    <script type="text/javascript">
       $(document).ready(function(){
          $("#deleteInfo").click(function(){
