@@ -482,7 +482,21 @@
         .tab-content.active {
             display: block;
         }
+        
+        
     </style>
+    
+    <!-- 메모 디자인 -->
+    <style>
+		.custom-card-body {
+			border: 1px solid #E0E0E0;
+			margin: 20px;
+		}
+
+		.custom-card-text-username {
+			text-align: right;
+		}
+	</style>
 	
 
 	<!-- footer -->
@@ -556,11 +570,11 @@
 		$.each(data, function(index,obj) {
 			
 			blist += "<div class='col-lg-6'>"
-			blist += "<div class='card-body'>"
+			blist += "<div class='card-body custom-card-body'>"
 			blist += "<img></img>";
 			blist += "<h5 class='card-title'>"+obj.title+"</h5>";
 			blist += "<p class='card-text'>"+obj.content+"</p>";
-			blist += "<h5 class='card-text'>"+obj.username+"</h5>";
+			blist += "<h5 class='card-text custom-card-text-username'>작성자 : "+obj.username+"</h5>";
 			blist += "</div>";
 			blist += "</div>";
 		})

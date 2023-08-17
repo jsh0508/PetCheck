@@ -8,6 +8,10 @@ create table invitation (
 	name VARCHAR(100)
 );
 
+select * from diary;
+delete from diary
+where title='ㅎ';
+
 alter table invitation add idx int;
 alter table invitation modify idx int not null auto_increment;
 drop table invitation;
