@@ -81,7 +81,6 @@ body, html, html a {
 }
 
 p {
-   display: inline-block;
    font-size: 22px;
    font-weight: 400;
    color: #766B6B;
