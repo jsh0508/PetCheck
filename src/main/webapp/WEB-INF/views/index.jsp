@@ -5,6 +5,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <c:set var="cpath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <!-- ==============================
@@ -50,6 +51,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
         
         <link rel="stylesheet" href="resources/css/chatbot.css">
+        
     </head>
     <!-- END HEAD -->
 
@@ -86,7 +88,7 @@
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a
 									class="nav-item-child nav-item-hover"
-									href="${cpath}/diary.do?idx=${mvo.idx}">다이어리</a></li>
+									href="${cpath}/diary.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
 							</c:if>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
@@ -98,16 +100,95 @@
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
 								<li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
-
+								<c:if test="${empty list}">
+									<!-- 헤더 부분에 알림 아이콘 추가 -->
+									<li class="nav-item">
+										<button style="background: none;" id = "notification-button" class="nav-item-child nav-item-hover">
+											<i class="bi bi-lightbulb"></i>
+										</button>
+									</li>
+    					
+								</c:if>
+								
+								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+								<c:if test="${!empty list}">
+									<!-- 알림이 있을 경우 -->
+									<li class="nav-item">
+										<button style="background: none;" id = "notification-button" class="nav-item-child nav-item-hover">
+											<i class="bi bi-lightbulb-fill"></i>
+											<i class="fas fa-exclamation-circle"></i>
+										</button>
+									</li>
+								</c:if>
+			
 							</c:if>
-							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="products.html"><i class="bi bi-person"></i></a></li>
+							<style>
+								/* 느낌표 아이콘 스타일 */
+						        .fas {
+						            position: absolute;
+						            right: 0;
+						            color: red;
+						            background-color: white;
+						            border-radius: 50%;
+						            padding: 5px;
+						            font-size: 14px;
+						        }
+							</style>				
+							
 						</ul>
 					</div>
 				</div><!-- End Navbar Collapse -->
 			</div>
 		</nav> <!-- Navbar -->
 	</header> <!--========== END HEADER ==========-->
-
+	<!-- 알림 목록을 보여주는 모달 창 설정 -->
+	<div id="notification-modal" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <div class="modal-title">알림 목록</div>
+	        <button style="margin-left: 490px;" type="button" class="close" data-dismiss="modal" aria-label="닫기">
+	          X
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <!-- 알림 목록을 보여주는 내용 -->
+	        <ul id="notification-list">
+	          <!-- 알림 항목들을 동적으로 추가 -->
+	          <c:if test="${empty list}">
+	          	<li>현재 알림이 없습니다.</li>
+	          </c:if>
+	          <c:forEach var="sender" items="${list}">
+				<li>${sender}님이 초대를 하셨습니다. 수락하시겠습니까? </li>	          	
+	          </c:forEach>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<style>
+		/* 추가된 CSS 스타일 */
+		.modal-header {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		}
+		.modal-close {
+		  display: flex;
+		  align-items: center;
+		}
+	</style>
+	
+	<script>
+		// 알림 버튼을 누르면 모달 창을 열도록 설정
+		document.getElementById("notification-button").addEventListener("click", () => {
+		  $("#notification-modal").modal("show");
+		});
+	</script>
+	
+	
 	<!--========== SLIDER ==========-->
 	<!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 	      <div class="carousel-inner" role="listbox">

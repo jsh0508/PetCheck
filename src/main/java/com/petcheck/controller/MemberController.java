@@ -55,12 +55,16 @@ public class MemberController {
 	
 	// 로그인
 	@PostMapping("/login.do")
-	public String login(Member vo, HttpSession session) {
+	public String login(Member vo, HttpSession session, Model request) {
 		
 		Member mvo = mapper.login(vo);
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 		}
+		
+		List<String> list = mapper.invitationList(vo);
+
+		session.setAttribute("list", list);
 		
 		return "redirect:/main.do";
 	}
@@ -70,7 +74,6 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
-		
 		return "redirect:/main.do";
 	}
 	

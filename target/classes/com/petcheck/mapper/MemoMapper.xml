@@ -4,11 +4,22 @@
 <mapper namespace="com.petcheck.mapper.MemoMapper">
 	
 	<select id="MemoList" resultType="com.petcheck.entity.Memo">
-		select * from diary where idx=#{idx};
+		select * from diary where diary_key=#{id};
 	</select>
 	
 	<insert id="InsertMemo" parameterType="com.petcheck.entity.Memo">
-		insert into diary (idx, title, content, username) values (#{idx}, #{title}, #{content}, #{username});
+		insert into diary (title, content, username, diary_key) values (#{title}, #{content}, #{username}, #{diary_key});
 	</insert>
 	
+	<select id="MyDiaryList" resultType="com.petcheck.entity.DiaryMapping">
+		select * from my_diary where id=#{id};
+	</select>
+	
+	<select id="SharedDiaryList" resultType="com.petcheck.entity.DiaryMapping">
+		select * from shared_diary where id=#{id};
+	</select>
+	
+	<insert id="InsertDiary" parameterType="com.petcheck.entity.DiaryMapping">
+		insert into my_diary values (#{diary_key}, #{id}, #{name});
+	</insert>
 </mapper>

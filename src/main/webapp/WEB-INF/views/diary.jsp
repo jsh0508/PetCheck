@@ -225,54 +225,184 @@
 
 
 	<!-- calendar -->
-	
-	<div class="card" style="background-color: #FFFAF3;">
+
+	<div class="card" style="background-color: #FFFAF3; ">
 		<div class="row">
 			<div class="col-lg-6">
 				<div id='calendar'></div>
 			</div>
 			<div class="col-lg-6">
 				<div class="card">
-						<div class="card-body">
-							<h4 class="card-title">
-								MEMO
-								<button id="register" style="background: none;">
-									<i class="bi bi-plus-square" style="font-size: 20px;"></i>
-								</button>
-							</h4>
-							<div id="board" style="display: block"></div>
-						</div>
+					<div class="card-body">
+						<h4 class="card-title">
+							MEMO
+						</h4>
+						<div id="board" style="display: block"></div>
 					</div>
-					<div id="write" class="card" style="display: none">
-						<div class="card-body">
-							<div class="container">
+				</div>
+				<div id="write" class="card" style="display: none;">
+					<div class="card-body">
+						<div class="container">
 							<p class="card-text">글등록하기</p>
 							<form id="frm" enctype="multipart/form-data">
-								<label>제목 :</label>
-								<input type="text" name="title" class="form-control" />
-								<label>내용 :</label>
+								<label>제목 :</label> <input type="text" name="title"
+									class="form-control" /> <label>내용 :</label>
 								<textarea rows="10" name="content" class="form-control"></textarea>
-								<label>이미지 파일 첨부</label>
-								<input type="file" name="img_file" multiple class="form-control"/>
-								<img id="preview" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
-								<br />
-								<label>작성자 :</label>
-								<input type="text" name="username" class="form-control" /> <br />
+								<label>이미지 파일 첨부</label> <input type="file" name="img_file"
+									multiple class="form-control" /> <img id="preview" src="#"
+									width=200 height=150 alt="선택된 이미지가 없습니다"
+									style="align-content: flex-end;"> <br /> <label>작성자
+									:</label> <input type="text" name="username" class="form-control" /> <br />
 								<button type="button" class="btn btn-primary btn-sm"
 									onclick="insert()">등록</button>
 								<button id="reset" type="reset" class="btn btn-warning btn-sm">취소</button>
 							</form>
-							</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+	<!-- 오른쪽에 tab을 만듬 -->
+	<div class="tab-container ">
+		<div style="display:flex">
+			<input id="diaryname" style="width:80px;" type="text" name="search" placeholder="제목입력">
+			<button onclick="addDiary()" style="width: 40px; background: #09df09; color: white; margin-top: 5px; border-radius: 5px;">add</button>
+		</div>
+		
+		<div id="my">
+		</div>
 
+        <div id="shared" style="margin-top: 10px;">
+        </div>
+    </div>
 	
 	
+	<script>
+		$(document).ready(function() {
+	    	ajaxLoadTabList();
+	    });
+		
+	
+		function addDiary() {
+			const ele = document.getElementById("diaryname");
+			const name = ele.value;
+			const key = Date.now();
+			// add 버튼 누르고 인풋 안에 내용 없애기
+			ele.value = "";
+			$.ajax({
+				url: "${cpath}/ajaxDiaryInsert.do?id=${param.id}&diary_key="+key+"&name="+name, //key name 추가
+				type: "post",
+				success: ajaxLoadTabList,
+				error: function() {alert("error");}
+			});		
+		}
+		
+		function ajaxLoadTabList(){
+			ajaxLoadMyDiaryList();
+			ajaxLoadSharedDiaryList();
+		}
+		
+		function ajaxLoadMyDiaryList() {
+			$.ajax({
+				url: "${cpath}/ajaxMyDiaryList.do?id=${param.id}",
+				type: "get",
+				dataType: "json",
+				success: ajaxMakeMyDairyList,
+				error: function() {alert("error");}
+			});
+		}
+		function ajaxMakeMyDairyList(data) {
+			console.log(data);
+			var blist = "<div class= 'MyDiaryList'>";
+			blist += "<h5 style='text-align: center; margin-top: 10px;' >내 다이어리</h5>";
+			$.each(data, function(index, obj) {
+				blist += "<button id=" + obj.diary_key +" class='tab-button' onclick='openDiary(event)'>"+obj.name+"</button>";
+			})
+			
+			blist += '</div>';
+			$("#my").html(blist);
+		}
+		
+		function ajaxLoadSharedDiaryList() {
+			$.ajax({
+				url: "${cpath}/ajaxSharedDiaryList.do?id=${param.id}",
+				type: "get",
+				dataType: "json",
+				success: ajaxMakeSharedDairyList,
+				error: function() {alert("error");}
+			});
+		}
+		
+		function ajaxMakeSharedDairyList(data) {
+			console.log(data);
+			var blist = "<div class= 'SharedDiaryList'>";
+			blist += "<h5 style='text-align: center'>공유된 다이어리</h5>";
+			$.each(data, function(index, obj) {
+				blist += "<button id=" + obj.diary_key+" class='tab-button' onclick='openDiary(event)'>"+obj.name+"</button>";
+			})
+			
+			blist += '</div>';
+			$("#shared").html(blist);
+		}
+		
+        function openDiary(evt) {
+            var i, tabButton;
 
+            tabButton = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButton.length; i++) {
+                tabButton[i].className = tabButton[i].className.replace(" active", "");
+            }
+            evt.currentTarget.className += " active";
+            
+            const key = evt.currentTarget.id;
+            loadList(key);
+        }
+	</script>
+    
+	<!-- 탭 컨테이너 스타일  -->
+	<style>
+        .tab-container {
+            position: fixed;
+            top: 100px;
+            right: 0;
+            width: 120px; /* 탭의 너비 조정 */
+            height: 100%; /* 탭의 높이 조정 */
+            z-index: 100;
+            background : #f5f5f5;
+        }
+
+        /* 탭 버튼 스타일 */
+        .tab-button {
+            display: block;
+            padding: 5px;
+            text-align: center;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            text-decoration: none;
+            cursor: pointer;
+            width: 120px;
+            margin-top: 10px;
+        }
+
+        /* 선택된 탭 버튼 스타일 */
+        .tab-button.active {
+            background-color: #fff6d5;
+            border-right: 3px solid #3788d8;
+        }
+
+        /* 탭 컨텐츠 스타일 */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* 선택된 탭 컨텐츠 스타일 */
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+	
 
 	<!-- footer -->
 	<footer>
@@ -285,53 +415,33 @@
 			<div class="footer-copyright">독하고묘한팀</div>
 		</div>
 	</footer>
-	
-	<script type="text/javascript">
-	// 이미지 업로드
 
-	
-	$(document).ready(function() {
-	       // 글쓰기 버튼이 클릭 되었을 때
-	      $("#register").click(function() {
-	      // $("#board").css("display", "none");
-	       if($("#write").css("display")=="none"){
-	         $("#write").css("display", "block");
-	         }else{
-	            $("#write").css("display", "none");
-	         }
-	      });
-	      // 버튼이 클릭되었을때 서버통신 : ajax(비동기전송)  # : id , . : class
-	      //$("button").click(function() {
-	         loadList();
-	      //}); // button 끝
-	   });
+	<script type="text/javascript">
 	
 	function insert() {
 	      // 폼의 데이터를 가지고오기(title,content,writer)
 	      var fData=$("#frm").serialize();   // 직렬화 : title=111&content=111&writer=111
-	      
-	      /* var inputFile = $("input[name='img_file']");
-	      var files = inputFile[0].files; */
-	      
-	      /* fData += "&img_file_name="+files[0].name ;
-	      fData += "&img_file_size="+files[0].size ; */
-	      
 	      console.log(fData);
 	      
+	      // 현재 탭에 선택된 diary의 key 값을 가져오는 방법
+	      const div = document.getElementsByClassName("tab-button active");
+	      const key = div[0].id;
 	      $.ajax({
-	         url : "${cpath}/ajaxMemoInsert.do?idx=${param.idx}",
+	         url : "${cpath}/ajaxMemoInsert.do?diary_key="+key,
 	         /* processData: false,
 	         contentType: false, */
 	         type : "post",
 	         data : fData,  // 직렬화 된 데이터는 바로 써주면 된다.
-	         success : loadList,
+	         success : function() {
+	        	 loadList(key);
+	         },
 	         error : function() {alert("error");}
 	      });
 	   }
 	
-	function loadList() {
+	function loadList(key) {
 	      $.ajax({
-	         url : "${cpath}/ajaxMemoList.do?idx=${param.idx}",
+	         url : "${cpath}/ajaxMemoList.do?id="+key,
 	         type : "get",
 	         dataType : "json",
 	         success : ajaxMemoList,
@@ -339,10 +449,23 @@
 	      }); // ajax
 	   }
 	
+	function insertMemo() {
+		const content = document.getElementById("write");
+		if (content.style.display == "none") {
+			content.style.display = "block";
+		} else {
+			content.style.display = "none";
+		}
+			
+	}
+	
 	function ajaxMemoList(data){
 		console.log(data);
-		
-		var blist = "<div class='container-fluid'>";
+		var blist = "<div>"
+		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
+		blist += "<button id='invite' style='background: #09df09; margin-left: 25px; padding: 3px; color: white; border-radius: 5px;'>초대</button>";
+		blist += "</div>";
+		blist += "<div class='container-fluid'>";
 		blist += "<div class='row'>"
 		
 		$.each(data, function(index,obj) {
@@ -367,7 +490,7 @@
 	}	
 	
 	</script>
-	
+
 
 	<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
 

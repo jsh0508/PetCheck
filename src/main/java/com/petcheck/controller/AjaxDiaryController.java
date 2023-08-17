@@ -2,15 +2,12 @@ package com.petcheck.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.petcheck.entity.Diary;
+import com.petcheck.entity.DiaryMapping;
 import com.petcheck.entity.Memo;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemoMapper;
@@ -38,11 +35,10 @@ public class AjaxDiaryController {
 	}
 	
 	@RequestMapping("/ajaxMemoList.do")
-	public List<Memo> ajaxMemoList(int idx) {
-		List<Memo> list = mapper2.MemoList(idx);
+	public List<Memo> ajaxMemoList(String id) {
+		List<Memo> list = mapper2.MemoList(id);
 		return list;
 	}
-	
 	
 	@RequestMapping("/ajaxMemoInsert.do")
 	public void ajaxMemoInsert(Memo vo) {
@@ -50,6 +46,23 @@ public class AjaxDiaryController {
 		return;
 	}
 	
+	@RequestMapping("/ajaxDiaryInsert.do")
+	public void ajaxDiaryInsert(DiaryMapping vo) {
+		System.out.println(vo);
+		mapper2.InsertDiary(vo);
+		return;
+	}
 	
+	@RequestMapping("/ajaxMyDiaryList.do")
+	public List<DiaryMapping> ajaxMyDiaryList(String id) {
+		List<DiaryMapping> list = mapper2.MyDiaryList(id);
+		return list;
+	}
+	
+	@RequestMapping("/ajaxSharedDiaryList.do")
+	public List<DiaryMapping> ajaxSharedDiaryList(String id) {
+		List<DiaryMapping> list = mapper2.SharedDiaryList(id);
+		return list;
+	}
 
 }
