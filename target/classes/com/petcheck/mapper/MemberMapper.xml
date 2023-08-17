@@ -27,9 +27,12 @@
 		select * from t_member where idx=#{idx}
 	</select>
 	
-	<select id="invitationList" parameterType="com.petcheck.entity.Member" resultType="String">
+	<select id="invitationList" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.InviteVO">
 		select * from invitation where receiver=#{id}
 	</select>
 	
+	<select id="memberList" resultType="com.petcheck.entity.Member">
+		select * from t_member;
+	</select>
 	
 </mapper>

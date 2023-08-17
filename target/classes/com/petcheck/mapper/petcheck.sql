@@ -2,16 +2,26 @@
 show tables;
 select * from diary;
 create table invitation (
-	sender VARCHAR(50),
-	receiver VARCHAR(50)
+	sender VARCHAR(100),
+	receiver VARCHAR(100),
+	diary_key VARCHAR(100),
+	name VARCHAR(100)
 );
 
+alter table invitation add idx int;
+alter table invitation modify idx int not null auto_increment;
+drop table invitation;
 select * from invitation;
-insert into invitation values ('admin', 'moo');
-
+delete from invitation;
+select * from my_diary;
+delete from my_diary where name = '';
+alter table invitation add diary_key varchar(100);
+insert into invitation values ('admin123', 'moo', '123');
+delete from invitation;
 select * from calendar;
 select * from diary;
-delete from diary;
+select * from shared_diary;
+delete from shared_diary;
 select * from t_member;
 update diary set diary_key='123' where idx = 10;
 
@@ -29,6 +39,8 @@ delete from my_diary where name='myseconddiary';
 alter table shared_diary add name varchar(100);
 alter table my_diary add name varchar(100);
 
+select * from my_diary;
+select * from shared_diary;
 create table my_diary (
 	diary_key varchar(100),
 	id varchar(100)

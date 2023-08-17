@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.petcheck.entity.Diary;
+import com.petcheck.entity.InviteVO;
 import com.petcheck.entity.Member;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemberMapper;
-import com.petcheck.mapper.PetMapper;
 
 @Controller //POJO
 public class MemberController {
@@ -56,14 +56,15 @@ public class MemberController {
 	// 로그인
 	@PostMapping("/login.do")
 	public String login(Member vo, HttpSession session, Model request) {
-		
+		System.out.println("loginmember before vo-->" + vo);
 		Member mvo = mapper.login(vo);
+		System.out.println("loginmember after vo -->"+mvo);
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 		}
 		
-		List<String> list = mapper.invitationList(vo);
-
+		List<InviteVO> list = mapper.invitationList(vo);
+		System.out.println("invitationlist -->" + list);
 		session.setAttribute("list", list);
 		
 		return "redirect:/main.do";
@@ -115,7 +116,9 @@ public class MemberController {
 	@RequestMapping("/diary.do")
 	public String diary(int idx, Model request) {
 		List<Diary> list = mapper2.DiaryList(idx);
+		List<Member> memList = mapper.memberList();
 		request.addAttribute("list", list);
+		request.addAttribute("memList", memList);
 		return "diary";
 	}
 	

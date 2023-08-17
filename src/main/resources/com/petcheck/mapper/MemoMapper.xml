@@ -19,7 +19,19 @@
 		select * from shared_diary where id=#{id};
 	</select>
 	
-	<insert id="InsertDiary" parameterType="com.petcheck.entity.DiaryMapping">
+	<insert id="InsertMyDiary" parameterType="com.petcheck.entity.DiaryMapping">
 		insert into my_diary values (#{diary_key}, #{id}, #{name});
 	</insert>
+	
+	<insert id="InsertSharedDiary" parameterType="com.petcheck.entity.DiaryMapping">
+		insert into shared_diary values (#{diary_key}, #{id}, #{name});
+	</insert>
+	
+	<insert id="InsertInvitation" parameterType="com.petcheck.entity.InviteVO">
+		insert into invitation (sender, receiver, diary_key, name) values (#{sender}, #{receiver}, #{diary_key}, #{name});
+	</insert>
+	
+	<delete id = "DeleteInvitation" parameterType="String">
+		delete from invitation where diary_key = #{id};
+	</delete>
 </mapper>

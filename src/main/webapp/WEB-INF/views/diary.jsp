@@ -36,6 +36,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
 <link href='resources/calendar/main.css' rel='stylesheet' />
+
 <script src='resources/calendar/main.js'></script>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
@@ -277,6 +278,67 @@
         </div>
     </div>
 	
+	<!-- 알림 목록을 보여주는 모달 창 설정 -->
+	<div id="notification-modal" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <div class="modal-title">회원 목록</div>
+	        <button style="margin-left: 490px;" type="button" class="close" data-dismiss="modal" aria-label="닫기">
+	          X
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <!-- 알림 목록을 보여주는 내용 -->
+	        <ul id="notification-list">
+	          <!-- 알림 항목들을 동적으로 추가 -->
+	          <c:if test="${empty list}">
+	          	<li>현재 알림이 없습니다.</li>
+	          </c:if>
+	          <c:forEach var="member" items="${memList}">
+	          	<c:if test="${not (member.id eq param.id)}">
+					<li style="padding: 5px;">
+						${member.id}를 초대하시겠습니까?
+						<button id="${member.id}" onclick="addInvitationDB(event)" style="margin-left: 10px; background: #09df09; color: white; border-radius: 5px;">yes</button>
+					</li>
+	          	</c:if>
+	          </c:forEach>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script>
+		function addInvitationDB(evt) {
+			// 현재 탭에 선택된 diary의 key 값을 가져오는 방법
+	      	const div = document.getElementsByClassName("tab-button active");
+	      	const key = div[0].id;
+			const receiver = evt.currentTarget.id;
+			const name = div[0].innerHTML;
+			$.ajax({
+				url : "${cpath}/ajaxInvitationInsert.do?sender=${param.id}&receiver="+receiver+"&diary_key="+key+"&name="+name,
+				type : "post",
+				success: closeModal,
+				error : function() {alert("error");}
+			});
+		}
+		
+		function closeModal(){
+			$("#notification-modal").modal("hide");
+		}
+	</script>
+	<style>
+		/* 추가된 CSS 스타일 */
+		.modal-header {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		}
+		.modal-close {
+		  display: flex;
+		  align-items: center;
+		}
+	</style>
 	
 	<script>
 		$(document).ready(function() {
@@ -458,12 +520,16 @@
 		}
 			
 	}
+	function invitationListShowUp(){
+		const ele = document.getElementById("invite");
+		$("#notification-modal").modal("show");
+	}
 	
 	function ajaxMemoList(data){
 		console.log(data);
 		var blist = "<div>"
 		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
-		blist += "<button id='invite' style='background: #09df09; margin-left: 25px; padding: 3px; color: white; border-radius: 5px;'>초대</button>";
+		blist += "<button id='invite' style='background: #09df09; margin-left: 25px; padding: 3px; color: white; border-radius: 5px;' onclick='invitationListShowUp()'>초대</button>";
 		blist += "</div>";
 		blist += "<div class='container-fluid'>";
 		blist += "<div class='row'>"

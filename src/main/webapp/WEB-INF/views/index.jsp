@@ -159,8 +159,12 @@
 	          <c:if test="${empty list}">
 	          	<li>현재 알림이 없습니다.</li>
 	          </c:if>
-	          <c:forEach var="sender" items="${list}">
-				<li>${sender}님이 초대를 하셨습니다. 수락하시겠습니까? </li>	          	
+	          <c:forEach var="vo" items="${list}">
+				<li style="padding: 5px;">
+					${vo.sender}님이 초대를 하셨습니다. 수락하시겠습니까?
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteYes(event)" style="margin-left: 10px; background: #09df09; color: white; border-radius: 5px;">yes</button>
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteNo(event)" style="margin-left: 10px; background: #ff0000; color: white; border-radius: 5px;">no</button>
+				</li>
 	          </c:forEach>
 	        </ul>
 	      </div>
@@ -180,12 +184,46 @@
 		  align-items: center;
 		}
 	</style>
-	
 	<script>
 		// 알림 버튼을 누르면 모달 창을 열도록 설정
 		document.getElementById("notification-button").addEventListener("click", () => {
 		  $("#notification-modal").modal("show");
 		});
+		
+		function inviteYes(evt){
+			const key = evt.currentTarget.id;
+			const name = evt.currentTarget.className;
+			$.ajax({
+				url: "${cpath}/ajaxInvitationYes.do?id=${mvo.id}&diary_key="+key+"&name="+name,
+				type: "post",
+				success: function(){
+					$('#notification-modal').modal("hide");
+					reloadMainPage();
+				},
+				error: function(){alert("error");}
+			});
+		}
+		function reloadMainPage() {
+			console.log("reloadMainPage!!");
+			$.ajax({
+				url:"${cpath}/login.do?id=${mvo.id}&pw=${mvo.pw}",
+				type : "post",
+				error : function() {alert("error");}
+			});
+		}
+		function inviteNo(evt){
+			const key = evt.currentTarget.id;
+			const name = evt.currentTarget.className;
+			$.ajax({
+				url: "${cpath}/ajaxInvitationNo.do?id=${mvo.id}&diary_key="+key+"&name="+name,
+				type: "post",
+				success: function(){
+					$('#notification-modal').modal("hide");
+					reloadMainPage();
+				},
+				error: function(){alert("error");}
+			});
+		}
 	</script>
 	
 	

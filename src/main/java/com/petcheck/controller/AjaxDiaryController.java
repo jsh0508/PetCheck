@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.petcheck.entity.Diary;
 import com.petcheck.entity.DiaryMapping;
+import com.petcheck.entity.InviteVO;
 import com.petcheck.entity.Memo;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemoMapper;
@@ -49,7 +50,7 @@ public class AjaxDiaryController {
 	@RequestMapping("/ajaxDiaryInsert.do")
 	public void ajaxDiaryInsert(DiaryMapping vo) {
 		System.out.println(vo);
-		mapper2.InsertDiary(vo);
+		mapper2.InsertMyDiary(vo);
 		return;
 	}
 	
@@ -64,5 +65,25 @@ public class AjaxDiaryController {
 		List<DiaryMapping> list = mapper2.SharedDiaryList(id);
 		return list;
 	}
-
+	
+	@RequestMapping("/ajaxInvitationInsert.do")
+	public void ajaxInvitationInsert(InviteVO vo) {
+		System.out.println("ajaxInvitation -->"+ vo);
+		mapper2.InsertInvitation(vo);
+		return;
+	}
+	
+	@RequestMapping("/ajaxInvitationYes.do")
+	public void ajaxInvitationYes(DiaryMapping vo) {
+		System.out.println("ajaxInvite Yes -->" + vo);
+		System.out.println(vo.getDiary_key());
+		mapper2.DeleteInvitation(vo.getDiary_key());
+		mapper2.InsertSharedDiary(vo);
+	}
+	
+	@RequestMapping("/ajaxInvitationNo.do")
+	public void ajaxInvitationNo(DiaryMapping vo) {
+		System.out.println("ajaxInvite NO -->" + vo);
+		mapper2.DeleteInvitation(vo.getDiary_key());
+	}
 }
