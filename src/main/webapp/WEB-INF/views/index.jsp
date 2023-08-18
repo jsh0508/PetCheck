@@ -81,11 +81,11 @@
 					<div class="menu-container">
 						<ul class="navbar-nav navbar-nav-right">
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
-							<c:if test="${empty mvo}">
+							<c:if test="${empty mvo || empty lvo}">
 								<li class="nav-item"><a
 									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
 							</c:if>
-							<c:if test="${!empty mvo}">
+							<c:if test="${!empty mvo || !empty lvo}">
 								<li class="nav-item"><a
 									class="nav-item-child nav-item-hover"
 									href="${cpath}/diary.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
@@ -93,11 +93,11 @@
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/postList.do">게시판</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover">|</a></li>
-							<c:if test="${empty mvo}">
+							<c:if test="${empty mvo || empty lvo}">
 								<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
 								<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/memberjoin.do">회원가입</a></li>
 							</c:if>
-							<c:if test="${!empty mvo}">
+							<c:if test="${!empty mvo || !empty lvo}">
 								<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
 								<li class="nav-item"><a class="nav-item-child nav-item-hover" href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
 								<c:if test="${empty list}">

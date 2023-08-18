@@ -10,13 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.petcheck.entity.Diary;
-import com.petcheck.entity.InviteVO;
 import com.petcheck.entity.Member;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemberMapper;
+import com.petcheck.mapper.PetMapper;
 
 @Controller //POJO
 public class MemberController {
@@ -47,6 +49,16 @@ public class MemberController {
 		return "index";
 	}
 	
+	@RequestMapping("idCheck.do")
+	@ResponseBody
+	public int idCheck(@RequestParam String id) {
+		int re = mapper.idCheck(id);
+		System.out.println(re);
+		return re;
+		
+	}
+	
+	
 	// 로그인 페이지 접속
 	@GetMapping("/login.do")
 	public String login() {
@@ -55,19 +67,17 @@ public class MemberController {
 	
 	// 로그인
 	@PostMapping("/login.do")
-	public String login(Member vo, HttpSession session, Model request) {
-		System.out.println("loginmember before vo-->" + vo);
+	public String login(Member vo, HttpSession session, Model model) {
+		
 		Member mvo = mapper.login(vo);
-		System.out.println("loginmember after vo -->"+mvo);
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
+			return "redirect:/main.do";
+		} else {
+			model.addAttribute("msg", "잘못된 정보입니다.");
+			return "login";
 		}
 		
-		List<InviteVO> list = mapper.invitationList(vo);
-		System.out.println("invitationlist -->" + list);
-		session.setAttribute("list", list);
-		
-		return "redirect:/main.do";
 	}
 	
 	// 로그아웃
@@ -75,6 +85,7 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
+		
 		return "redirect:/main.do";
 	}
 	
@@ -116,9 +127,7 @@ public class MemberController {
 	@RequestMapping("/diary.do")
 	public String diary(int idx, Model request) {
 		List<Diary> list = mapper2.DiaryList(idx);
-		List<Member> memList = mapper.memberList();
 		request.addAttribute("list", list);
-		request.addAttribute("memList", memList);
 		return "diary";
 	}
 	

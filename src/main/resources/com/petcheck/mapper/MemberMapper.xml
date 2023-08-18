@@ -15,10 +15,6 @@
 		delete from t_member where idx=#{idx}
 	</delete>
 	
-	<select id="snsLogin" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
-		select * from t_member where sns_type=#{sns_type} and id=#{id}
-	</select>
-	
 	<select id="login" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.Member">
 		select * from t_member where id=#{id} and pw=#{pw}
 	</select>
@@ -27,12 +23,8 @@
 		select * from t_member where idx=#{idx}
 	</select>
 	
-	<select id="invitationList" parameterType="com.petcheck.entity.Member" resultType="com.petcheck.entity.InviteVO">
-		select * from invitation where receiver=#{id}
-	</select>
-	
-	<select id="memberList" resultType="com.petcheck.entity.Member">
-		select * from t_member;
+	<select id="idCheck" parameterType="String" resultType="int">
+		select count(*) from t_member where id=#{id};
 	</select>
 	
 </mapper>

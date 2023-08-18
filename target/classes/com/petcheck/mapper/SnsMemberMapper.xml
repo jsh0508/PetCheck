@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
-<mapper namespace="com.petcheck.mapper.MemberMapper">
-	<insert id="memberJoin" parameterType="com.petcheck.entity.Member">
-		INSERT INTO t_member (id, pw, nick, admin_yn, joindate) 
-		VALUES (#{id}, #{pw}, #{nick}, 'N', NOW());
+<mapper namespace="com.petcheck.mapper.SnsMemberMapper">
+	<insert id="snsJoin" parameterType="com.petcheck.entity.SnsMember">
+		INSERT INTO t_member (id, nick, admin_yn, joindate, sns_type) 
+		VALUES (#{id}, #{nick}, 'N', NOW(), #{sns_type});
 	</insert>
 	
-	<update id="updateInfo" parameterType="com.petcheck.entity.Member">
+	<select id="snsLogin" parameterType="com.petcheck.entity.SnsMember" resultType="com.petcheck.entity.SnsMember">
+		select * from t_member where id=#{id} and sns_type=#{sns_type}
+	</select>
+	
+	<select id="snsLoginCheck" parameterType="com.petcheck.entity.SnsMember" resultType="com.petcheck.entity.SnsMember">
+		select * from t_member where id=#{id} and sns_type=#{sns_type}
+	</select>
+	
+	<!-- <update id="updateInfo" parameterType="com.petcheck.entity.Member">
 		update t_member set pw=#{pw}, nick=#{nick} where idx=#{idx}
 	</update>
 	
@@ -21,10 +29,6 @@
 	
 	<select id="checkInfo" parameterType="int" resultType="com.petcheck.entity.Member"> 
 		select * from t_member where idx=#{idx}
-	</select>
-	
-	<select id="idCheck" parameterType="String" resultType="int">
-		select count(*) from t_member where id=#{id};
-	</select>
+	</select> -->
 	
 </mapper>
