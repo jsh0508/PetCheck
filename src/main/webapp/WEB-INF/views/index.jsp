@@ -91,7 +91,7 @@
 									href="${cpath}/diary.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
 							</c:if>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
-							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
+							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/postList.do">게시판</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover">|</a></li>
 							<c:if test="${empty mvo}">
 								<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
