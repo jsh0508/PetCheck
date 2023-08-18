@@ -54,6 +54,12 @@ public class AjaxDiaryController {
 		return;
 	}
 	
+	@RequestMapping("/ajaxMemoDelete.do")
+	public void ajaxMemoDelete(String title) {
+		mapper2.DeleteMemo(title);
+		return;
+	}
+	
 	@RequestMapping("/ajaxMyDiaryList.do")
 	public List<DiaryMapping> ajaxMyDiaryList(String id) {
 		List<DiaryMapping> list = mapper2.MyDiaryList(id);

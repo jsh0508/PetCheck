@@ -221,17 +221,19 @@
 
 
 	<!-- calendar -->
+	
 
+<div class="container">
 	<div class="card" style="background-color: #FFFAF3; ">
 		<div class="row">
 			<div class="col-lg-6">
 				<div id='calendar'></div>
 			</div>
 			<div class="col-lg-6">
-				<div class="card">
+				<div class="card" id='diary'>
 					<div class="card-body">
 						<h4 class="card-title">
-							MEMO
+							Diary
 						</h4>
 						<div id="board" style="display: block"></div>
 					</div>
@@ -259,14 +261,21 @@
 			</div>
 		</div>
 	</div>
-	
-	<button id="tabbtn" style="color:white; background: #09df09; position:fixed; z-index: 1000; right: 0; top: 70px;">tab</button>
+</div>
 	
 	<!-- 오른쪽에 tab을 만듬 -->
 	<div id="tab-container" class="tab-container ">
 		<div style="display:flex">
 			<input id="diaryname" style="width:80px;" type="text" name="search" placeholder="제목입력">
-			<button onclick="addDiary()" style="width: 40px; background: #09df09; color: white; margin-top: 5px; border-radius: 5px;">add</button>
+			<button onclick="addDiary()"><i class="bi bi-plus-square"></i></button>
+		</div>
+		
+		<div id="calendar_tap">
+		<p><button class="menu_btn" onclick="open_calendar()">캘린더</button></p>
+		</div>
+		
+		<div>
+		<p><button class="menu_btn" onclick="open_diary()">다이어리</button></p>
 		</div>
 		
 		<div id="my">
@@ -275,20 +284,36 @@
         <div id="shared" style="margin-top: 10px;">
         </div>
     </div>
+   
 	<script>
-		const ele = document.getElementById("tabbtn");
-		const tab = document.getElementById("tab-container");
-		ele.onclick = function(){
-			tab.classList.toggle("open");
+		function open_calendar() {
+			const content = document.getElementById("calendar");
+			if (content.style.display == "none") {
+				content.style.display = "block";
+			} else {
+				content.style.display = "none";
+			}
+			
 		}
+		
+		function open_diary() {
+			const my_diary_list = document.getElementById("my_diary_list");
+			const shared_diary_list = document.getElementById("shared_diary_list");
+			if (my_diary_list.style.display == "none") {
+				my_diary_list.style.display = "block";
+			} else {
+				my_diary_list.style.display = "none";
+			}
+			if (shared_diary_list.style.display == "none") {
+				shared_diary_list.style.display = "block";
+			} else {
+				shared_diary_list.style.display = "none";
+			}
+			
+		}
+	
 	</script>
 	
-	<style>
-		#tab-container.open {
-			right: 0;
-			z-index: 1000;
-		}
-	</style>
 	<!-- 알림 목록을 보여주는 모달 창 설정 -->
 	<div id="notification-modal" class="modal fade" tabindex="-1">
 	  <div class="modal-dialog">
@@ -403,8 +428,8 @@
 			});
 		}
 		function ajaxMakeMyDairyList(data) {
-			var blist = "<div class= 'MyDiaryList'>";
-			blist += "<h5 style='text-align: center; margin-top: 10px;' >내 다이어리</h5>";
+			var blist = "<div class= 'MyDiaryList' id='my_diary_list'>";
+			blist += "<h5>내 다이어리</h5>";
 			$.each(data, function(index, obj) {
 				blist += "<button id=" + obj.diary_key +" class='tab-button' onclick='openDiary(event)'>"+obj.name+"</button>";
 			})
@@ -424,8 +449,8 @@
 		}
 		
 		function ajaxMakeSharedDairyList(data) {
-			var blist = "<div class= 'SharedDiaryList'>";
-			blist += "<h5 style='text-align: center'>공유된 다이어리</h5>";
+			var blist = "<div class= 'SharedDiaryList' id='shared_diary_list'>";
+			blist += "<h5>공유된 다이어리</h5>";
 			$.each(data, function(index, obj) {
 				blist += "<button id=" + obj.diary_key+" class='tab-button' onclick='openDiary(event)'>"+obj.name+"</button>";
 			})
@@ -450,10 +475,14 @@
     
 	<!-- 탭 컨테이너 스타일  -->
 	<style>
+		.menu_btn {
+			background: none;
+		}
+	
         .tab-container {
             position: fixed;
             top: 100px;
-            right: -120px;
+            right: 0;
             width: 120px; /* 탭의 너비 조정 */
             height: 100%; /* 탭의 높이 조정 */
             background : #f5f5f5;
@@ -495,8 +524,8 @@
     <!-- 메모 디자인 -->
     <style>
     	.scrollable-container {
- 			 width: 700px; /* 원하는 너비 설정 */
- 			 height: 530px; /* 원하는 높이 설정 */
+ 			 width: 600px; /* 원하는 너비 설정 */
+ 			 height: 400px; /* 원하는 높이 설정 */
   			 overflow-y: scroll; /* 세로 스크롤만 표시 */
 		}
     
@@ -521,7 +550,7 @@
 	
 
 	<!-- footer -->
-	<footer>
+	<!-- <footer>
 		<div class="inner">
 			<div class="footer-contact">
 				<a href="https://github.com/jsh0508/PetCheck" target="_blank"> <i
@@ -530,29 +559,29 @@
 			</div>
 			<div class="footer-copyright">독하고묘한팀</div>
 		</div>
-	</footer>
+	</footer> -->
 
 	<script type="text/javascript">
 	
 	function insert() {
-	      // 폼의 데이터를 가지고오기(title,content,writer)
-	      var fData=$("#frm").serialize();   // 직렬화 : title=111&content=111&writer=111
-	      
-	      // 현재 탭에 선택된 diary의 key 값을 가져오는 방법
-	      const div = document.getElementsByClassName("tab-button active");
-	      const key = div[0].id;
-	      $.ajax({
-	         url : "${cpath}/ajaxMemoInsert.do?diary_key="+key,
-	         /* processData: false,
-	         contentType: false, */
-	         type : "post",
-	         data : fData,  // 직렬화 된 데이터는 바로 써주면 된다.
-	         success : function() {
-	        	 loadList(key);
-	         },
-	         error : function() {alert("error");}
-	      });
-	   }
+      // 폼의 데이터를 가지고오기(title,content,writer)
+      var fData=$("#frm").serialize();   // 직렬화 : title=111&content=111&writer=111
+      
+      // 현재 탭에 선택된 diary의 key 값을 가져오는 방법
+      const div = document.getElementsByClassName("tab-button active");
+      const key = div[0].id;
+      $.ajax({
+         url : "${cpath}/ajaxMemoInsert.do?diary_key="+key,
+         /* processData: false,
+         contentType: false, */
+         type : "post",
+         data : fData,  // 직렬화 된 데이터는 바로 써주면 된다.
+         success : function() {
+        	 loadList(key);
+         },
+         error : function() {alert("error");}
+      });
+   }
 	
 	
 	
@@ -606,8 +635,9 @@
 		
 		$.each(data, function(index,obj) {
 			
-			blist += "<div class='col-lg-6'>"
+			blist += "<div class='col-lg-12'>"
 			blist += "<div class='card-body custom-card-body'>"
+			blist +="<button id='"+obj.title+"' class='btn btn-sm btn-warning' onclick='memoDelete(event)'>X</button>";
 			blist += "<img></img>";
 			blist += "<h5 class='card-title custom-card-title'>"+obj.title+"</h5>";
 			blist += "<p class='card-text custom-card-text-content'>"+obj.content+"</p>";
@@ -629,16 +659,17 @@
 		var blist = "<div>"
 		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
 		blist += "</div>";
-		blist += "<div class='container-fluid'>";
+		blist += "<div class='container-fluid scrollable-container'>";
 		blist += "<div class='row'>"
 		
 		$.each(data, function(index,obj) {
 			
-			blist += "<div class='col-lg-6'>"
+			blist += "<div class='col-lg-12'>"
 			blist += "<div class='card-body custom-card-body'>"
+				blist +="<button id='"+obj.title+"' class='btn btn-sm btn-warning' onclick='memoDelete(event)'>X</button>";
 			blist += "<img></img>";
-			blist += "<h5 class='card-title'>"+obj.title+"</h5>";
-			blist += "<p class='card-text'>"+obj.content+"</p>";
+			blist += "<h5 class='card-title custom-card-title'>"+obj.title+"</h5>";
+			blist += "<p class='card-text custom-card-text-content'>"+obj.content+"</p>";
 			blist += "<h5 class='card-text custom-card-text-username'>작성자 : "+obj.username+"</h5>";
 			blist += "</div>";
 			blist += "</div>";
@@ -651,7 +682,23 @@
 		$("#write").css("display","none");
 	    $("#reset").trigger("click");
 		
-	}	
+	}
+	
+	function memoDelete(evt){
+		var title = evt.currentTarget.id
+		const div = document.getElementsByClassName("tab-button active");
+      	const key = div[0].id;
+		
+		$.ajax({
+			url: "${cpath}/ajaxMemoDelete.do",
+			type: "get",
+			data : {"title" : title},
+			success : function() {
+	        	 loadList(key);
+	         },
+			error : function(){alert("error");}
+		});
+	}
 	</script>
 
 
