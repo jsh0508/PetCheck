@@ -494,13 +494,28 @@
     
     <!-- 메모 디자인 -->
     <style>
+    	.scrollable-container {
+ 			 width: 700px; /* 원하는 너비 설정 */
+ 			 height: 530px; /* 원하는 높이 설정 */
+  			 overflow-y: scroll; /* 세로 스크롤만 표시 */
+		}
+    
 		.custom-card-body {
-			border: 1px solid #E0E0E0;
+			border: 3px solid #E0E0E0;
 			margin: 20px;
+		}
+		
+		.custom-card-title {
+			text-align: center;
 		}
 
 		.custom-card-text-username {
 			text-align: right;
+		}
+		
+		.custom-card-text-content {
+			font-size: 15px;
+			margin: 20px 70px 20px 70px;
 		}
 	</style>
 	
@@ -586,7 +601,7 @@
 		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
 		blist += "<button id='invite' style='background: #09df09; margin-left: 25px; padding: 3px; color: white; border-radius: 5px;' onclick='invitationListShowUp()'>초대</button>";
 		blist += "</div>";
-		blist += "<div class='container-fluid'>";
+		blist += "<div class='container-fluid scrollable-container'>";
 		blist += "<div class='row'>"
 		
 		$.each(data, function(index,obj) {
@@ -594,8 +609,8 @@
 			blist += "<div class='col-lg-6'>"
 			blist += "<div class='card-body custom-card-body'>"
 			blist += "<img></img>";
-			blist += "<h5 class='card-title'>"+obj.title+"</h5>";
-			blist += "<p class='card-text'>"+obj.content+"</p>";
+			blist += "<h5 class='card-title custom-card-title'>"+obj.title+"</h5>";
+			blist += "<p class='card-text custom-card-text-content'>"+obj.content+"</p>";
 			blist += "<h5 class='card-text custom-card-text-username'>작성자 : "+obj.username+"</h5>";
 			blist += "</div>";
 			blist += "</div>";
