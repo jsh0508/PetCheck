@@ -186,9 +186,12 @@
 	</style>
 	<script>
 		// 알림 버튼을 누르면 모달 창을 열도록 설정
-		document.getElementById("notification-button").addEventListener("click", () => {
-		  $("#notification-modal").modal("show");
-		});
+		const ele = document.getElementById("notification-button");
+		if (ele != null) {
+			ele.addEventListener("click", () => {
+				  $("#notification-modal").modal("show");
+			});
+		}
 		
 		function inviteYes(evt){
 			const key = evt.currentTarget.id;

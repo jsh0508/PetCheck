@@ -42,4 +42,8 @@
 	<select id = "isInvitation" parameterType = "com.petcheck.entity.InviteVO" resultType="String">
 		select receiver from invitation where receiver = #{receiver} and sender = #{sender} and diary_key = #{diary_key};
 	</select>
+	
+	<delete id="DeleteMemo" parameterType="String">
+		delete from diary where title=#{title};
+	</delete>
 </mapper>

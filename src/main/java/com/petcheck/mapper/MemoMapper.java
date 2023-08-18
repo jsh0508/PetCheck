@@ -18,4 +18,5 @@ public interface MemoMapper {
 	public void DeleteInvitation(String id);
 	public List<String> isShared(DiaryMapping vo);
 	public String isInvitation(InviteVO vo);
+	public void DeleteMemo(String title);
 }
