@@ -335,7 +335,9 @@
 	          	<c:if test="${not (member.id eq param.id)}">
 					<li style="padding: 5px;">
 						${member.id}를 초대하시겠습니까?
-						<button id="${member.id}" onclick="addInvitationDB(event)" style="margin-left: 10px; background: #09df09; color: white; border-radius: 5px;">yes</button>
+						<button id="${member.id}" onclick="addInvitationDB(event)" 
+						style="background: none; color: #007bff;"><i class="bi bi-check-circle-fill"></i></button>
+				
 					</li>
 	          	</c:if>
 	          </c:forEach>

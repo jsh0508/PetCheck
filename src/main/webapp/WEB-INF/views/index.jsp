@@ -162,8 +162,8 @@
 	          <c:forEach var="vo" items="${list}">
 				<li style="padding: 5px;">
 					${vo.sender}님이 초대를 하셨습니다. 수락하시겠습니까?
-					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteYes(event)" style="margin-left: 10px; background: #09df09; color: white; border-radius: 5px;">yes</button>
-					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteNo(event)" style="margin-left: 10px; background: #ff0000; color: white; border-radius: 5px;">no</button>
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteYes(event)" style="background: none; color: #007bff;"><i class="bi bi-check-circle-fill"></i></button>
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteNo(event)" style="margin-left: 5px; background: none; color: red;"><i class="bi bi-x-circle-fill"></i></button>
 				</li>
 	          </c:forEach>
 	        </ul>
