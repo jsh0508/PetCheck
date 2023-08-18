@@ -234,25 +234,35 @@
 	         <!--<div class="container">	 -->               
 	                <div id="root">  
 	                 <div class="mainImg">
-		           <img src="resources/img/main.png" alt="자가진단서비스 화면" width="300px">
+		         <!--   <img src="resources/img/main.png" alt="자가진단서비스 화면" width="300px"> -->
 		           </div>
 	                   <div class="row" style="text-align:center";>
 	                     <div class="col">
-		            <!--   <div class="carousel-centered"> -->
-		          		<h1>페트체크</h1>
-	                      <p>반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
-	                      사람보다 1.5배이상 얇은 반려동물의 피부!<br>
-	                      털에 가려져 특히 세심한 관심이 필요해요<br><br>
-	                      내 소중한 <strong>펫</strong>의 피부질환을 지금 바로 <strong>체크</strong>해보세요.</p>
+	                     
+	                         <video src="resources/img/main555.mp4" autoplay loop muted style="width:100%; background-size: cover;"/>
+	                   
+	                     
+	                     
+	                     
+	                     <%--  <!-- video넣기전 메인화면 -->
+		          		   <h1>페트체크</h1>
+	                       <p class="copy">반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
+	                         사람보다 1.5배이상 얇은 반려동물의 피부!<br>
+	                         털에 가려져 특히 세심한 관심이 필요해요<br><br>
+	                         내 소중한 <strong>펫</strong>의 피부질환을 지금 바로 <strong>체크</strong>해보세요.</p>
 	                       <!--  <div class="checkbtn"> -->
 	                       <div class="mainbtn">
 	                         <button class="btn-hover color-10" align="center" onclick="location.href='${cpath}/upload.do'">자가진단 시작하기</button>
 	                       </div>
+	                        --%>
+	                       
+	                       
+	                       
 	                 <!--        </div> -->
 	                    </div>
 	                  </div>
+	                  
 	                   <div class="contents">
-	                     
 	                  </div>
 	                </div>
 <!-- 	                 </div>

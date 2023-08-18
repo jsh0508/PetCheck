@@ -8,39 +8,41 @@ body {
 	top: 25px;
 }
 
-p .available {
+p.available {
 	font-size:14px;
 }
 
 #root {
 	height:800px;
 	position: relative;
-    top: 100px;
+ /*    top: 100px; */
 	width: 100%;
 	margin: 0 auto;
 	max-width: 1600px;
 }
 
-/* .col {
-	display: inline-block;
-    position: absolute;
-    top: 0px;
-    height: 350px;
-    left: 100px;
-    margin: 120px 1px;
-    padding: 1px 10px 10px;
-} */
+p.copy {
+	font-size: 25px;
+}
 
 .col {
     display: inline-block;
     position: absolute;
     top: -20px;
-    height: 430px;
-    left: 100px;
-    margin: 90px 1px;
-    padding: 1px 10px 10px;
+    width: 1600px;
+    left:0;
+    height: 800px;
+    margin-top: 20px;
 }
 
+.video{
+    width: 700px;
+    position: absolute;
+    display: block;
+    left: 260px;
+    
+	
+}
 /* .mainbtn {
     position: absolute;
     top: 300px;
@@ -52,23 +54,16 @@ p .available {
 } */
 
 .mainbtn {
-	position: absolute;
-    top: 300px;
+    position: absolute;
+    top: 280px;
     height: 100px;
-    width: 570px;
-    padding: 10px 100px 10px 60px;
+    width: 410px;
+    margin: 1px 45px;
+    padding: 10px 10px 10px 10px;
     bottom: 400px;
-    left: -20px;
+    left: 0px;
     right: 80px;
 }
-
-
-/* .mainbtn {
-	position: absolute;
-	top: 230px;
-	left: 110px;
-} */
-
 
 col {
 	height: 800px;

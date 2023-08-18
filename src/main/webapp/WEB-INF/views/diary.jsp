@@ -149,10 +149,9 @@
 		<!-- Navbar -->
 		<nav class="navbar" role="navigation">
 			<div class="logo">
-				<a class="logo-wrap" href="${cpath}/main.do"
-					style="margin-top: 10px"> <img class="logo-img logo-img-main"
-					src="resources/img/nocatlogo.png" alt="">
-				</a>
+			   <a class="logo-wrap" href="${cpath}/main.do"> 
+			   <img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="로고">
+			   </a>
 			</div>
 			<div class="menu-container">
 				<!-- Brand and toggle get grouped for better mobile display -->
