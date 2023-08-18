@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+<title>Diary</title>
 <meta charset='utf-8' />
 <!-- GLOBAL MANDATORY STYLES -->
 <link
