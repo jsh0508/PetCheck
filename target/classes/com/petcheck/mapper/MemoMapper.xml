@@ -34,4 +34,12 @@
 	<delete id = "DeleteInvitation" parameterType="String">
 		delete from invitation where diary_key = #{id};
 	</delete>
+	
+	<select id = "isShared" parameterType = "com.petcheck.entity.DiaryMapping" resultType="java.lang.String">
+		select diary_key from shared_diary where diary_key = #{diary_key} and id = #{id};
+	</select>
+	
+	<select id = "isInvitation" parameterType = "com.petcheck.entity.InviteVO" resultType="String">
+		select receiver from invitation where receiver = #{receiver} and sender = #{sender} and diary_key = #{diary_key};
+	</select>
 </mapper>

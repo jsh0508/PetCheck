@@ -28,7 +28,7 @@ select * from shared_diary;
 delete from shared_diary;
 select * from t_member;
 update diary set diary_key='123' where idx = 10;
-
+delete from my_diary where name = '';
 alter table diary add diary_key varchar(100);
 insert into t_member (admin_yn, joindate, pw, id, nick) values ('N', '2023-08-09', '1234', 'hihi', 'test');
 

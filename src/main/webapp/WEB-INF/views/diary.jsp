@@ -71,11 +71,6 @@
 				            allDay: arg.allDay
 				          })
 				          
-				         /* window.localStorage.setItem('publicId', arg.event._def.publicId); */
-				         // 값을 가져옴
-				         /* var storedPublicId = localStorage.getItem('publicId');
-				         console.log("hi");
-				         console.log(storedPublicId); */
 				          $.ajax({
 				              url: "${cpath}/ajaxInsert.do",
 				              data: {
@@ -265,7 +260,7 @@
 		</div>
 	</div>
 	
-	<button id="tabbtn" style="color:white; background: #09df09; position:fixed; right: 0; top: 70px">tab</button>
+	<button id="tabbtn" style="color:white; background: #09df09; position:fixed; z-index: 1000; right: 0; top: 70px;">tab</button>
 	
 	<!-- 오른쪽에 tab을 만듬 -->
 	<div id="tab-container" class="tab-container ">
@@ -282,14 +277,10 @@
     </div>
 	<script>
 		const ele = document.getElementById("tabbtn");
-		console.log("hihi");
-		console.log(ele);
 		const tab = document.getElementById("tab-container");
-		console.log(tab);
 		ele.onclick = function(){
 			tab.classList.toggle("open");
 		}
-		console.log("finish!!");
 	</script>
 	
 	<style>
@@ -312,7 +303,7 @@
 	        <!-- 알림 목록을 보여주는 내용 -->
 	        <ul id="notification-list">
 	          <!-- 알림 항목들을 동적으로 추가 -->
-	          <c:if test="${empty list}">
+	          <c:if test="${empty memList}">
 	          	<li>현재 알림이 없습니다.</li>
 	          </c:if>
 	          <c:forEach var="member" items="${memList}">
@@ -330,16 +321,29 @@
 	</div>
 	<script>
 		function addInvitationDB(evt) {
+			console.log("hihihiii");
 			// 현재 탭에 선택된 diary의 key 값을 가져오는 방법
 	      	const div = document.getElementsByClassName("tab-button active");
 	      	const key = div[0].id;
 			const receiver = evt.currentTarget.id;
 			const name = div[0].innerHTML;
+			
 			$.ajax({
-				url : "${cpath}/ajaxInvitationInsert.do?sender=${param.id}&receiver="+receiver+"&diary_key="+key+"&name="+name,
-				type : "post",
-				success: closeModal,
-				error : function() {alert("error");}
+				url: "${cpath}/ajaxIsInvitation.do?sender=${param.id}&receiver="+receiver+"&diary_key="+key+"&name="+name,
+				type: "post",
+				success: function(data) {
+					if (data) {
+						$.ajax({
+							url : "${cpath}/ajaxInvitationInsert.do?sender=${param.id}&receiver="+receiver+"&diary_key="+key+"&name="+name,
+							type : "post",
+							success: closeModal,
+							error : function() {alert("error");}
+						});
+					} else {
+						alert("이미 초대를 보낸 상태입니다.");
+					}
+				},
+				error: function() {alert("error");}
 			});
 		}
 		
@@ -370,6 +374,10 @@
 			const ele = document.getElementById("diaryname");
 			const name = ele.value;
 			const key = Date.now();
+			if (name == "") {
+				alert("다이어리 제목을 입력해 주세요. ")
+				return;
+			}
 			// add 버튼 누르고 인풋 안에 내용 없애기
 			ele.value = "";
 			$.ajax({
@@ -395,7 +403,6 @@
 			});
 		}
 		function ajaxMakeMyDairyList(data) {
-			console.log(data);
 			var blist = "<div class= 'MyDiaryList'>";
 			blist += "<h5 style='text-align: center; margin-top: 10px;' >내 다이어리</h5>";
 			$.each(data, function(index, obj) {
@@ -417,7 +424,6 @@
 		}
 		
 		function ajaxMakeSharedDairyList(data) {
-			console.log(data);
 			var blist = "<div class= 'SharedDiaryList'>";
 			blist += "<h5 style='text-align: center'>공유된 다이어리</h5>";
 			$.each(data, function(index, obj) {
@@ -516,7 +522,6 @@
 	function insert() {
 	      // 폼의 데이터를 가지고오기(title,content,writer)
 	      var fData=$("#frm").serialize();   // 직렬화 : title=111&content=111&writer=111
-	      console.log(fData);
 	      
 	      // 현재 탭에 선택된 diary의 key 값을 가져오는 방법
 	      const div = document.getElementsByClassName("tab-button active");
@@ -534,14 +539,32 @@
 	      });
 	   }
 	
+	
+	
 	function loadList(key) {
-	      $.ajax({
-	         url : "${cpath}/ajaxMemoList.do?id="+key,
-	         type : "get",
-	         dataType : "json",
-	         success : ajaxMemoList,
-	         error : function() {alert("error");}
-	      }); // ajax
+		  $.ajax({
+			  url: "${cpath}/ajaxIsShared.do?diary_key="+key+"&id=${param.id}",
+			  success: function(data){
+				  if (data) {
+					  $.ajax({
+						  url: "${cpath}/ajaxMemoList.do?id="+key,
+						  type: "get",
+						  dataType: "json",
+						  success : ajaxSharedMemoList,
+						  error: function() {alert("error");}
+					  });
+				  } else {
+					  $.ajax({
+						  url: "${cpath}/ajaxMemoList.do?id="+key,
+						  type: "get",
+						  dataType: "json",
+						  success : ajaxMyMemoList,
+						  error: function() {alert("error");}
+					  });
+				  }
+			  } ,
+			  error: function() {alert("error");}
+		  });		
 	   }
 	
 	function insertMemo() {
@@ -558,8 +581,7 @@
 		$("#notification-modal").modal("show");
 	}
 	
-	function ajaxMemoList(data){
-		console.log(data);
+	function ajaxMyMemoList(data){
 		var blist = "<div>"
 		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
 		blist += "<button id='invite' style='background: #09df09; margin-left: 25px; padding: 3px; color: white; border-radius: 5px;' onclick='invitationListShowUp()'>초대</button>";
@@ -586,8 +608,35 @@
 		$("#write").css("display","none");
 	    $("#reset").trigger("click");
 		
-	}	
+	}
 	
+	function ajaxSharedMemoList(data){
+		var blist = "<div>"
+		blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
+		blist += "</div>";
+		blist += "<div class='container-fluid'>";
+		blist += "<div class='row'>"
+		
+		$.each(data, function(index,obj) {
+			
+			blist += "<div class='col-lg-6'>"
+			blist += "<div class='card-body custom-card-body'>"
+			blist += "<img></img>";
+			blist += "<h5 class='card-title'>"+obj.title+"</h5>";
+			blist += "<p class='card-text'>"+obj.content+"</p>";
+			blist += "<h5 class='card-text custom-card-text-username'>작성자 : "+obj.username+"</h5>";
+			blist += "</div>";
+			blist += "</div>";
+		})
+		
+		blist += "</div>";
+		blist += "</div>";
+		
+		$("#board").html(blist);
+		$("#write").css("display","none");
+	    $("#reset").trigger("click");
+		
+	}	
 	</script>
 
 

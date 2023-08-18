@@ -86,4 +86,30 @@ public class AjaxDiaryController {
 		System.out.println("ajaxInvite NO -->" + vo);
 		mapper2.DeleteInvitation(vo.getDiary_key());
 	}
+	
+	@RequestMapping("/ajaxIsShared.do")
+	public boolean ajaxIsShared(DiaryMapping vo) {
+		System.out.println(vo);
+		System.out.println("ajaxShared -->" + vo);
+		boolean check;
+		List<String> res = mapper2.isShared(vo);
+		if (res.size() == 0) {
+			check = false; // 공유된 다이어리가 아님
+		} else {
+			check = true; // 공유된 다이어리가 맞음
+		}
+		return check;
+	}
+	
+	@RequestMapping("/ajaxIsInvitation.do")
+	public boolean ajaxIsInvitation(InviteVO vo) {
+		boolean check;
+		String res = mapper2.isInvitation(vo);
+		if (res == null) {
+			check = true; // 초대를 보내지 않은 상태
+		} else {
+			check = false; // 이미 초대를 보낸 상태
+		}
+		return check;
+	}
 }
