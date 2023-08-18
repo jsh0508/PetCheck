@@ -18,21 +18,23 @@
 }
 
 .mymessage {
-    border-top: 1px solid #b6bb30;
+    position: relative;
+    display: inline-block;
+    max-width: calc(100% - 70px);
     padding: 10px;
-    margin-top: 20px;
-    background-color: #8d4e4e0f;
-    border-radius: 5px;
-    margin-right: 50px;
+    margin-top: 7px;
+    font-size: 13px;
+    border-radius: 10px;
+    background-color: #F9EB54;
 }
 
 .chatbotmessage {
-    border-top: 1px solid #b6bb30;
     padding: 10px;
     margin-top: 20px;
-    background-color: #8d4e4e0f;
+    background-color: #fff;
     border-radius: 5px;
     margin-left: 50px;
+    
 }
 
 /* .message {
@@ -56,6 +58,7 @@
 	padding: 10px;
 	display: flex;
 	flex-direction: column-reverse;
+	background-color: #A8C0D6;
 }
 
 #user-input {
@@ -71,8 +74,8 @@
 
 #user-input button {
 	border: none;
-	background-color: #1e88e5;
-	color: white;
+	background-color: #F0DF23;
+	color: black;
 	padding: 10px 15px;
 	cursor: pointer;
 }

@@ -275,7 +275,7 @@
 	 
 	 <!-- chatbot 버튼과 채팅창 -->
 	 <div class="fixed-button" id="chat-toggle">
-        <button id="scroll-top-button" style="background: none;"><i class="bi bi-robot" style="font-size: 50px;"></i></button>
+        <button id="scroll-top-button" style="background: none;"><img src="resources/img/bot.png" style="width: 100px;"/></button>
     </div>
     
     <div id="chat-container">
