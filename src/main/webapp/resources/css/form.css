@@ -33,7 +33,7 @@ a, h1, p {
 
 
  /* 마이페이지.css */ 
-#mypagemain {
+.Mypage_main {
    font-family: 'RIDIBatang';
    background-color: #FFFFFF;
    width: 800px;
