@@ -1,4 +1,57 @@
 -- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+show tables;
+select * from diary;
+create table invitation (
+	sender VARCHAR(100),
+	receiver VARCHAR(100),
+	diary_key VARCHAR(100),
+	name VARCHAR(100)
+);
+
+select * from diary;
+delete from diary
+where title='ㅎ';
+
+alter table invitation add idx int;
+alter table invitation modify idx int not null auto_increment;
+drop table invitation;
+select * from invitation;
+delete from invitation;
+select * from my_diary;
+delete from my_diary where name = '';
+alter table invitation add diary_key varchar(100);
+insert into invitation values ('admin123', 'moo', '123');
+delete from invitation;
+select * from calendar;
+select * from diary;
+select * from shared_diary;
+delete from shared_diary;
+select * from t_member;
+update diary set diary_key='123' where idx = 10;
+delete from my_diary where name = '';
+alter table diary add diary_key varchar(100);
+insert into t_member (admin_yn, joindate, pw, id, nick) values ('N', '2023-08-09', '1234', 'hihi', 'test');
+
+create table shared_diary (
+	diary_key varchar(100),
+	id varchar(100)
+);
+select * from my_diary;
+alter table diary drop idx;
+
+delete from my_diary where name='myseconddiary';
+alter table shared_diary add name varchar(100);
+alter table my_diary add name varchar(100);
+
+select * from my_diary;
+select * from shared_diary;
+create table my_diary (
+	diary_key varchar(100),
+	id varchar(100)
+);
+select * from my_diary;
+delete from my_diary;
+show tables;
 
 -- t_member Table Create SQL
 -- 테이블 생성 SQL - t_member
@@ -12,6 +65,7 @@ CREATE  TABLE t_member (
   PRIMARY KEY (idx) ,
   INDEX idx1_id (id ASC)
 );
+select * from t_member;
 
 -- 테이블 Comment 설정 SQL - t_member
 ALTER TABLE t_member COMMENT '회원. 회원';

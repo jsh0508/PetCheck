@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
+<mapper namespace="com.petcheck.mapper.PostMapper">
+	
+	<!-- 게시물 검색 기능 -->
+   <sql id="search">
+     <if test="type=='id'">
+       where id like concat('%',#{keyword},'%')
+     </if>
+     <if test="type=='post_title'">
+       where post_title like concat('%',#{keyword},'%')
+     </if>
+     <if test="type=='post_content'">
+       where post_content like concat('%',#{keyword},'%')
+     </if>
+   </sql>
+
+
+	<select id="postList" resultType="com.petcheck.entity.Post" parameterType="com.petcheck.entity.Criteria">
+		select *
+		from t_post a, t_member b
+		where a.id = b.id
+		order by post_idx desc
+	</select>
+	
+	
+	<select id="postDetail" resultType="com.petcheck.entity.Post">
+		select * from t_post a, t_member b where post_idx = #{post_idx} and a.id = b.id 
+	</select>
+	
+	
+	
+  	<insert id="postRegister" parameterType="com.petcheck.entity.Post">
+		insert into t_post (post_title, post_content, post_file, created_at, post_views, id) 
+		values (#{post_title}, #{post_content}, #{post_file}, now(), #{post_views}, #{id});
+	</insert> 
+	
+		
+	<update id="postModify" parameterType="com.petcheck.entity.Post">
+		update t_post set post_title = #{post_title}, post_content = #{post_content}, post_file = #{post_file}
+		where post_idx = #{post_idx}
+	</update>
+	
+ 	<delete id="postDelete" parameterType="com.petcheck.entity.Post">
+		delete from t_post where post_idx = #{post_idx}
+	</delete> 
+	
+	<select id="totalCount" resultType="int" parameterType="com.petcheck.entity.Criteria">
+     select count(*) from t_post
+	</select> 
+</mapper>
