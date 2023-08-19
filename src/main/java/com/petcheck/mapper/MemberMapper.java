@@ -1,5 +1,8 @@
 package com.petcheck.mapper;
 
+import java.util.List;
+
+import com.petcheck.entity.InviteVO;
 import com.petcheck.entity.Member;
 
 // @Mapper
@@ -13,4 +16,6 @@ public interface MemberMapper {
 	public void updateInfo(Member vo);
 	public void deleteInfo(int idx);
 	public int idCheck(String id);
+	public List<InviteVO> invitationList(Member vo);
+	public List<Member> memberList();
 }

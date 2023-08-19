@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.petcheck.entity.Diary;
+import com.petcheck.entity.InviteVO;
 import com.petcheck.entity.Member;
 import com.petcheck.mapper.DiaryMapper;
 import com.petcheck.mapper.MemberMapper;
@@ -71,12 +72,16 @@ public class MemberController {
 		Member mvo = mapper.login(vo);
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
+			List<InviteVO> list = mapper.invitationList(vo);
+			System.out.println("invitationlist -->" + list);
+			session.setAttribute("list", list);
+			
 			return "redirect:/main.do";
 		} else {
 			model.addAttribute("msg", "잘못된 정보입니다.");
 			return "login";
 		}
-		
+
 	}
 	
 	// 로그아웃
@@ -126,7 +131,9 @@ public class MemberController {
 	@RequestMapping("/diary.do")
 	public String diary(int idx, Model request) {
 		List<Diary> list = mapper2.DiaryList(idx);
+		List<Member> memList = mapper.memberList();
 		request.addAttribute("list", list);
+		request.addAttribute("memList", memList);
 		return "diary";
 	}
 	
