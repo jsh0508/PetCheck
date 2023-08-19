@@ -23,7 +23,7 @@
 </head>
 <body>
   <div class="main">
-   <c:if test="${!empty mvo || !empty lvo}">
+   <c:if test="${!empty mvo}">
      <div class="pet-modify">
       <p class="petinformation" align="center">펫 정보 수정하기</p>
      </div> 
