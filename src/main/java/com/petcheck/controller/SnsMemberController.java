@@ -22,11 +22,11 @@ public class SnsMemberController {
 	
 	@PostMapping("/snsJoin.do")
 	public String snsJoin(String sns_id, String nick, String sns_type, SnsMember svo, Model model, HttpSession session) {
-		System.out.println("카카오===================");
+		System.out.println("===================");
 		System.out.println(sns_id);
 		System.out.println(nick);
 		System.out.println(sns_type);
-		System.out.println("카카오===================");
+		System.out.println("===================");
 		String id = sns_id;
 		svo.setId(id);
 		svo.setNick(nick);

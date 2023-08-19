@@ -44,6 +44,7 @@
 <!-- 로그인 디자인 CSS -->
 <link rel="stylesheet" href="resources/css/form.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head> <!-- END HEAD -->
 
@@ -82,14 +83,14 @@
                         class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
                      <li class="nav-item"><a
                         class="nav-item-child nav-item-hover">|</a></li>
-                     <c:if test="${empty mvo || empty lvo}">
+                     <c:if test="${empty mvo}">
                         <li class="nav-item"><a
                            class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
                         <li class="nav-item"><a
                            class="nav-item-child nav-item-hover"
                            href="${cpath}/memberjoin.do">회원가입</a></li>
                      </c:if>
-                     <c:if test="${!empty mvo || !empty lvo}">
+                     <c:if test="${!empty mvo}">
                         <li class="nav-item"><a
                            class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
                         <li class="nav-item"><a
@@ -124,13 +125,12 @@
       <p class="intro-1" align="center">ㅡㅡㅡㅡㅡㅡ 간편로그인 / 회원가입 ㅡㅡㅡㅡㅡㅡ
       <p>
       <div class="kakaonaver">
-            <a type="submit" class="apiLogo" href="javascript:naverLogin();"
-               id="naverIdLogin_loginButton" align="center"> <img
-               src="resources/img/naver0.png" alt="네이버 간편 로그인" class="naver"/>
+            <a type="button" class="apiLogo" href="javascript:naver_Login();" align="center">
+            	<img src="resources/img/naver0.png" alt="네이버 간편 로그인" class="naver"/>
             </a>
 			<!-- 카카오 로그인 버튼 -->
 			<a type="button" class="apiLogo" href="javascript:kakaoLogin();" align="center">
-			   <img src="resources/img/kakao0.png" alt="카카오 간편 로그인" class="kakao"/>
+			<img src="resources/img/kakao0.png" alt="카카오 간편 로그인" class="kakao"/>
 			</a>
       </div>
          <p class="intro-2" align="center">아직 PetCheck 회원이 아니신가요?
@@ -146,8 +146,6 @@
    	<input type="hidden" name="nick" id="nick">
    	<input type="hidden" name="sns_type" id="sns_type">
    </form>
-       <!-- 네이버 로그인 스크립트 로드 -->
-    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
    <script>
 		// 1. 아이디 입력창 정보 가져오기
 		let elInputid = document.querySelector('#id'); // input#id
@@ -235,8 +233,144 @@
 				}
 			});
 		}
+		function naver_Login() {
+		var naverLogin;
+			
+			naverLogin = new naver.LoginWithNaverId(
+					{
+						clientId: "Eo_FUlEBW8bHSlohztQD",
+				        callbackUrl: "http://localhost:8081/PetCheck/main.do",
+						isPopup: false,
+						callbackHandle: true
+					}
+				);	
 	
-   var naverLogin = new naver.LoginWithNaverId({
+			naverLogin.init();
+	
+				naverLogin.getLoginStatus(function (status) {
+					if (status) {
+						var id = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+						var nickname = naverLogin.user.getNickName(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+						var sns_type = 'naver';
+						
+						console.log(naverLogin.user); 
+						console.log(sns_type); 
+			    		
+			            if( id == undefined || id == null) {
+							alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+							naverLogin.reprompt();
+							return;
+						} else {
+			                // AJAX 요청을 통해 컨트롤러에 정보 전송
+							const sns_id = id;
+							const nick = nickname;
+							const sns_type = 'naver';
+							
+							console.log(sns_id);
+							console.log(nick);
+							console.log(sns_type);
+							
+							$('#sns_id').val(sns_id);
+							$('#nick').val(nick);
+							$('#sns_type').val(sns_type);
+							$("#frm").submit();
+			            }
+					} else {
+						console.log("callback 처리에 실패하였습니다.");
+					}
+				});
+	
+	
+			var testPopUp;
+			function openPopUp() {
+			    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+			}
+			function closePopUp(){
+			    testPopUp.close();
+			}
+	
+			function naverLogout() {
+				openPopUp();
+				setTimeout(function() {
+					closePopUp();
+					}, 1000);
+				
+				
+			}
+		
+		}
+		
+		
+		
+		
+		
+/* 		function naverLogin() {
+		    var naverLogin = new naver.LoginWithNaverId({
+		    	clientId: "Eo_FUlEBW8bHSlohztQD",
+		        callbackUrl: "http://localhost:8081/PetCheck/login.do",
+		        isPopup: false,
+		        callbackHandle: true
+		    });
+
+		    naverLogin.init();
+
+		    naverLogin.getLoginStatus(function (status) {
+		        if (status) {
+		            naverLogin.getLoginStatus(function (status) {
+		                if (status) {
+		                    naverLogin.getUserProfile(function (userInfo) {
+		                        var sns_id = userInfo.email;
+		                        var sns_nick = userInfo.nickname;
+		                        var sns_type = 'naver';
+
+		                        // 로그인 성공 처리
+		                        handleLoginSuccess(sns_id, sns_nick, sns_type);
+		                    });
+		                } else {
+		                    // 로그인 실패 처리
+		                    handleLoginFailure();
+		                }
+		            });
+		        }
+		    });
+		}
+
+		function handleLoginSuccess(sns_id, sns_nick, sns_type) {
+		    var userInfo = {
+		        sns_id: sns_id,
+		        nick: sns_nick,
+		        sns_type: sns_type
+		    };
+		    
+		    $.ajax({
+		        type: 'POST',
+		        url: '${cpath}/snsJoin.do', // 서버 URL
+		        contentType: 'application/json',
+		        data: JSON.stringify(userInfo),
+		        success: function(data) {
+		            // 성공 처리 로직
+		            console.log("로그인이 성공적으로 처리되었습니다.");
+		            console.log(data); // 서버로부터 받은 응답 데이터
+		            
+		            // 추가적인 로직이나 화면 전환 등의 처리를 수행할 수 있습니다.
+		        },
+		        error: function(error) {
+		            // 오류 처리 로직
+		            console.log("로그인 처리 중 오류가 발생했습니다.");
+		            console.log(error); // 에러 정보
+		            
+		            // 에러 메시지를 사용자에게 보여주거나 추가적인 처리를 수행할 수 있습니다.
+		        }
+		    });
+		}
+
+		function handleLoginFailure() {
+		    console.log("네이버 로그인 실패");
+		    // 로그인 실패 시에 수행할 동작을 여기에 구현
+		    // 예를 들어, 실패 메시지를 사용자에게 보여주거나 다른 처리를 수행할 수 있습니다.
+		} */
+		
+   /* var naverLogin = new naver.LoginWithNaverId({
        clientId: "Eo_FUlEBW8bHSlohztQD", // 내 애플리케이션 정보에 clientId를 입력
        callbackUrl: "http://localhost:8081/PetCheck/main.do", // 내 애플리케이션 API 설정의 Callback URL 입력
        isPopup: false,
@@ -288,7 +422,7 @@
 	// 팝업 닫기
 	function closePopUp() {
 	    testPopUp.close();
-	}
+	} */
 	
     </script>
  </body>

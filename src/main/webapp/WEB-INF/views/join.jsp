@@ -76,7 +76,7 @@
 							<a class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
 							<li class="nav-item">
 							<a class="nav-item-child nav-item-hover">|</a></li>
-							<c:if test="${empty mvo || empty lvo}">
+							<c:if test="${empty mvo}">
 						    <li class="nav-item">
 							<a class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
 							<li class="nav-item">
@@ -84,7 +84,7 @@
 							href="${cpath}/memberjoin.do">회원가입</a></li>
 							</c:if>
 							
-							<c:if test="${!empty mvo || !empty lvo}">
+							<c:if test="${!empty mvo}">
 							<li class="nav-item">
 							<a class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
 							<li class="nav-item">
@@ -248,13 +248,13 @@
 			        	
 			        	if (idLength(elInputid.value) === true) {
 							
-			            if (response == 1) {
-			            	elSuccessMessage.textContent = '이미 사용중인 아이디입니다.';
-			            	elSuccessMessage.style.color = '#C90000'; // 빨간색 글씨로 변경
-			            	elSuccessMessage.classList.remove('hide');
-			            } else {
+			            if (response == 0 && onlyNumberAndEnglish(elInputid.value) === true) {
 			            	elSuccessMessage.textContent = '사용할 수 있는 아이디입니다.';
 			            	elSuccessMessage.style.color = 'green'; // 초록색 글씨로 변경
+			            	elSuccessMessage.classList.remove('hide');
+			            } else if (response != 0){
+			            	elSuccessMessage.textContent = '이미 사용중인 아이디입니다.';
+			            	elSuccessMessage.style.color = '#C90000'; // 빨간색 글씨로 변경
 			            	elSuccessMessage.classList.remove('hide');
 			            }
 						}

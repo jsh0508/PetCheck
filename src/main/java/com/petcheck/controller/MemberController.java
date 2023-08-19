@@ -53,7 +53,6 @@ public class MemberController {
 	@ResponseBody
 	public int idCheck(@RequestParam String id) {
 		int re = mapper.idCheck(id);
-		System.out.println(re);
 		return re;
 		
 	}
