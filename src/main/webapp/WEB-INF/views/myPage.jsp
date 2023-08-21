@@ -137,7 +137,8 @@
       <button class="addpetbtn" onclick="location.href='${cpath}/addPet.do'">펫 추가하기</button>
       </div><br><br>
 <!--       <hr> -->
-      
+   </c:if>
+      <c:if test="${mvo.sns_type == null}">
       <!-- 회원정보 수정하기 -->
           <p class="my-information" align="center">내 정보 수정하기</p>
       <div class="memberModify">
@@ -163,13 +164,13 @@
             </form>
        </div>
      </div>
-   </c:if>
            <form action="frm">
              <input type="hidden" name="id" value="${mvo.id}">
            </form>
  </div> <!-- main -->
  
          <button data-btn="deleteInfo" id="deleteInfo" class="joinus">회원탈퇴</button>
+      </c:if>
    <script type="text/javascript">
       var MainSwiper = new Swiper('.main_swiper .swiper-container', {
            loop: true,

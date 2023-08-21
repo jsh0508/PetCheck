@@ -12,24 +12,26 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 //노 생성자
 @NoArgsConstructor
-public class Sns_Member {
+public class SnsMember {
 	
 	// 회원넘버
 	private int idx;
 	
 	// 아이디
-	private String sns_id;
+	private String id;
+	
+	private String pw;
 	
 	// 닉네임
 	private String nick;
 	
-	// 이름
-	private String name;
+	 // 관리자여부 관리자여부
+    private String admin_yn;
+
+    // 가입일자 가입일자
+    private Timestamp joindate;
 	
 	// sns타입
 	private String sns_type;
-	
-	// 접속시간
-	private Timestamp sns_connecte_date;
 	
 }

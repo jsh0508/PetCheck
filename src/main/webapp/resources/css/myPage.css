@@ -207,7 +207,9 @@
  top: 560px;
  }
  
- 
+  .hide {
+ display: none;
+ }
  
 /* 
 

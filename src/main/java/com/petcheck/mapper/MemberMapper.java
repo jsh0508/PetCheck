@@ -15,6 +15,7 @@ public interface MemberMapper {
 	public Member checkInfo(int idx);
 	public void updateInfo(Member vo);
 	public void deleteInfo(int idx);
+	public int idCheck(String id);
 	public List<InviteVO> invitationList(Member vo);
 	public List<Member> memberList();
 }
