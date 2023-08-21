@@ -85,12 +85,12 @@
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a
 									class="nav-item-child nav-item-hover"
-									href="${cpath}/diary.do?idx=${mvo.idx}">다이어리</a></li>
+									href="${cpath}/diary2.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
 							</c:if>
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a
-								class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
+								class="nav-item-child nav-item-hover" href="${cpath}/postList.do">게시판</a></li>
 							<li class="nav-item"><a
 								class="nav-item-child nav-item-hover">|</a></li>
 							<c:if test="${empty mvo}">
@@ -108,9 +108,6 @@
 									href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
 
 							</c:if>
-							<li class="nav-item"><a
-								class="nav-item-child nav-item-hover" href="products.html"><i
-									class="bi bi-person"></i></a></li>
 						</ul>
 					</div>
 				</div>

@@ -370,7 +370,7 @@
 								<c:if test="${not (member.id eq param.id)}">
 									<li style="padding: 5px;">${member.id} 를초대하시겠습니까?
 										<button id="${member.id}" onclick="addInvitationDB(event)"
-											style="border: none; background: none; color: black;">
+											style="border: none; background: none; color: #007bff;">
 											<i class="bi bi-check-circle-fill"></i>
 										</button>
 
