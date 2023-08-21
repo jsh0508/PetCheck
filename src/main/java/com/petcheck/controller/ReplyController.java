@@ -29,7 +29,8 @@ public class ReplyController {
 	//ReplyService replyservice;
 	
 	// 댓글 입력
-	//@RequestMapping()
+	//@RequestMapping("replyRegister.do")
+	//pu
 	
 	
 }

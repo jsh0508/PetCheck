@@ -12,18 +12,304 @@
 * {
    font-family: 'RIDIBatang';
 }
-
-body {
+  body {
    background-color: #FFFAF3;
    font-family: 'RIDIBatang';
-}
+  }
 
-a, h1, p {
+
+  .main {
+   position: relative;
+   font-family: 'RIDIBatang';
+   background-color: #FFFFFF;
+   width: 1000px;
+   height: 801px;
+   margin: 3em auto;
+   border-radius: 1.5em;
+   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  } 
+  
+  
+  .pet-modify{
+   position: relative;
+   display: block;
+   top: 30px;
+   left: 10px;
+  }
+  
+  .petinformation {
+   left: 190px;
+   display: block;
+   position: absolute;
+   padding: 0px 200px 10px 210px;
+   color : #d7b0bb;
+   font-family: 'RIDIBatang';
+   font-weight: bold;
+   font-size: 25px;
+   color: #d7b0bb;
+   margin:0px; 
+   }
+   
+   .my-information {
+    left: 200px;
+    top: 510px;
+    display: block;
+    position: absolute;
+    padding: 5px 200px 5px 210px;
+    color: #d7b0bb;
+    font-family: 'RIDIBatang';
+    font-weight: bold;
+    font-size: 25px;
+    color: #d7b0bb;
+    margin: 0px;
+    }
+  .swiper-slide {
+    height: 270px;
+  }
+  
+  .main_swiper .swiper-slide {
+  
+   height: 150px;
+   display: flex;
+   top: 40px;  
+   justify-content: center;
+   align-items: center;
+   font-size: 10px;
+   font-weight: bold;
+   overflow: hidden;
+  }
+  
+  .sub_swiper .swiper-slide {
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  overflow: hidden;
+  }
+  
+  .swiper-button-next, .swiper-button-prev {
+  top: auto;
+  margin-top: -130px;
+  }
+  
+  .swiper-pagination {
+  position: relative;
+  bottom: auto;
+  }
+  
+  .sub_swiper{
+  position: relative;
+  text-align: center;
+  align: center;
+  }
+  
+  .material-icons {
+  font-size: 30px;
+  color: white;
+  }
+  
+  .petName > p {
+  margin: 0px;
+  }
+  
+  #dog_img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+ }
+  #cat_img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+ }
+ 
+.petIntro >p {
+  font-size: 15px; 
+  margin:0px;
+ }
+ 
+ .in-put {
+   /* position: absolute; */
+   margin: 0px 60px 10px 60px;
+   width: 300px;
+   color: rgb(38, 50, 56);
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: rgba(136, 126, 126, 0.04);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
    font-family: 'RIDIBatang';
 }
+ 
+ .addpetBtn{
+  top: 450px;
+  position: absolute;
+  display: inline-block;
+  left: 300px;
+ }
+ 
+/*  .pet-modify{
+ display: block;
+ position: absolute;
+ } */
+ 
+ .success {
+   margin: 0px 60px 30px 60px;
+   width: 300px;
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #e6c3cd, #e6c3cd);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+}
 
-/* 주원님 css --------------> */
-.main_swiper .swiper-slide {
+.addpetbtn{
+   margin: 0px 60px 10px 60px;
+   width: 300px;
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #d7e0ee,#bdcbe2);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+}
+
+ .memberModify{
+ display: block;
+ position: absolute;
+ left: 300px;
+ top: 560px;
+ }
+ 
+  .hide {
+ display: none;
+ }
+ 
+ .updatePet{
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #d7e0ee,#bdcbe2);
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+}
+ .deletePet{
+   margin: 0px 60px 10px 60px;
+   width: 300px;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #d7e0ee,#bdcbe2);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+}
+.swiper-pagination {
+	bottom: -30px;
+}
+
+.updatePetbtn{
+   margin: 0px 60px 10px 60px;
+   width: 300px;
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #d7e0ee,#bdcbe2);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+}
+
+/* 라디오 버튼을 커스텀 스타일로 꾸미기 */
+input[type="radio"] {
+   margin-right: 5px; /* 라디오 버튼 오른쪽 여백 추가 */
+}
+
+/* 라디오 버튼이 체크되었을 때의 스타일 */
+input[type="radio"]:checked {
+   border-color: #007bff; /* 선택된 라디오 버튼의 테두리 색상 변경 */
+}
+ 
+#updatePet {
+	text-align: center;
+    top: 100px;
+    position: absolute;
+    left: 300px;
+}
+ /* .deleteInfo {
+   color: #fff;
+   font-weight: 700;
+   font-size: 14px;
+   letter-spacing: 1px;
+   background: linear-gradient(to right, #e6c3cd, #e6c3cd);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   box-sizing: border-box;
+   border: 2px solid rgba(0, 0, 0, 0.02);
+   text-align: center;
+   font-family: 'RIDIBatang';
+   display: inline-block;
+ } */
+/* 
+
+.main {
+   font-family: 'RIDIBatang';
+   background-color: #FFFFFF;
+   width: 500px;
+   height: 600px;
+   margin: 7em auto;
+   border-radius: 1.5em;
+   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+
+ .main_swiper .swiper-slide {
   height: 200px;
   display: flex;
   justify-content: center;
@@ -65,291 +351,4 @@ a, h1, p {
   content:url(resources/img/cat.png);
   height:200px;
   width:150px;
- } /* <----------------- 주원님 css */
-
-
-
-
-
-
-
-.mypagemain {
-   font-family: 'RIDIBatang';
-   background-color: #FFFFFF;
-   width: 800px;
-   height: 730px;
-   margin: 7em auto;
-   border-radius: 1.5em;
-   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-}
-
-.sign {
-   padding: 50px 170px 0px 210px;
-   color: #d7b0bb;
-   font-family: 'RIDIBatang';
-   font-weight: bold;
-   font-size: 23px;
-}
-
-.sign-in {
-   padding: 60px 200px 30px 210px;
-   color : #d7b0bb;
-   font-family: 'RIDIBatang';
-   font-weight: bold;
-   font-size: 23px;
-   color: #d7b0bb;
-}
-
-.apilogin {
-   color: #fff;
-}
-
-.un {
-   width: 76%;
-   margin: 0px 60px 10px 60px;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-}
-
-.id {
-   margin: 0px 60px 30px 60px;
-   width: 76%;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-}
-
-.password {
-   margin: 0px 60px 30px 60px;
-   width: 76%;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-}
-
-.nick {
-   margin: 0px 60px 30px 60px;
-   width: 76%;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-}
-
-form.form1 {
-   padding-top: 20px;
-   padding-bottom: 10PX;
-}
-
-.pass {
-   margin: 0px 60px 10px 60px;
-   width: 76%;
-   color: rgb(38, 50, 56);
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: rgba(136, 126, 126, 0.04);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-}
-
-.un:focus, .pass:focus {
-   border: 2px solid rgba(0, 0, 0, 0.18) !important;
-}
-
-.success {
-   margin: 0px 60px 30px 60px;
-   width: 76%;
-   color: #fff;
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: linear-gradient(to right, #e6c3cd, #e6c3cd);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-   display: inline-block;
-}
-
-.submit {
-   margin: 0px 60px 5px 60px;
-   width: 76%;
-   color: #fff;
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: linear-gradient(to right, #e6c3cd, #e6c3cd);
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-   display: inline-block;
-}
-
-.joinus {
-    margin: 30px 60px 30px 60px;
-    opacity: 0.9;
-    top: 660px;
-    position: absolute;
-    width: 380px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: #E8E4E4;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    text-align: center;
-    font-family: 'RIDIBatang';
-    display: block;
-}
-
-.back {
-   margin: 0px 60px 30px 60px;
-   opacity: 0.9;
-   width: 76%;
-   color: #fff;
-   font-weight: 700;
-   font-size: 14px;
-   letter-spacing: 1px;
-   background: #E8E4E4;
-   padding: 10px 20px;
-   border: none;
-   border-radius: 20px;
-   outline: none;
-   box-sizing: border-box;
-   border: 2px solid rgba(0, 0, 0, 0.02);
-   text-align: center;
-   font-family: 'RIDIBatang';
-   display: inline-block;
-}
-
-/* ----간편로그인/회원가입-----*/
-.intro-1 {
-   font-size: 15px;
-   padding: 10px 10px 10px 80px;
-   text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-   color: #e6c3cd;
-}
-
-/* 아직 회원이 아니신가요? */
-.intro-2 {
-    font-size: 15px;
-    display: block;
-    position: absolute;
-    top: 630px;
-    padding: 10px 130px 10px 140px;
-    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #e6c3cd;
-}
-
-img {
-   border:0px;
-   content: "";
-/*    position: absolute; */
-   width: 55px;
-}
-
-
-img.kakao {
-	display: inline-block;
-    top: 0px;
-    position: absolute;
-    left: 80px;
-}
-
-img.naver {
-	display: inline-block;
-    top: 0px;
-    position: absolute;
-    right: 480px;
-}
-
-
-.kakaonaver {
-    top: 0px;
-    left: 200px;
-    right: 400px;
-    position: relative;
-}
-.naverlogo {
-/*    position: absolute; */
-   display: inline-block;
-   top: 550px;
-   left: 800px;
-   padding: 10px 20px 20px 170px;
-}
-
-.kakaologo {
-/*    position: absolute; */
-   display: inline-block;
-   top: 550px;
-   left: 750px;
-   padding: 10px 170px 20px 20px;
-}
-
-
-@media ( max-width : 600px) {
-   .main {
-      border-radius: 0px;
-   }
-}
+ } */

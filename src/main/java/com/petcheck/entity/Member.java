@@ -32,5 +32,7 @@ public class Member {
 
 	    // 가입일자 가입일자
 	    private Timestamp joindate;
+	    
+	    private String sns_type;
 
 }

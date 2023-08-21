@@ -125,7 +125,7 @@
 	   <h2 class="title">진단받고 싶은 아이의 사진을 올려주세요.</h2>
 		 <div class="row" style="text-align:center">
 		   <div class="col">
-			<p> 업로드 가능한 파일 : JPG, JPEG, PNG </p><br>
+			<p> 업로드 가능한 파일 : JPG, JPEG, PNG </p>
 			<p>업로드 된 사진과 결과는 저장되지 않아요.</p>
 		   </div>
         </div>

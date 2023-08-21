@@ -71,8 +71,8 @@
 				  <div class="menu-container">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 					       data-target=".nav-collapse">
-					  <span class="sr-only">Toggle navigation</span> <span
-								class="toggle-icon"></span>
+					  <span class="sr-only">Toggle navigation</span> 
+					  <span class="toggle-icon"></span>
 					</button>
                    </div>
 
@@ -88,7 +88,7 @@
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a
 									class="nav-item-child nav-item-hover"
-									href="${cpath}/diary.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
+									href="${cpath}/diary2.do?idx=${mvo.idx}&id=${mvo.id}">다이어리</a></li>
 							</c:if>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
 							<li class="nav-item"><a	class="nav-item-child nav-item-hover" href="${cpath}/postList.do">게시판</a></li>
@@ -162,8 +162,8 @@
 	          <c:forEach var="vo" items="${list}">
 				<li style="padding: 5px;">
 					${vo.sender}님이 초대를 하셨습니다. 수락하시겠습니까?
-					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteYes(event)" style="margin-left: 10px; background: #09df09; color: white; border-radius: 5px;">yes</button>
-					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteNo(event)" style="margin-left: 10px; background: #ff0000; color: white; border-radius: 5px;">no</button>
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteYes(event)" style="background: none; color: #007bff;"><i class="bi bi-check-circle-fill"></i></button>
+					<button id="${vo.diary_key}" class="${vo.name}" onclick="inviteNo(event)" style="margin-left: 5px; background: none; color: red;"><i class="bi bi-x-circle-fill"></i></button>
 				</li>
 	          </c:forEach>
 	        </ul>
@@ -186,9 +186,12 @@
 	</style>
 	<script>
 		// 알림 버튼을 누르면 모달 창을 열도록 설정
-		document.getElementById("notification-button").addEventListener("click", () => {
-		  $("#notification-modal").modal("show");
-		});
+		const ele = document.getElementById("notification-button");
+		if (ele != null) {
+			ele.addEventListener("click", () => {
+				  $("#notification-modal").modal("show");
+			});
+		}
 		
 		function inviteYes(evt){
 			const key = evt.currentTarget.id;
@@ -234,25 +237,35 @@
 	         <!--<div class="container">	 -->               
 	                <div id="root">  
 	                 <div class="mainImg">
-		           <img src="resources/img/main.png" alt="자가진단서비스 화면" width="300px">
+		         <!--   <img src="resources/img/main.png" alt="자가진단서비스 화면" width="300px"> -->
 		           </div>
 	                   <div class="row" style="text-align:center";>
 	                     <div class="col">
-		            <!--   <div class="carousel-centered"> -->
-		          		<h1>페트체크</h1>
-	                      <p>반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
-	                      사람보다 1.5배이상 얇은 반려동물의 피부!<br>
-	                      털에 가려져 특히 세심한 관심이 필요해요<br><br>
-	                      내 소중한 <strong>펫</strong>의 피부질환을 지금 바로 <strong>체크</strong>해보세요.</p>
+	                     
+	                         <video src="resources/img/main555.mp4" autoplay loop muted style="width:100%; background-size: cover;"/>
+	                   
+	                     
+	                     
+	                     
+	                     <%--  <!-- video넣기전 메인화면 -->
+		          		   <h1>페트체크</h1>
+	                       <p class="copy">반려동물 피부관리, <br>어떻게 하고 계신가요?<br><br>
+	                         사람보다 1.5배이상 얇은 반려동물의 피부!<br>
+	                         털에 가려져 특히 세심한 관심이 필요해요<br><br>
+	                         내 소중한 <strong>펫</strong>의 피부질환을 지금 바로 <strong>체크</strong>해보세요.</p>
 	                       <!--  <div class="checkbtn"> -->
 	                       <div class="mainbtn">
 	                         <button class="btn-hover color-10" align="center" onclick="location.href='${cpath}/upload.do'">자가진단 시작하기</button>
 	                       </div>
+	                        --%>
+	                       
+	                       
+	                       
 	                 <!--        </div> -->
 	                    </div>
 	                  </div>
+	                  
 	                   <div class="contents">
-	                     
 	                  </div>
 	                </div>
 <!-- 	                 </div>
@@ -262,7 +275,7 @@
 	 
 	 <!-- chatbot 버튼과 채팅창 -->
 	 <div class="fixed-button" id="chat-toggle">
-        <button id="scroll-top-button" style="background: none;"><i class="bi bi-robot" style="font-size: 50px;"></i></button>
+        <button id="scroll-top-button" style="background: none;"><img src="resources/img/bot.png" style="width: 100px;"/></button>
     </div>
     
     <div id="chat-container">

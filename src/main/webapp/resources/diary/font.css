@@ -1,0 +1,33 @@
+@font-face {
+   font-family: 'RIDIBatang';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body{
+	font-family: 'RIDIBatang';
+}
+
+
+#bold-text {
+    color: #71bfd6;
+    font-family: 'RIDIBatang';
+}
+
+
+#TODAY {
+    color: red;
+}
+
+
+.menu-box {
+    color: white;
+    font-family: 'RIDIBatang';
+}
+
+
+#basic-text {
+    font-family: 'RIDIBatang';
+}

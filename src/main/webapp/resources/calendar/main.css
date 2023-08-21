@@ -575,10 +575,10 @@ A HORIZONTAL event
 */
 .fc-h-event { /* allowed to be top-level */
   display: block;
-  border: 1px solid #3788d8;
-  border: 1px solid var(--fc-event-border-color, #3788d8);
-  background-color: #3788d8;
-  background-color: var(--fc-event-bg-color, #3788d8)
+  border: 1px solid #8b8b8b;
+  border: 1px solid var(--fc-event-border-color, #8b8b8b);
+  background-color: #8b8b8b;
+  background-color: var(--fc-event-bg-color, #8b8b8b);
 
 }
 .fc-h-event .fc-event-main {
@@ -596,6 +596,7 @@ A HORIZONTAL event
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0; /* important for allowing to shrink all the way */
+    background-color: #8b8b8b;
   }
 .fc-h-event .fc-event-title {
     display: inline-block; /* need this to be sticky cross-browser */
@@ -1493,3 +1494,6 @@ A VERTICAL event
   background-color: var(--bs-gray-200);
 }
 
+a{
+	color: #2c3e50;
+}
