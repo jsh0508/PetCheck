@@ -87,18 +87,42 @@ public class PetController {
 	}
 	
 	@RequestMapping("/updatePet.do")
-	public String updatePet(RedirectAttributes rttr , Model model, int pet_seq, int idx, String id, Pet vo) {
+	public String updatePet(MultipartHttpServletRequest mpRequest, Model model, int pet_seq, int idx, String id, Pet vo) {
+	    MultipartFile petImageFile = mpRequest.getFile("petImg");
+
+	    if (petImageFile != null && !petImageFile.isEmpty()) {
+	        String uploadDir = mpRequest.getSession().getServletContext().getRealPath("/resources/petImgUploads/");
+	        
+	        // 중복 파일 관리를 위해 파일명 변경
+	        String originalFilename = petImageFile.getOriginalFilename();
+	        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+	        String uniqueFilename = UUID.randomUUID().toString() + extension;
+
+	        try {
+	            // 이미지 파일 저장
+	            Path filePath = Paths.get(uploadDir, uniqueFilename);
+	            Files.copy(petImageFile.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+
+	            // 저장된 파일명을 펫 객체에 설정 (상대 경로로 변환)
+	            String relativeFilePath = "/resources/petImgUploads/" + uniqueFilename;
+	            vo.setPet_img(relativeFilePath);
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
 		vo.setPet_seq(pet_seq);
-		rttr.addAttribute("pet_seq", pet_seq);
 		mapper.updatePet(vo);
+		model.addAttribute("pet_seq", pet_seq);
 		model.addAttribute("id", id);
 		model.addAttribute("idx", idx);
 		return "redirect:/myPage.do";
 	}
 	
 	@RequestMapping("/deletePet.do")
-	public String deletePet(int pet_seq) {
+	public String deletePet(int idx, int pet_seq, Model model) {
 		mapper.deletePet(pet_seq);
+		model.addAttribute("idx", idx);
 		return "redirect:/myPage.do";
 	}
 	
