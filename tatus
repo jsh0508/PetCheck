@@ -1,0 +1,290 @@
+[33mcommit 3453d65d8e48384a94b6f2e5af380b802aa9173c[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: juwon <kissmejr@naver.com>
+Date:   Sat Aug 19 16:49:46 2023 +0900
+
+    jw push
+
+[33mcommit 9af445401826dfd9de67e93cce64fd66c8725f1a[m
+Author: juwon <kissmejr@naver.com>
+Date:   Sat Aug 19 16:45:06 2023 +0900
+
+    juwon snsLogin
+
+[33mcommit 6ead88283141e2b960acb882c091dc7fac462acf[m
+Author: juwon <kissmejr@naver.com>
+Date:   Fri Aug 18 17:53:09 2023 +0900
+
+    juwon push
+
+[33mcommit 8fc695e63b8ab37d80c22e9695c4b1c4aac3df88[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 17:41:08 2023 +0900
+
+    feat:챗봇css
+
+[33mcommit 8c43667c5a706dd427575154cc15e243b7b0ca64[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 17:01:06 2023 +0900
+
+    feat:다이어리 버튼수정
+
+[33mcommit 67283c4eb6d8cc5fc74fa76b8528a1e97c773970[m
+Merge: c517e5b 91ef0a2
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 16:20:56 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit c517e5b137d11cc57650fac8cffb390d23dc8d7a[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 16:19:05 2023 +0900
+
+    feat:css 변경
+
+[33mcommit 91ef0a2a5af67f637a7b7feb0203967747ff7876[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Fri Aug 18 16:18:32 2023 +0900
+
+    feat:mh
+
+[33mcommit 5f84b08c2c2d658fd70cfd5ed1c37012515b63c7[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 16:18:26 2023 +0900
+
+    feat: css 변경
+
+[33mcommit 5905124bf6b31f14c010141f4bc8e6805625df45[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 16:18:04 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 0e89615e765d944bed67107ba04b3877861f2b93[m
+Merge: 7186bb3 0f49623
+Author: axm0219 <axm0219@naver.com>
+Date:   Fri Aug 18 16:16:00 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 7186bb36d0fca4cacc9921587042131498ba5586[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Fri Aug 18 16:15:57 2023 +0900
+
+    feat:update diary
+
+[33mcommit 0f49623f00a0b709a0ac4f307e06cf36eb08d289[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Fri Aug 18 12:56:47 2023 +0900
+
+    feat:index.jsp notification-button null 체크
+
+[33mcommit 0e51cc55efd874baa2cea34937414b87b04a95c9[m
+Merge: ec89920 6fa2d90
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 10:55:15 2023 +0900
+
+    feat.수정임시커밋
+
+[33mcommit ec89920b324853925e2d5800c3571673dc744813[m
+Author: sujung <ramie96218@naver.com>
+Date:   Fri Aug 18 10:45:33 2023 +0900
+
+    feat.수정-마이페이지변경
+
+[33mcommit 6fa2d90397b36c4450f6f8931cf1e32cf5ca91ea[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Fri Aug 18 09:56:14 2023 +0900
+
+    feat:diary css
+
+[33mcommit 97a22b8ebeacd298689d3a8defd323148642f717[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Fri Aug 18 09:49:20 2023 +0900
+
+    feat:다이어리 초대 유효성 체크
+
+[33mcommit c0910a3fec748dccbdcb6305315eab25722e6ec0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: moo <kylsttla@naver.com>
+Date:   Fri Aug 18 09:36:05 2023 +0900
+
+    moo
+
+[33mcommit 02c6c23f3ebdd55afbc129da5e6dc626191def39[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Thu Aug 17 19:10:01 2023 +0900
+
+    feat:다이어리 css
+
+[33mcommit 4a0b06d6e8b95d46c66e022950700e043e87854c[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Thu Aug 17 19:00:10 2023 +0900
+
+    feat: 탭버튼 누르면 오른쪽 슬라이드바 생기기
+
+[33mcommit 406905f082793088f75946c564c1a234acc1a0c9[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Thu Aug 17 18:21:08 2023 +0900
+
+    feat: 다이어리 초대 기능 구현
+
+[33mcommit 10814fcca3db338c57fbccea704a45f464d59fb1[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Thu Aug 17 18:14:36 2023 +0900
+
+    feat:mh
+
+[33mcommit 4ff3367d5d2792a9be8fb20347397550ce86d49f[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Thu Aug 17 14:29:21 2023 +0900
+
+    feat:다이어리 탭 추가기능
+
+[33mcommit 37f6d32c1dd58e03087dcfbae342e2cfd7fc7c90[m
+Merge: 26dbb5d f5f775b
+Author: sujung <ramie96218@naver.com>
+Date:   Thu Aug 17 09:34:52 2023 +0900
+
+    수정 임시 커밋
+
+[33mcommit 26dbb5d139b2a4c05869767987dd973b49bddb06[m
+Author: sujung <ramie96218@naver.com>
+Date:   Thu Aug 17 09:16:53 2023 +0900
+
+    feat.메인,지도화면 변경
+
+[33mcommit f5f775b02a5115347ea33ec63922c232c2e95667[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Wed Aug 16 18:24:23 2023 +0900
+
+    feat:mh
+
+[33mcommit 28c6c616607870368b35327c6daf097f49ba177e[m
+Author: juwon <kissmejr@naver.com>
+Date:   Wed Aug 16 18:10:30 2023 +0900
+
+    juwon push
+
+[33mcommit ca3b8c90215f6c897ce9ed1ab2cece62357fb259[m
+Author: juwon <kissmejr@naver.com>
+Date:   Wed Aug 16 17:37:42 2023 +0900
+
+    juwon
+
+[33mcommit 944dc0afe989bad35670fb06142c5499375495dd[m
+Merge: 5260198 3a07299
+Author: juwon <kissmejr@naver.com>
+Date:   Wed Aug 16 17:32:36 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 5260198f6d6a805bbd01462a61363b77547e5b32[m
+Author: juwon <kissmejr@naver.com>
+Date:   Wed Aug 16 17:28:04 2023 +0900
+
+    feat:jw
+
+[33mcommit 3a072997212cebf7bf65dc446b86211cdc994acc[m
+Merge: 73bcb4b 416d277
+Author: sujung <ramie96218@naver.com>
+Date:   Wed Aug 16 12:38:01 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 73bcb4b407552673e5742293989f64262a78ceec[m
+Author: sujung <ramie96218@naver.com>
+Date:   Wed Aug 16 12:37:48 2023 +0900
+
+    feat.메인,자가진단페이지 변경
+
+[33mcommit 416d277a841d700fcb59d70472583ca756a25fa6[m
+Merge: de72f28 f5f20e3
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Wed Aug 16 12:27:16 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit de72f28c08884d4968dd2ea1b8287966ffbce259[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Wed Aug 16 12:27:07 2023 +0900
+
+    feat:apikey 깃헙에 올라가는것 방지
+
+[33mcommit f5f20e39faa494162a15c9e66529eaf1b8d04957[m
+Author: sujung <ramie96218@naver.com>
+Date:   Mon Aug 14 16:55:10 2023 +0900
+
+    feat.CSS변경
+
+[33mcommit 89c80a4d9bf1f640214b5a7ed886f1061647993f[m
+Merge: 793baf6 a04bcbd
+Author: sujung <ramie96218@naver.com>
+Date:   Mon Aug 14 15:24:39 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 793baf603843acef7d252ea850dcca09baa4c91d[m
+Author: sujung <ramie96218@naver.com>
+Date:   Mon Aug 14 15:24:26 2023 +0900
+
+    feat.자가진단서비스
+
+[33mcommit a04bcbde282b98bfb757a3008954b49e1929f9e3[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Mon Aug 14 15:22:22 2023 +0900
+
+    feat: 챗봇 기능 추가
+
+[33mcommit a6df976f99ab7a557e8a31e02b40de96a5dea871[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Mon Aug 14 10:55:17 2023 +0900
+
+    feat: 병원지도에 검색기능 추가
+
+[33mcommit 02548025a8a17c300dee8a6f81810837469c5dc0[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Mon Aug 14 09:31:30 2023 +0900
+
+    feat:diary_calendar
+
+[33mcommit 087c336f7a158b2438229de67b2015e6f303f6d0[m
+Merge: 14b61fe 38d0a10
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Sat Aug 12 18:44:52 2023 +0900
+
+    Merge branch 'master' of https://github.com/jsh0508/PetCheck
+
+[33mcommit 14b61fe48ebce8040726e878dd1c99986a7ea771[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Sat Aug 12 18:38:52 2023 +0900
+
+    feat:동물병원서비스 추가
+
+[33mcommit e8a2ca74fbe97180e91a44a2779847dca92ba282[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Sat Aug 12 18:11:30 2023 +0900
+
+    feat: 동물병원지도기능 추가
+
+[33mcommit 38d0a1096adf0897e4223bb88197770acfb606d9[m
+Author: sujung <ramie96218@naver.com>
+Date:   Sat Aug 12 17:13:57 2023 +0900
+
+    feat.로그인 회원가입페이지변경
+
+[33mcommit 42d30e1b1312ad35bcccb013955677d73f91b8b0[m
+Author: axm0219 <axm0219@naver.com>
+Date:   Sat Aug 12 11:27:01 2023 +0900
+
+    feat:mh
+
+[33mcommit 5904bc5c427c2a98fe705dad045ac54a2c35e9ee[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Sat Aug 12 10:31:01 2023 +0900
+
+    rm cache
+
+[33mcommit a9ce090e4420e994e09a08b30f637028a3c468a9[m
+Author: jsh7485 <jsh7485@daum.net>
+Date:   Fri Aug 11 17:58:48 2023 +0900
+
+    fix:bug fixgit add

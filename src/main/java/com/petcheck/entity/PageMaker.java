@@ -1,5 +1,7 @@
 package com.petcheck.entity;
 
+import com.petcheck.entity.Criteria;
+import com.petcheck.entity.PageMaker;
 import lombok.Data;
 
 @Data

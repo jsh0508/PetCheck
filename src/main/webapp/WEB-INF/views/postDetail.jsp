@@ -57,6 +57,13 @@
 		<input type="hidden" name="keyword" value="${cri.keyword}"/>
 	</form>
 	
+	<!-- 댓글 쓰기 -->
+	<form action="${cpath}/reply.do" method="post" >
+	<input type="text" class="form-control" placeholder="댓글을 입력하세요">
+	<button class="btn btn-success" type="submit">등록</button>
+	
+	</form>
+	
 	
   <script type="text/javascript">
      // jQuery(자바스크립트 라이브러리:API(.js)) : http://jquery.com : $.ajax(), fetch(ajax)
