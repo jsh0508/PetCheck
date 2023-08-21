@@ -50,7 +50,7 @@ a, h1, p {
 }
 
 .sign {
-   padding: 50px 170px 0px 210px;
+   padding: 50px 170px 0px 180px;
    color: #d7b0bb;
    font-family: 'RIDIBatang';
    font-weight: bold;
@@ -271,7 +271,7 @@ form.form1 {
 /* ----간편로그인/회원가입-----*/
 .intro-1 {
    font-size: 15px;
-   padding: 10px 10px 10px 80px;
+   padding: 10px 80px 10px 80px;
    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
    color: #e6c3cd;
 }
