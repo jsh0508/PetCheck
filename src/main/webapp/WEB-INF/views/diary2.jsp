@@ -606,7 +606,7 @@
 				
 				blist += "<div class='guest-box-container'>";
 				blist += "<div class='guest-box basic-text'>";
-				blist += "<div class='guest-box-title'><span id='blue'>"+obj.title+"</span>("+obj.username+")<button id='"+obj.title+"' onclick='memoDelete(event)'>X</button>";
+				blist += "<div class='guest-box-title custom-title'><span id='blue'>"+obj.title+"</span><span class='custom-username'>(작성자 : "+obj.username+")</span>";  // <button class='custom-delete-btn' id='"+obj.title+"' onclick='memoDelete(event)'>X</button>
 				blist += "</div>";
 				blist += "<div class='guest-box-content'>";
 				blist += "<div class='guestbook-image background-"+index+"'>";
@@ -635,10 +635,10 @@
 					
 					blist += "<div class='guest-box-container'>";
 					blist += "<div class='guest-box basic-text'>";
-					blist += "<div class='guest-box-title'><span id='blue'>"+obj.title+"</span>("+obj.username+")<button id='"+obj.title+"' onclick='memoDelete(event)'>X</button>";
+					blist += "<div class='guest-box-title custom-title'><span id='blue'>"+obj.title+"</span><span class='custom-username'>(작성자 : "+obj.username+")</span>"; // <button class='custom-delete-btn' id='"+obj.title+"' onclick='memoDelete(event)'>X</button>
 					blist += "</div>";
 					blist += "<div class='guest-box-content'>";
-					blist += "<div class='guestbook-image background-1'>";
+					blist += "<div class='guestbook-image background-"+index+"'>";
 					blist += "</div>";
 					blist += "<div class='guest-text'>"+obj.content+"</div>";
 					blist += "</div>";
@@ -717,6 +717,23 @@
 	border: none;
 	padding: 0;
 }
+
+.custom-delete-btn{
+	background: none;
+	border: none;
+	padding: 0;
+	text-align: end;
+}
+
+.custom-title{
+	display: flex;
+	justify-content: space-between;
+}
+
+.custom-username{
+	font-size: 13px;
+}
+
 </style>
 </body>
 </html>
