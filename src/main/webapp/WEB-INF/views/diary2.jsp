@@ -309,7 +309,7 @@
 	      	const div = document.getElementsByClassName("tab-button active");
 	      	const key = div[0].id;
 			const receiver = evt.currentTarget.id;
-			const name = div[0].innerHTML;
+			const name = div[0].firstChild.innerHTML;
 			
 			$.ajax({
 				url: "${cpath}/ajaxIsInvitation.do?sender=${param.id}&receiver="+receiver+"&diary_key="+key+"&name="+name,
