@@ -71,8 +71,8 @@
 				  <div class="menu-container">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 					       data-target=".nav-collapse">
-					  <span class="sr-only">Toggle navigation</span> <span
-								class="toggle-icon"></span>
+					  <span class="sr-only">Toggle navigation</span> 
+					  <span class="toggle-icon"></span>
 					</button>
                    </div>
 
