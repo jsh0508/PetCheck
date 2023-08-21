@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Gaegu:wght@300&family=Jua&display=swap');
+@font-face {
+   font-family: 'RIDIBatang';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body{
+	font-family: 'RIDIBatang';
+}
 
 
 #bold-text {
     color: #71bfd6;
-    font-family: 'Jua', sans-serif;
+    font-family: 'RIDIBatang';
 }
 
 
@@ -14,10 +24,10 @@
 
 .menu-box {
     color: white;
-    font-family: 'Jua', sans-serif;
+    font-family: 'RIDIBatang';
 }
 
 
 #basic-text {
-    font-family: 'Gaegu', cursive;
+    font-family: 'RIDIBatang';
 }

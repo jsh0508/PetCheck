@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
     margin: 10px 0 10px 0;
+    justify-content: space-evenly;
 }
 
 
@@ -65,7 +66,7 @@
 
 .guest-text {
     padding: 10px;
-    flex: 0.7;
+    flex: 1;
 }
 
 
@@ -84,8 +85,8 @@
 }
 
 .guestbook-image {
-  flex: 0 0 8rem;
-  height: 8rem;
+  flex: 0 0 10rem;
+  height: 10rem;
   background-size: cover;
 
   display: flex;
@@ -93,8 +94,38 @@
   justify-content: center;
 }
 
+.background-0 {
+  background-image: url('./images/team1.jpg');
+}
 .background-1 {
-  background-image: url('./images/background.jpg');
+  background-image: url('./images/cat1.png');
+}
+.background-2 {
+  background-image: url('./images/cat2.jpg');
+}
+.background-3 {
+  background-image: url('./images/cat3.png');
+}
+.background-4 {
+  background-image: url('./images/cat4.png');
+}
+.background-5 {
+  background-image: url('./images/cat5.png');
+}
+.background-6 {
+  background-image: url('./images/cat6.png');
+}
+.background-7 {
+  background-image: url('./images/cat7.png');
+}
+.background-8 {
+  background-image: url('./images/cat8.png');
+}
+.background-9 {
+  background-image: url('./images/cat9.png');
+}
+.background-10 {
+  background-image: url('./images/cat10.png');
 }
 
 .guestbook-image > img {

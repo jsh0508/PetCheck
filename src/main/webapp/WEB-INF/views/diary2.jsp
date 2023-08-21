@@ -9,6 +9,12 @@
 <head>
 <meta charset="UTF-8">
 <title>다이어리</title>
+
+        
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <link rel="stylesheet" href="resources/diary/font.css">
@@ -17,11 +23,65 @@
 <link rel="stylesheet" href="resources/diary/guest.css">
 <script src="https://kit.fontawesome.com/862f1afc4c.js"
 	crossorigin="anonymous"></script>
+	
+	
 <link href='resources/calendar/main.css' rel='stylesheet' />
 <script src='resources/calendar/main.js'></script>
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+		<link rel="stylesheet" href="resources/css/index.css">
+        <link rel="stylesheet" href="resources/css/form.css">
+        
+        GLOBAL MANDATORY STYLES
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="resources/vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        PAGE LEVEL PLUGIN STYLES
+        <link href="resources/css/animate.css" rel="stylesheet">
+        <link href="resources/vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+
+        THEME STYLES
+        <link href="resources/css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+        Favicon
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="resources/css/btn.css">
+        
+        bootstrap icon
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" href="resources/css/chatbot.css">
+        
+        
+        <script src="resources/vendor/jquery.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/jquery-migrate.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        PAGE LEVEL PLUGINS
+        <script src="resources/vendor/jquery.easing.js" type="text/javascript"></script>
+        <script src="resources/vendor/jquery.back-to-top.js" type="text/javascript"></script>
+        <script src="resources/vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <script src="resources/vendor/jquery.wow.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="resources/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+        PAGE LEVEL SCRIPTS
+        <script src="resources/js/layout.min.js" type="text/javascript"></script>
+        <script src="resources/js/components/wow.min.js" type="text/javascript"></script>
+        <script src="resources/js/components/swiper.min.js" type="text/javascript"></script>
+        <script src="resources/js/components/masonry.min.js" type="text/javascript"></script>
+ -->
+
+
+	
+	
+
 <!-- calendar -->
 <script>
 
@@ -44,7 +104,7 @@
                 // 일정 생성
                 select: function(arg) {
                 	
-      				var title = prompt('Event Title:');
+      				var title = prompt('제목을 입력해주세요 :');
 				        if (title) {
 				        	var uniqueKey = Date.now();
 				            calendar.addEvent({
@@ -123,6 +183,77 @@
     </script>
 
 </head>
+<%-- <!-- Navbar -->
+		<nav class="navbar" role="navigation">
+			<div class="logo">
+				<a class="logo-wrap" href="${cpath}/main.do"> 
+				<img class="logo-img logo-img-main" src="resources/img/nocatlogo.png" alt="">
+				</a>
+			</div>
+			<div class="menu-container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="menu-container">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".nav-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="toggle-icon"></span>
+					</button>
+
+					<!-- Logo -->
+					<div class="logo">
+						<a class="logo-wrap" href="index.html"> <!--  <img class="logo-img logo-img-active" src="resources/img/logo-dark.png" alt="Asentus Logo"> -->
+						</a>
+					</div>
+					<!-- End Logo -->
+				</div>
+
+				<!-- 네비게이션 -->
+				<div class="collapse navbar-collapse nav-collapse">
+					<div class="menu-container">
+						<ul class="navbar-nav navbar-nav-right">
+							<li class="nav-item"><a
+								class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
+							<c:if test="${empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
+							</c:if>
+							<c:if test="${!empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover"
+									href="${cpath}/diary.do?idx=${mvo.idx}">다이어리</a></li>
+							</c:if>
+							<li class="nav-item"><a
+								class="nav-item-child nav-item-hover"
+								href="${cpath}/hospital.do">병원검색</a></li>
+							<li class="nav-item"><a
+								class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
+							<li class="nav-item"><a
+								class="nav-item-child nav-item-hover">|</a></li>
+							<c:if test="${empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover" href="${cpath}/login.do">로그인</a></li>
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover"
+									href="${cpath}/memberjoin.do">회원가입</a></li>
+							</c:if>
+							<c:if test="${!empty mvo}">
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover" href="${cpath}/logout.do">로그아웃</a></li>
+								<li class="nav-item"><a
+									class="nav-item-child nav-item-hover"
+									href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
+
+							</c:if>
+							<li class="nav-item"><a
+								class="nav-item-child nav-item-hover" href="products.html"><i
+									class="bi bi-person"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Navbar Collapse -->
+			</div>
+		</nav>
+ --%>
 <body style="background-color: #FFFAF3;">
 	<div class="bookcover">
 		<div class="bookdot">
@@ -134,32 +265,30 @@
 						</span>
 					</div>
 					<div class="profile">
-						<img class="profile-image" src="resources/diary/images/cat1.png">
+						<img class="profile-image" src="resources/diary/images/team1.jpg">
 						<div class="profile-text" id="basic-text">
-							@myeong_heon<br>성공으로 가는 길은 잘 깔린 직선이 아니야,<br>오히려 험난한
-							길이지.. 바다에 떠 있는 배처럼.<br>너는 그 선장이고. 거친 바다를 가로지르는 거야!
+							@myeong_heon<br>실패는 잊어라<br>하지만 그것이 주는 교훈은<br>절대 잊으면 안 된다
 						</div>
 						<div class="profile-dropdown">
 							<div id="basic-text">다이어리 추가하기</div>
 							<div>
 								<input id="diaryname" style="width: 80px;" type="text"
 									name="search" placeholder="제목입력">
-								<button onclick="addDiary()">
-									<i class="bi bi-plus"></i>
+								<button class="custom-diary-btn" onclick="addDiary()">
+									<i class="bi bi-plus-lg"></i>
 								</button>
 							</div>
 						</div>
 						<div class="profile-dropdown">
-							<div id="basic-text">공유멤버 추가하기</div>
-							<button id='invite' onclick='invitationListShowUp()'>초대</button>
-							
+							<div id="basic-text">공유멤버 추가하기
+								<button class='custom-invite-btn' id='invite' onclick='invitationListShowUp()'><i class="bi bi-person-plus"></i></button>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="column2">
 					<div class="top-text-box">
 						<div class="title" id="basic-text">명헌의 미니홈피</div>
-						<div class="url" id="basic-text">http://url주소/나중에입력</div>
 					</div>
 					<!--home-->
 					<div class="main-content scrollable-container">
@@ -227,7 +356,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<div class="modal-title">회원 목록</div>
-						<button style="margin-left: 490px;" type="button" class="close"
+						<button type="button" class="close"
 							data-dismiss="modal" aria-label="닫기">X</button>
 					</div>
 					<div class="modal-body">
@@ -239,9 +368,9 @@
 							</c:if>
 							<c:forEach var="member" items="${memList}">
 								<c:if test="${not (member.id eq param.id)}">
-									<li style="padding: 5px;">${member.id}를초대하시겠습니까?
+									<li style="padding: 5px;">${member.id} 를초대하시겠습니까?
 										<button id="${member.id}" onclick="addInvitationDB(event)"
-											style="background: none; color: #007bff;">
+											style="border: none; background: none; color: black;">
 											<i class="bi bi-check-circle-fill"></i>
 										</button>
 
@@ -464,19 +593,23 @@
 		
 		
 		function ajaxMyMemoList(data){
+			console.log(data);
+			
 			var blist = "<div>"
 			blist += "</div>";
 			blist += "<div class='main-content'>";
 			
 			$.each(data, function(index,obj) {
+				console.log(index);
+				console.log(obj);
+				
 				
 				blist += "<div class='guest-box-container'>";
 				blist += "<div class='guest-box basic-text'>";
 				blist += "<div class='guest-box-title'><span id='blue'>"+obj.title+"</span>("+obj.username+")<button id='"+obj.title+"' onclick='memoDelete(event)'>X</button>";
 				blist += "</div>";
 				blist += "<div class='guest-box-content'>";
-				blist += "<div class='guestbook-image background-1'>";
-				blist += "<img src='resources/diary/images/cat1.png'>"
+				blist += "<div class='guestbook-image background-"+index+"'>";
 				blist += "</div>";
 				blist += "<div class='guest-text'>"+obj.content+"</div>";
 				blist += "</div>";
@@ -495,30 +628,30 @@
 		
 		function ajaxSharedMemoList(data){
 			var blist = "<div>"
-			blist += "<button id='register' style='background: #09df09; color: white; padding: 3px; border-radius: 5px;' onclick='insertMemo()'>글쓰기</button>";
-			blist += "</div>";
-			blist += "<div class='container-fluid scrollable-container'>";
-			blist += "<div class='row'>"
-			
-			$.each(data, function(index,obj) {
+				blist += "</div>";
+				blist += "<div class='main-content'>";
 				
-				blist += "<div class='col-lg-12'>"
-				blist += "<div class='card-body custom-card-body'>"
-					blist +="<button id='"+obj.title+"' class='btn btn-sm btn-warning' onclick='memoDelete(event)'>X</button>";
-				blist += "<img></img>";
-				blist += "<h5 class='card-title custom-card-title'>"+obj.title+"</h5>";
-				blist += "<p class='card-text custom-card-text-content'>"+obj.content+"</p>";
-				blist += "<h5 class='card-text custom-card-text-username'>작성자 : "+obj.username+"</h5>";
+				$.each(data, function(index,obj) {
+					
+					blist += "<div class='guest-box-container'>";
+					blist += "<div class='guest-box basic-text'>";
+					blist += "<div class='guest-box-title'><span id='blue'>"+obj.title+"</span>("+obj.username+")<button id='"+obj.title+"' onclick='memoDelete(event)'>X</button>";
+					blist += "</div>";
+					blist += "<div class='guest-box-content'>";
+					blist += "<div class='guestbook-image background-1'>";
+					blist += "</div>";
+					blist += "<div class='guest-text'>"+obj.content+"</div>";
+					blist += "</div>";
+					blist += "</div>";
+					blist += "</div>";
+				})
+				
+				blist += "<div class='add-button'><button class='fas fa-plus-circle icon' id='register' onclick='insertMemo()'>글 작성하기</button></div>";
 				blist += "</div>";
-				blist += "</div>";
-			})
-			
-			blist += "</div>";
-			blist += "</div>";
-			
-			$("#memo").html(blist);
-			$("#write").css("display","none");
-		    $("#reset").trigger("click");
+				
+				$("#memo").html(blist);
+				$("#write").css("display","none");
+			    $("#reset").trigger("click");
 			
 		}
 		
@@ -566,6 +699,23 @@
 .modal-close {
 	display: flex;
 	align-items: center;
+}
+
+.custom-textarea{
+	width: 700px;
+}
+
+.custom-invite-btn{
+	background: none;
+	border: none;
+	padding: 0;
+	
+}
+
+.custom-diary-btn{
+	background: none;
+	border: none;
+	padding: 0;
 }
 </style>
 </body>
