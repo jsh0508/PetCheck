@@ -324,6 +324,19 @@ CREATE TABLE t_group_post
      PRIMARY KEY (post_idx)
 );
 
+
+CREATE TABLE t_reply
+(
+    reply_idx     INT			  NOT NULL    AUTO_INCREMENT COMMENT '댓글 순번. 댓글 순번',
+    reply_content INT 			  NOT NULL    COMMENT '댓글 내용. 댓글 내용',
+    post_idx      INT             NOT NULL    COMMENT '글 순번. 글 순번', 
+    id            VARCHAR(50)     NOT NULL    COMMENT '작성자 아이디. 작성자 이메일', 
+    created_at    DATETIME        NOT NULL    COMMENT '글 작성일자. 글 작성일자', 
+    PRIMARY KEY (reply_idx)
+);
+
+
+
 -- 테이블 Comment 설정 SQL - t_group_post
 ALTER TABLE t_group_post COMMENT '그룹 게시판. 그룹 게시판';
 
@@ -350,3 +363,24 @@ select * from t_member;
 ALTER TABLE t_pet ADD COLUMN pet_name varchar(50) NOT NULL	COMMENT '펫이름. 펫이름';
 ALTER TABLE t_pet ADD COLUMN pet_gender varchar(50) NOT NULL COMMENT '펫성별. 펫성별';
 ALTER TABLE t_pet MODIFY COLUMN pet_birthdate DATE NULL;
+
+
+
+select * from t_post a, t_member b where a.id = b.id in (select * from t_post where post_idx = 61)
+
+select * from t_post a, t_member b where a.id = b.id and post_idx = 61
+
+
+update t_member set pw = 123123 where id='moo'
+
+
+select *
+from t_post a, t_member b
+where a.id = b.id and  b.nick like 'moo'
+order by post_idx desc
+
+
+select *
+from t_post a, t_member b
+where a.id = b.id and  a.post_title like '주원'
+order by post_idx desc

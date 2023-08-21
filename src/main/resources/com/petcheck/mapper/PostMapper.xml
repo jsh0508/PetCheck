@@ -3,49 +3,39 @@
 <!-- namespace에는 패키지명 + 메퍼 파일명까지  -->
 <mapper namespace="com.petcheck.mapper.PostMapper">
 	
-	<!-- 게시물 검색 기능 -->
-   <sql id="search">
-     <if test="type=='id'">
-       where id like concat('%',#{keyword},'%')
-     </if>
-     <if test="type=='post_title'">
-       where post_title like concat('%',#{keyword},'%')
-     </if>
-     <if test="type=='post_content'">
-       where post_content like concat('%',#{keyword},'%')
-     </if>
-   </sql>
-
-
+	<!-- 게시물 보기 -->
 	<select id="postList" resultType="com.petcheck.entity.Post" parameterType="com.petcheck.entity.Criteria">
 		select *
 		from t_post a, t_member b
 		where a.id = b.id
 		order by post_idx desc
+		limit #{pageStart}, #{perPageNum}
 	</select>
 	
-	
+	<!-- 게시물 상세보기 -->
 	<select id="postDetail" resultType="com.petcheck.entity.Post">
-		select * from t_post a, t_member b where post_idx = #{post_idx} and a.id = b.id 
+		select * from t_post a, t_member b where a.id = b.id and post_idx = #{post_idx}
 	</select>
 	
 	
-	
+	<!-- 게시물 등록 -->
   	<insert id="postRegister" parameterType="com.petcheck.entity.Post">
 		insert into t_post (post_title, post_content, post_file, created_at, post_views, id) 
 		values (#{post_title}, #{post_content}, #{post_file}, now(), #{post_views}, #{id});
 	</insert> 
 	
-		
+	<!-- 게시물 수정 -->	
 	<update id="postModify" parameterType="com.petcheck.entity.Post">
 		update t_post set post_title = #{post_title}, post_content = #{post_content}, post_file = #{post_file}
 		where post_idx = #{post_idx}
 	</update>
 	
+	<!-- 게시물 삭제 -->
  	<delete id="postDelete" parameterType="com.petcheck.entity.Post">
 		delete from t_post where post_idx = #{post_idx}
 	</delete> 
 	
+	<!-- 게시물 토탈 -->
 	<select id="totalCount" resultType="int" parameterType="com.petcheck.entity.Criteria">
      select count(*) from t_post
 	</select> 

@@ -45,16 +45,11 @@
 		</tbody>
 	</table>
                
-					<!-- 검색기능 추가 -->
-					<form action="${cpath}/postList.do" method="post">
-						<select name="type" class="form-control">
-							<option value="id" ${pm.cri.type=='id' ? 'selected' : ''}>작성자</option> 
-							<option value="post_title" ${pm.cri.type=='post_title' ? 'selected' : ''}>제목</option>
-							<option value="post_content" ${pm.cri.type=='post_content' ? 'selected' : ''}>내용</option>
-						</select>
-						<input type="text" name="keyword" class="form-control" placeholder="Search" value="${pm.cri.keyword}">
-						<button class="btn btn-success" type="submit">검색</button>
-					</form>					
+				<c:if test="${!empty mvo}">
+				<button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/postRegister.do<%-- ?id=${pvo.id} --%>'">글쓰기</button>
+				</c:if>
+				
+
 					<!-- 페이징 처리 -->
 					<ul class="pagination justify-content-center">
 					  <c:if test="${pm.prev}">
@@ -68,42 +63,13 @@
 					  </c:if>
 					</ul>
 					
-				<c:if test="${!empty mvo}">
-				<button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/postRegister.do<%-- ?id=${pvo.id} --%>'">글쓰기</button>
-				</c:if>
 
-  
-  
-  
 
-    <!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">메세지</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body" style="color: red">
-        삭제된 게시물 입니다.
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <form id="frm" action="${cpath}/postList.do" method="post">
-     <input id="page" type="hidden" name="page" value="${pm.cri.page}"/>
-     <input type="hidden" name="type" value="${pm.cri.type}"/>
-     <input type="hidden" name="keyword" value="${pm.cri.keyword}"/>          
-  </form>
-  
-  
-  
+	<form id="frm" action="${cpath}/postList.do" method="post">
+		<input id="page" type="hidden" name="page" value="${pm.cri.page}"/>
+		<input type="hidden" name="type" value="${pm.cri.type}"/>
+		<input type="hidden" name="keyword" value="${pm.cri.keyword}"/>          
+	</form>
 <script type="text/javascript">
       $(document).ready(function() {
          $(".page-link").click(function(e) {
@@ -113,25 +79,26 @@
             $("#page").val(page);
             $("#frm").submit();
             //location.href="${cpath}/list.do?page="+page; // 너무 번거로움
-         
          });
-
+         
          /* 위에 있는 form을 직접 쓰기 위해서 변수에 담기 */
          var frm = $("#frm");
-         $(".postDetail").click(function(e) {
+         $(".get").click(function(e) {
             e.preventDefault();
             var num = $(this).attr("href");
-            var tag = "<input type='hidden' name='post_idx' value='"+post_idx+"'/>";
+            var tag = "<input type='hidden' name='num' value='"+num+"'/>";
 
             // 클릭이 일어났을때만 input 태그를 추가 해준다.
             frm.append(tag);
             // 페이지 주소를 바꿔줘야 한다.
-            frm.attr("action", "${cpath}/postDetail.do");
+            frm.attr("action", "${cpath}/`.do");
             frm.attr("method", "get");
             frm.submit();
-         }
          });
-         
+      }); // JQuery 끝
+      function goMsg() {
+         $(".modal").modal("show");
+      }
    </script>
    </body>
    </html>

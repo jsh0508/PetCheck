@@ -13,7 +13,7 @@ import com.petcheck.entity.Post;
 // 하지만 인터페이스 파일만 존재하면 어노테이션 안써도 된다.
 // @Mapper
 // JDBC(Java+SQL) -> MyBatis Framework(Java<-분리->SQL(xml))
-public interface PostMapper {
+public interface ReplyMapper {
 	
 	// 게시물 조회
 	public List<Post> postList(Criteria cri);// 추상메서드
