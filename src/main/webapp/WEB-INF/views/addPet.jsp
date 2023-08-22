@@ -47,6 +47,9 @@
  	overflow: hidden;
  	clip: rect(0, 0, 0, 0);
  }
+ #insertPet {
+ text-align: center;
+ }
 </style>
 </head>
 <body>
