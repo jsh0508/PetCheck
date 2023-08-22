@@ -384,3 +384,24 @@ select *
 from t_post a, t_member b
 where a.id = b.id and  a.post_title like '주원'
 order by post_idx desc
+
+drop table t_post
+
+CREATE TABLE t_post
+(
+    post_idx      INT             NOT NULL    AUTO_INCREMENT COMMENT '글 순번. 글 순번', 
+    post_title    VARCHAR(800)    NOT NULL    COMMENT '글 제목. 글 제목', 
+    post_content  TEXT            NULL        COMMENT '글 내용. 글 내용', 
+    post_file     VARCHAR(600)    NULL        COMMENT '글 첨부파일. 글 첨부파일', 
+    created_at    DATETIME        NOT NULL    COMMENT '글 작성일자. 글 작성일자', 
+    post_views    INT             NOT NULL    COMMENT '글 조회수. 글 조회수', 
+    id            VARCHAR(50)     NOT NULL    COMMENT '작성자 아이디. 작성자 이메일', 
+     PRIMARY KEY (post_idx)
+);
+
+insert into t_post (post_title, post_content, created_at, post_views, id)
+values('자가검진 정말 편리하고 좋아요', '리얼', now(),0,'moomoo')
+insert into t_post (post_title, post_content, created_at, post_views, id)
+values('강아지 사료 추천받아용', '제곧내', now(),0,'moomoo2')
+
+drop 

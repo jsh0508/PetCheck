@@ -36,6 +36,15 @@
 <!-- <link rel="stylesheet" href="resources/css/btn.css"> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.btn-primary,
+.btn-primary:hover {
+	background-color: sandybrown;
+	border-color : sandybrown;
+	}
+
+</style>
+
 </head>
 <!-- END HEAD -->
 
@@ -104,12 +113,17 @@
 		</nav>
 		<!-- Navbar -->
 	</header>
-	<h1>게시물 수정하기</h1>
+	
+	<div class="row" style="text-align:center";>
+		<h1>게시물 수정하기</h1>
+</div>
+
 	<form action="${cpath}/postModify.do" method="post">
 		<input type="hidden" name="post_idx" value="${pvo.post_idx}"/>
 		<input type="hidden" name="page" value="${cri.page}"/>
 		<input type="hidden" name="type" value="${cri.type}"/>
 		<input type="hidden" name="keyword" value="${cri.keyword}"/>
+		
 		<label>제목</label>
 		<input type="text" name="post_title" class="form-control" value="${pvo.post_title}"/>
 		<label>작성자</label>
@@ -117,9 +131,11 @@
 		<label>내용</label>
 		<textarea rows="10" name="post_content" class="form-control">${pvo.post_content}</textarea>  
 		<br/>
+ 		<div class="row" style="text-align: center">
 		<button type="submit" class="btn btn-primary btn-sm">수정하기 </button>
 		<button type="reset" class="btn btn-warning btn-sm">재입력</button>
 		<button type="button" class="btn btn-primary btn-sm" onclick="location.href='${cpath}/postList.do'">목록</button>
+		</div>
 	</form>
 </body>
 </html>

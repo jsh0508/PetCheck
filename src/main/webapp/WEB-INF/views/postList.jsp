@@ -39,13 +39,21 @@
 <style>
 	.pagination>.active>a,
 	.pagination>.active>a:hover {
-		background-color: sandybrown;
+	background-color: sandybrown;
 	border-color : sandybrown;
 	}
 	.pagination>li>a{
 	color : sandybrown;
 	}
-
+	.btn-primary,
+	.btn-primary:hover{ 
+	background-color: sandybrown;
+	border-color : sandybrown;
+	margin-right : 10%; 
+	}
+	.btn-group-sm>.btn, .btn-sm{
+	float : right;
+	}
 </style>
 </head>
 <!-- END HEAD -->
@@ -78,7 +86,7 @@
 								class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
 							<c:if test="${empty mvo}">
 								<li class="nav-item"><a
-									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
+									class="nav-item-child nav-item-hover" href="${cpath}/login.do">다이어리</a></li>
 							</c:if>
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a
@@ -119,7 +127,7 @@
 <div class="row" style="text-align:center";>
 	<div class="col">
 		<h1>게시판</h1>
-		<p>게시판 설명 글</p>
+		<p>회원들과 자유로운 대화를 나눠보세요</p>
 	</div> 
 </div>
 <table class="table table-bordered table-hover" style="width : 80%; margin-left : 10%; margin-right : 10%">
@@ -136,13 +144,13 @@
 			<%-- ${}: EL --%>
 			<c:forEach var="pvo" items="${postlist}">
 				<tr>
-					<td>${pvo.post_idx}</td>
-					<td>
+					<td class = "td1" style = "text-align:center">${pvo.post_idx}</td>
+					<td class = "td2">
 					<a href="${cpath}/postDetail.do?post_idx=${pvo.post_idx}">${pvo.post_title} </a></td>
 					<!-- 게시물에 달린 댓글 개수 표기 해주기 -->
-					<td>${pvo.nick}</td> 
-					<td><fmt:formatDate value="${pvo.created_at}" pattern="yyyy-MM-dd"/></td>
-					<td>${pvo.post_views}</td>
+					<td class = "td3" style = "text-align:center">${pvo.nick}</td> 
+					<td class = "td4" style = "text-align:center"><fmt:formatDate value="${pvo.created_at}" pattern="yyyy-MM-dd"/></td>
+					<td class = "td5" style = "text-align:center">${pvo.post_views}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -150,7 +158,7 @@
 <div>
 
 	<c:if test="${!empty mvo}">
-		<button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/postRegister.do<%-- ?id=${pvo.id} --%>'">글쓰기</button>
+		<button class="btn btn-primary btn-sm"onclick="location.href='${cpath}/postRegister.do<%-- ?id=${pvo.id} --%>'">글쓰기</button>
 	</c:if>
 </div>
 				

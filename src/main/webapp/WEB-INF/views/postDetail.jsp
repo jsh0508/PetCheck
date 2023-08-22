@@ -36,6 +36,16 @@
 <!-- <link rel="stylesheet" href="resources/css/btn.css"> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.btn-primary,
+.btn-primary:hover {
+	background-color: sandybrown;
+	border-color : sandybrown;
+	}
+
+</style>
+
+
 </head>
 <!-- END HEAD -->
 
@@ -104,25 +114,26 @@
 		</nav>
 		<!-- Navbar -->
 	</header>
-	<div>
-		<h1>게시물</h1> 
-	</div>
-	<table class="table table-bordered">
+<div class="row" style="text-align:center";>
+		<h1>게시물</h1>
+	</div> 
+</div>
+<table class="table table-bordered table-hover" style="width : 80%; margin-left : 10%; margin-right : 10%">
  		<tr>
- 			<td style="width: 100px">제목</td>
- 			<td>${pvo.post_title}</td>
+ 			<td class = "td1" style = "width : 20%; text-align:center">제목</td>
+ 			<td class = "td2" style = "width : 80%; text-align:center">${pvo.post_title}</td>
  		</tr>
 		<tr>
-			<td>작성자</td>
-			<td>${pvo.nick}</td>
+			<td class = "td3" style = "text-align:center">작성자</td>
+			<td class = "td4" style = "text-align:center">${pvo.nick}</td>
 		</tr>
 		<tr>
- 			<td>작성일</td>
-			<td><fmt:formatDate value="${pvo.created_at}" pattern="yyyy-MM-dd"/></td>
+ 			<td class = "td5" style = "text-align:center">작성일</td>
+			<td class = "td6" style = "text-align:center"><fmt:formatDate value="${pvo.created_at}" pattern="yyyy-MM-dd"/></td>
  		</tr>
  		<tr>
- 			<td>내용</td>
-            <td>${fn:replace(pvo.post_content,newLineChar,"<br/>")}</td>
+ 			<td class = "td7" style = "text-align:center">내용</td>
+            <td class = "td8" style = "text-align:center">${fn:replace(pvo.post_content,newLineChar,"<br/>")}</td>
  		</tr>
  	</table>
  			<div class="row" style="text-align: center">
