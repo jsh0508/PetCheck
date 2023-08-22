@@ -98,9 +98,6 @@
                            href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
 
                      </c:if>
-                     <li class="nav-item"><a
-                        class="nav-item-child nav-item-hover" href="products.html"><i
-                           class="bi bi-person"></i></a></li>
                   </ul>
                </div>
             </div> <!-- End Navbar Collapse -->
