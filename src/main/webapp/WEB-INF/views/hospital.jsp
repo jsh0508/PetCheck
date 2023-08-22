@@ -77,7 +77,7 @@
 								class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
 							<c:if test="${empty mvo}">
 								<li class="nav-item"><a
-									class="nav-item-child nav-item-hover" href="">다이어리</a></li>
+									class="nav-item-child nav-item-hover" href="${cpath}/login.do">다이어리</a></li>
 							</c:if>
 							<c:if test="${!empty mvo}">
 								<li class="nav-item"><a

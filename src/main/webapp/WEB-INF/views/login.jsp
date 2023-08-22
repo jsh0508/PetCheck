@@ -76,11 +76,11 @@
                      <li class="nav-item"><a
                         class="nav-item-child nav-item-hover" href="${cpath}/upload.do">자가진단</a></li>
                      <li class="nav-item"><a
-                        class="nav-item-child nav-item-hover" href="about.html">다이어리</a></li>
+                        class="nav-item-child nav-item-hover" href="${cpath}/login.do">다이어리</a></li>
                      <li class="nav-item"><a
-                        class="nav-item-child nav-item-hover" href="products.html">병원검색</a></li>
+                        class="nav-item-child nav-item-hover" href="${cpath}/hospital.do">병원검색</a></li>
                      <li class="nav-item"><a
-                        class="nav-item-child nav-item-hover" href="faq.html">게시판</a></li>
+                        class="nav-item-child nav-item-hover" href="${cpath}/postList.do">게시판</a></li>
                      <li class="nav-item"><a
                         class="nav-item-child nav-item-hover">|</a></li>
                      <c:if test="${empty mvo}">
@@ -98,9 +98,6 @@
                            href="${cpath}/myPage.do?idx=${mvo.idx}">내 정보</a></li>
 
                      </c:if>
-                     <li class="nav-item"><a
-                        class="nav-item-child nav-item-hover" href="products.html"><i
-                           class="bi bi-person"></i></a></li>
                   </ul>
                </div>
             </div> <!-- End Navbar Collapse -->
