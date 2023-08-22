@@ -18,9 +18,6 @@ public interface PostMapper {
 	// 게시물 조회
 	public List<Post> postList(Criteria cri);// 추상메서드
 	
-	// 게시물 검색
-	/* public List<Post> postSearch(Criteria cri); */
-	
 	// 게시물 작성
 	public void postRegister (Post pvo);
 	
@@ -40,8 +37,7 @@ public interface PostMapper {
 	 // 전체 게시글의 수를 구하는 메서드 
  	public int totalCount(Criteria cri);
  	
- 	// 댓글 압력
- 	// public void replyRegister(int post_idx);
+
 	 
 
  	

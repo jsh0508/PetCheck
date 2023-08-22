@@ -53,16 +53,6 @@ public class PostController {
 	}
 	
 	
-	/*
-	 * // 댓글 입력
-	 * 
-	 * @PostMapping ("/reply.do") public String replyregister (int post_idx) {
-	 * mapper.replyRegister(post_idx); return "redirect:/postDetail.do";
-}
-	 */
-	
-	
-	
 	// 게시물 상세보기
 	@RequestMapping("/postDetail.do")
 	public String postDetail(@ModelAttribute("cri") Criteria cri, int post_idx, Model model) {
@@ -106,17 +96,4 @@ public class PostController {
 		rttr.addAttribute("type", cri.getType());
 		return "redirect:/postDetail.do"; // 수정된 게시물로 경로 변경하기??
 	}
-
-	/* // 게시물 검색
-	 * 
-	 * @RequestMapping("/postSearch.do") public String postSearch(Criteria cri,
-	 * Model model) {
-	 * 
-	 * List<Post> list = mapper.postSearch(cri); model.addAttribute("postlist",
-	 * list); // 페이징 PageMaker pm = new PageMaker(); pm.setCri(cri);
-	 * pm.setTotalCount(mapper.totalCount(cri)); model.addAttribute("pm", pm);
-	 * 
-	 * return "postSearch";
-		}
-	 */
 }

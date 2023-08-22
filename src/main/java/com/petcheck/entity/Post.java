@@ -1,7 +1,5 @@
 package com.petcheck.entity;
 
-import java.math.BigDecimal;
-import java.security.Timestamp;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
