@@ -82,37 +82,37 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조) 예시 
-![SystemArchitecture](./images/SystemArchitecture.png)
+<img src="./images/SystemArchitecture.png" width="500" height="300"/>
 <br>
 
 ## 📌 SW유스케이스
-![UseCase](./images/UseCase.png)
+<img src="./images/UseCase.png" width="500" height="300"/>
 <br>
 
 ## 📌 서비스 흐름도
-![serviceFlowchart](./images/serviceFlowchart.png)
+<img src="./images/serviceFlowchart.png" width="500" height="300"/>
 <br>
 
 ## 📌 ER다이어그램
-![diagram](./images/diagram.png)
+<img src="./images/diagram.png" width="500" height="600"/>
 <br>
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입/마이페이지
-
+### 로그인/회원가입
+<img src="./images/signIn.png" width="500" height="300"/><img src="./images/joinUs.png" width="500" height="300"/>
 <br>
 
 ### 메인페이지
-
+<img src="./images/mainPage.png" width="500" height="300"/>
 <br>
 
 ### 자가진단 페이지
-
+<img src="./images/diagnosis1.png" width="500" height="300"/><img src="./images/diagnosis2.png" width="500" height="300"/>
 <br>
 
 ### 다이어리/동물병원/게시판
-
+<img src="./images/diary.png" width="300" height="300"/><img src="./images/hospital.png" width="300" height="300"/><img src="./images/board.png" width="300" height="300"/>
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
