@@ -112,7 +112,7 @@
 <br>
 
 ### 다이어리/동물병원/게시판
-<img src="./images/diary.png" width="300" height="300"/><img src="./images/hospital.png" width="300" height="300"/><img src="./images/board.png" width="300" height="300"/>
+<img src="./images/diary.png" width="333" height="300"/><img src="./images/hospital.png" width="333" height="300"/><img src="./images/board.png" width="333" height="300"/>
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
@@ -139,11 +139,16 @@
     <td align="center"><b>Deep Learning</b></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center" width="200">
+        프로젝트 총괄<br>
+        다이어리 기능 구현<br>
+        그룹 기능 구현<br>
+        초대 기능 구현<br>
+        다이어리 페이지 UI/UX 구현</td>
+    <td align="center" width="200">Spring 서버 구축<br>데이터베이스 설계<br>로그인/회원가입 기능구현<br>(SNS 로그인 API)<br>마이페이지 기능 구현</td>
+    <td align="center" width="200">데이터베이스 설계<br>게시판 CRUD<br>게시판 UI/UX 구현</td>
+    <td align="center" width="200">메인 페이지<br>자가진단 페이지<br>병원검색 페이지<br>로그인 페이지<br>회원가입 페이지<br>마이 페이지 UI/UX 구현</td>
+    <td align="center" width="200">데이터 분석 및 전처리<br>데이터 모델링<br>Flask 서버 구축<br>자가진단 기능 구현<br>병원 검색 기능 구현<br>챗봇 기능 구현</td>
   </tr>
 </table>
 
